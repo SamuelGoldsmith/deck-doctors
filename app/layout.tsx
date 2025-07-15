@@ -1,16 +1,25 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+import { Roboto } from "next/font/google";
+import { Roboto_Mono } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const roboto = Roboto({
+  variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "700"], // customize as needed
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const robotoMono = Roboto_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
+  weight: ["400", "500", "700"], // optional
+  display: "swap",
 });
+
 
 export const metadata: Metadata = {
   title: "Deck Doctors",
@@ -25,9 +34,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${roboto.variable} ${robotoMono.variable} antialiased`}
       >
+        <Navbar />
         {children}
+        <div className="fixed bottom-0 w-full">
+        <Footer />
+        </div>
       </body>
     </html>
   );

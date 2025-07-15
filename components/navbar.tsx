@@ -11,52 +11,53 @@ import {
   NavigationMenuTrigger,
   NavigationMenuViewport,
 }
-from "@/components/ui/navigation-menu"
+  from "@/components/ui/navigation-menu"
 import Link from "next/link";
 import Projects from "@/components/projects";
 import Expieriences from "@/components/expieriences";
 import { Button } from "@/components/ui/button";
 
-const resume: { title: string; href: string; description: string }[] = [
+const gallery: { title: string; href: string; description: string }[] = [
   {
-    title: "Interactive Resume",
-    href: "/resume/interactive",
+    title: "Deck Restoration",
+    href: "/gallery/deck-restoration",
     description:
-      "An interactive resume that showcases my skills and experience with descriptions and examples.",
+      "See our gallery of deck restoration projects, showcasing shocking before and after images.",
   },
   {
-    title: "Resume PDF",
-    href: "/resume/resume.pdf",
+    title: "Mailboxes",
+    href: "/gallery/mailboxes",
     description:
-      "Download my resume in PDF format.",
+      "Explore our collection of custom mailboxes installs, designed to enhance curb appeal and functionality.",
   },
   {
-    title: "Interactive Transcript",
-    href: "/transcript/interactive",
+    title: "New Builds",
+    href: "/gallery/new-builds",
     description:
-      "An interactive transcript that showcases my skills and experience with descriptions, examples and links to related projects.",
+      "Discover our new builds gallery, featuring a range of custom decks and outdoor structures.",
   },
   {
-    title: "Transcript PDF",
-    href: "/transcript/transcript.pdf",
-    description: "Download my transcript in PDF format.",
+    title: "Other Projects",
+    href: "/gallery/other-projects",
+    description: "Browse our other projects, and unique outdoor solutions.",
   },
 ];
 
 export default function Navbar() {
   return (
+    <div className="w-full bg-primary text-primary-foreground shadow-lg">
+      <div className="fixed top-0 w-full bg-primary text-primary-foreground shadow-lg">
         <NavigationMenu>
           <NavigationMenuList>
-
             <NavigationMenuItem>
               <NavigationMenuLink asChild><Link href="/">Home</Link></NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Resume</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="bg-primary text-primary-foreground">Gallery</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  {resume.map((item) => (
+                  {gallery.map((item) => (
                     <ListItem
                       key={item.title}
                       title={item.title}
@@ -70,30 +71,29 @@ export default function Navbar() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <Projects />
-              </NavigationMenuContent>
+              <NavigationMenuLink asChild><Link href="/testimonials">Testimonials</Link></NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Expieriences</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-1 lg:w-[600px]">
-                  <Expieriences />
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-                <NavigationMenuLink asChild><Link href="/about">About Me</Link></NavigationMenuLink>
+              <NavigationMenuLink asChild><Link href="/about">About</Link></NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-            <NavigationMenuLink asChild><Link href="/contact">Contact</Link></NavigationMenuLink>
+              <NavigationMenuLink asChild><Link href="/contact">Contact</Link></NavigationMenuLink>
             </NavigationMenuItem>
 
           </NavigationMenuList>
 
         </NavigationMenu>
+      </div>
+      <div className="w-full h-[50vh] md:h-[30vh] lg:h-[25vh] overflow-hidden">
+        <img
+          src="/banner.jpg"
+          alt="Banner"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+    </div>
   );
 }
 
