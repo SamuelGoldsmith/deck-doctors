@@ -16,7 +16,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
             <Carousel orientation="horizontal" className="w-full">
                 <CarouselContent className="px-4">
                     {images.map((image, index) => (
-                        <CarouselItem key={index} className="basis-1/2 flex items-center justify-center">
+                        <CarouselItem key={index} className="sm:basis-1 md:basis-1/2 flex items-center justify-center">
                             <img src={image} alt={`Image ${index + 1}`} className="w-full h-auto rounded-lg shadow-2l block" />
                         </CarouselItem>
                     ))}
