@@ -9,11 +9,4 @@ declare module "heic-convert" {
 
   export = heicConvert;
 }
-// declare module "heic-convert" {
-//   export = heicConvert;
-//   function heicConvert(options: {
-//     buffer: Buffer;
-//     format: "JPEG" | "PNG";
-//     quality?: number;
-//   }): Promise<Buffer>;
-// }
+
