@@ -45,8 +45,8 @@ const gallery: { title: string; href: string; description: string }[] = [
 
 export default function Navbar() {
   return (
-    <div className="w-full bg-primary text-primary-foreground shadow-lg">
-      <div className="fixed top-0 w-full bg-primary text-primary-foreground shadow-lg">
+    <div className="w-full bg-primary text-primary-foreground shadow-lg fixed z-50">
+      <div className="top-0 w-full bg-primary text-primary-foreground shadow-lg">
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -85,13 +85,7 @@ export default function Navbar() {
 
         </NavigationMenu>
       </div>
-      <div className="w-full h-[50vh] md:h-[30vh] lg:h-[25vh] overflow-hidden">
-        <img
-          src="/banner.jpg"
-          alt="Banner"
-          className="w-full h-full object-cover"
-        />
-      </div>
+
 
     </div>
   );

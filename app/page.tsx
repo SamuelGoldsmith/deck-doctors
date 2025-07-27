@@ -13,13 +13,13 @@ export default function Home() {
             height={200}
             className="mb-4 mx-5"
           />
-          <div className="w-full lg:w-1/4 mx-5 text-center lg:text-left">
+          <div className="w-full lg:w-1/4 mx-5 text-center lg:text-left min-w-1/4">
             <h1 className="text-4xl font-bold">Is your deck in good health?</h1>
             <p className="text-2xl mb-4">
               It is recommended that a deck is repainted every 2–3 years. Is your deck in good health?
             </p>
           </div>
-          <div className="w-full lg:w-auto mx-5">
+          <div className="w-full lg:w-auto mx-5 p-10">
             <iframe
               src="https://docs.google.com/forms/d/e/1FAIpQLSfNEeVX4M0-leg1GDXhhcP5rMGRxX7lXHBrAoqR5uAnCkyD9g/viewform?embedded=true"
               width="100%"
@@ -35,7 +35,7 @@ export default function Home() {
         <div className="flex flex-col lg:flex-row p-10 items-center justify-center gap-6">
           <h1 className="text-4xl font-bold mb-4">Our Services</h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-5 items-center justify-center">
           <div className=" p-6 rounded-lg shadow-lg items-center justify-center">
             <Image
               src="/hammer.jpg"

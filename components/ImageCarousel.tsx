@@ -23,13 +23,13 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
                 </CarouselContent>
 
                 {/* Navigation buttons with z-index so they're not covered */}
-                <CarouselPrevious className="z-20 bg-muted-foreground text-white" />
-                <CarouselNext className="z-20 bg-muted-foreground text-white" />
+                <CarouselPrevious className="bg-muted-foreground text-white" />
+                <CarouselNext className="bg-muted-foreground text-white" />
             </Carousel>
 
             {/* Fading edges */}
-            <div className="pointer-events-none absolute top-0 left-0 h-full w-12 bg-gradient-to-r from-background to-transparent" />
-            <div className="pointer-events-none absolute top-0 right-0 h-full w-12 bg-gradient-to-l from-background to-transparent" />
+            <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-12 bg-gradient-to-r from-background to-transparent" />
+            <div className="pointer-events-none absolute top-0 right-0 z-10 h-full w-12 bg-gradient-to-l from-background to-transparent" />
         </div>
     );
 }
