@@ -36,7 +36,7 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${robotoMono.variable} antialiased`}
       >
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col max-w-screen">
           <Navbar />
           <div className="w-full h-[53vh] md:h-[33vh] lg:h-[28vh] overflow-hidden">
             <img
@@ -48,7 +48,7 @@ export default function RootLayout({
           <div className="pb-16">
             {children}
           </div>
-          <div className="fixed bottom-0 w-full">
+          <div className="fixed bottom-0 w-full z-50">
             <Footer />
           </div>
         </div>

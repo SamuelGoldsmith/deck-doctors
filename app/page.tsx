@@ -77,8 +77,8 @@ export default function Home() {
               height={200}
               className="mb-4 mx-5"
             />
-            <h2 className="text-2xl font-semibold mb-2">Deck Maintenance</h2>
-            <p>Regular maintenance to keep your deck in top shape.</p>
+            <h2 className="text-2xl font-semibold mb-2">Outdoor Projects</h2>
+            <p>From stairs to mailboxes the doc has got you covered.</p>
           </div>
         </div>
       </div>

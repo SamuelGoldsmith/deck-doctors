@@ -17,31 +17,7 @@ import Projects from "@/components/projects";
 import Expieriences from "@/components/expieriences";
 import { Button } from "@/components/ui/button";
 
-const gallery: { title: string; href: string; description: string }[] = [
-  {
-    title: "Deck Restoration",
-    href: "/gallery/deck-restoration",
-    description:
-      "See our gallery of deck restoration projects, showcasing shocking before and after images.",
-  },
-  {
-    title: "Mailboxes",
-    href: "/gallery/mailboxes",
-    description:
-      "Explore our collection of custom mailboxes installs, designed to enhance curb appeal and functionality.",
-  },
-  {
-    title: "New Builds",
-    href: "/gallery/new-builds",
-    description:
-      "Discover our new builds gallery, featuring a range of custom decks and outdoor structures.",
-  },
-  {
-    title: "Other Projects",
-    href: "/gallery/other-projects",
-    description: "Browse our other projects, and unique outdoor solutions.",
-  },
-];
+
 
 export default function Navbar() {
   return (
@@ -54,20 +30,7 @@ export default function Navbar() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-primary text-primary-foreground">Gallery</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  {gallery.map((item) => (
-                    <ListItem
-                      key={item.title}
-                      title={item.title}
-                      href={item.href}
-                    >
-                      {item.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
+              <NavigationMenuLink asChild><Link href="/gallery">Gallery</Link></NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>

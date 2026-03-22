@@ -27,7 +27,6 @@ export default async function DeckRestorationPage() {
         const jpgPath = path.join(folderPath, base + ".jpg");
 
         if (fs.existsSync(jpgPath)) {
-          // .jpg already exists, no need to convert or add again
           continue;
         }
 
@@ -49,11 +48,11 @@ export default async function DeckRestorationPage() {
   }
 
   return (
-    <main className="p-6 space-y-10 flex flex-col items-center">
+    <main className="p-6 flex flex-col items-center">
       {imagePaths.map((paths, index) => (
-        <div className="lg:w-2/5 m:w-8/10 sm:w-8/10 bg-background" key={`folder-${index}`}>
+        <div className={`lg:w-2/5 m:w-8/10 sm:w-7/10 bg-background my-1`} key={`folder-${index}`}>
           <ImageCarousel images={paths} key={`carousel-${index}`} />
-          {(index - 1 % 2) ==0 && (<hr className="h-px my-8 bg-black border-5 border-secondary rounded-2xl"/>)}
+          {((index - 1) % 2) === 0 && (<hr className="h-px my-8 bg-black border-5 border-primary rounded-2xl w-full"/>)}
         </div>
       ))}
     </main>

@@ -12,24 +12,18 @@ interface ImageCarouselProps {
 
 export default function ImageCarousel({ images }: ImageCarouselProps) {
     return (
-        <div className="relative w-full"> {/* Relative container for fade + z-index control */}
-            <Carousel orientation="horizontal" className="w-full">
-                <CarouselContent className="px-4">
+        <div className="relative w-full justify-center">
+            <Carousel orientation="horizontal" className="sm:w-5/10 sm:mx-auto md:w-full  ">
+                <CarouselContent className=" ">
                     {images.map((image, index) => (
                         <CarouselItem key={index} className="sm:basis-1 md:basis-1/2 flex items-center justify-center">
-                            <img src={image} alt={`Image ${index + 1}`} className="w-full h-auto rounded-lg shadow-2l block" />
+                            <img src={image} alt={`Image ${index + 1}`} className="w-full h-auto rounded-sm shadow-2l block" />
                         </CarouselItem>
                     ))}
                 </CarouselContent>
-
-                {/* Navigation buttons with z-index so they're not covered */}
-                <CarouselPrevious className="bg-muted-foreground text-white" />
-                <CarouselNext className="bg-muted-foreground text-white" />
+                <CarouselPrevious className="hidden md:flex" variant={"default"}/>
+                <CarouselNext className="hidden md:flex" variant={"default"}/>
             </Carousel>
-
-            {/* Fading edges */}
-            <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-12 bg-gradient-to-r from-background to-transparent" />
-            <div className="pointer-events-none absolute top-0 right-0 z-10 h-full w-12 bg-gradient-to-l from-background to-transparent" />
         </div>
     );
 }
