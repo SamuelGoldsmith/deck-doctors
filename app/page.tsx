@@ -36,46 +36,46 @@ export default function Home() {
           <h1 className="text-4xl font-bold mb-4">Our Services</h1>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-5 items-center justify-center">
-          <div className=" p-6 rounded-lg shadow-lg items-center justify-center">
+          <div className=" mx-5 text-center p-6 rounded-lg shadow-lg items-center justify-center">
             <Image
               src="/hammer.jpg"
               alt="Hammer"
               width={200}
               height={200}
-              className="mb-4 mx-5"
+              className="mb-4 "
             />
-            <h2 className="text-2xl font-semibold mb-2">Deck Inspection</h2>
+            <h2 className="text-2xl font-semibold mb-2 ">Deck Inspection</h2>
             <p>Thorough inspection of your deck's condition.</p>
           </div>
-          <div className=" p-6 rounded-lg shadow-lg">
+          <div className=" p-6 rounded-lg shadow-lg mx-5 text-center">
             <Image
               src="/roll.jpg"
               alt="Roller"
               width={200}
               height={200}
-              className="mb-4 mx-5"
+              className="mb-4 "
             />
             <h2 className="text-2xl font-semibold mb-2">Deck Repair</h2>
             <p>Professional repair services for damaged decks.</p>
           </div>
-          <div className="p-6 rounded-lg shadow-lg">
+          <div className="p-6 rounded-lg shadow-lg mx-5 text-center">
             <Image
               src="/spray.jpg"
               alt="Spray"
               width={200}
               height={200}
-              className="mb-4 mx-5"
+              className="mb-4 "
             />
-            <h2 className="text-2xl font-semibold mb-2">Deck Maintenance</h2>
-            <p>Regular maintenance to keep your deck in top shape.</p>
+            <h2 className="text-2xl font-semibold mb-2">New Construction</h2>
+            <p>Custom new builds for your property.</p>
           </div>
-          <div className="p-6 rounded-lg shadow-lg">
+          <div className="p-6 rounded-lg shadow-lg mx-5 text-center">
             <Image
               src="/tape.jpg"
               alt="Tape"
               width={200}
               height={200}
-              className="mb-4 mx-5"
+              className="mb-4 "
             />
             <h2 className="text-2xl font-semibold mb-2">Outdoor Projects</h2>
             <p>From stairs to mailboxes the doc has got you covered.</p>
