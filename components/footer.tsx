@@ -4,8 +4,19 @@ import * as React from "react";
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t mt-10 bg-secondary h-16 px-5 flex items-center justify-center">
-      <div className="absolute left-1/2 transform -translate-x-1/2">
+    <footer className="w-full border-t mt-10 bg-secondary p-3 px-5 flex items-center justify-center sm:flex">
+      <div className="mr-auto">
+        <a
+          href="/employee-portal"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-primary-foreground rounded-md border bg-primary  p-2 hover:p-3"
+        >
+          Employee Portal
+        </a>
+      </div>
+
+      <div className="">
         <Social />
       </div>
 
