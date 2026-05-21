@@ -4,11 +4,11 @@ import { getEmployeeById, getEmployees, getExpensesByJobId, getHoursByJob, getJo
 import { Employee, Expense, Hour } from "@/lib/utils";
 import { Pencil } from "lucide-react";
 
-export default async function JobProfile({ params }: { params: Promise<{ jid: string }> }) {
+export default async function JobProfile({ params }: { params: { jid: number } }) {
   const p = await params;
-  const job = await getJobById(p.jid);
-  var expenses = await getExpensesByJobId(p.jid);
-  const hours = await getHoursByJob(p.jid);
+  const job = await getJobById(String(p.jid));
+  var expenses = await getExpensesByJobId(String(p.jid));
+  const hours = await getHoursByJob(String(p.jid));
   const employees = await getEmployees();
   const getRate = (eid: number) => {return employees.find((e) => e.eid === eid)?.rate || 0 };
  //groups expenses by date summing costs

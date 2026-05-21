@@ -4,9 +4,9 @@ import { getCustomerById } from "@/lib/serverUtils";
 import { Edit } from "lucide-react";
 
 
-export default async function JobProfile({ params }: { params: Promise<{ cid: string }> }) { 
+export default async function JobProfile({ params }: { params: { cid: number } }) { 
   const p = await params;
-  const customer = await getCustomerById(p.cid);
+  const customer = await getCustomerById(String(p.cid));
 
   if (!customer) {
     return (

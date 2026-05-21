@@ -1,9 +1,9 @@
 import { getEmployeeById } from "@/lib/serverUtils";
 import { deleteEmployee } from "@/lib/utils";
 import { Pencil, Trash } from "lucide-react";
-export default async function EmployeeProfile({ params }: { params: Promise<{ eid: string }> }) {
+export default async function EmployeeProfile({ params }: { params: { eid: number } }) {
   const p = await params;
-  const employee = await getEmployeeById(p.eid);
+  const employee = await getEmployeeById(String(p.eid));
   return (
     <main className="m-3 ">
       <div className="p-5 px-30">

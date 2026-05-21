@@ -11,9 +11,9 @@ import { get } from "http";
 import { Check, Edit } from "lucide-react";
 
 
-export default async function JobProfile({ params }: { params: Promise<{ jid: string }> }) { 
+export default async function JobProfile({ params }: { params: { jid: number } }) { 
   const p = await params;
-  const job = await getJobById(p.jid);
+  const job = await getJobById(String(p.jid));
   const customers = await getCustomers();
 
   console.log(job);
