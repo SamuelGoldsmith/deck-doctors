@@ -35,7 +35,6 @@ export default async function EmployeeLayout({
   children: React.ReactNode;
 }>) {
   const session = await getSession();
-  console.log(session)
   return (
         <div className="min-h-screen flex flex-col max-w-screen">
           <Navbar />

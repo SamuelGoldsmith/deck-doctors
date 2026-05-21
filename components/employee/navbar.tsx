@@ -34,7 +34,7 @@ export default async function Navbar() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuLink asChild><Link href="/employee-portal/contacts">Contacts</Link></NavigationMenuLink>
+                  <NavigationMenuLink asChild><Link href="/employee-portal/customers">Contacts</Link></NavigationMenuLink>
                 </NavigationMenuItem>
               </>)}
           </NavigationMenuList>
