@@ -4,7 +4,7 @@ import { getEmployeeById, getEmployees, getExpensesByJobId, getHoursByJob, getJo
 import { Employee, Expense, Hour } from "@/lib/utils";
 import { Pencil } from "lucide-react";
 
-export default async function JobProfile({ params }: { params: { jid: number } }) {
+export default async function JobProfile({ params }: { params: Promise<{ jid: number }> }) {
   const p = await params;
   const job = await getJobById(String(p.jid));
   var expenses = await getExpensesByJobId(String(p.jid));

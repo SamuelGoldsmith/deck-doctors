@@ -4,7 +4,7 @@ import { getCustomerById, getEmployeeById, getEmployees, getExpensesByJobId, get
 import { Employee, Expense, Hour } from "@/lib/utils";
 import { Pencil } from "lucide-react";
 
-export default async function CustomerProfile({ params }: { params: { cid: number } }) {
+export default async function CustomerProfile({ params }: { params: Promise<{ cid: number }> }) {
   const p = await params;
   const customer = await getCustomerById(String(p.cid));
   

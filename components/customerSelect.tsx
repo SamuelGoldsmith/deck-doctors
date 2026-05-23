@@ -15,22 +15,23 @@ import { Customer } from "@/lib/utils"
 export function CustomerSelect({ customers, initial, onChange }: { customers: Customer[]; initial?: Customer; onChange?: (customer: Customer) => void }) {
   const itemToStringValue = (customer: Customer) => customer.first_name + " " + customer.last_name
   
-  const handleChange = (value: string) => {
-    const selected = customers.find(c => itemToStringValue(c) === value);
-    if (selected && onChange) {
-      onChange(selected);
+  const handleChange = (value: any) => {
+    if (value && onChange) {
+      const customer = customers.find(c => c.first_name + " " + c.last_name === value);
+      if (customer) {
+        onChange(customer);
+      }
     }
   }
   
   return (
     <div className="w-80">
     <Combobox
-    defaultValue={initial ? itemToStringValue(initial) : undefined}
     items={customers}
      itemToStringValue={itemToStringValue}
      onValueChange={handleChange}
     >
-      <ComboboxInput placeholder="Select a customer" />
+      <ComboboxInput placeholder={initial ? initial.first_name + " " + initial.last_name : "Select a customer"} />
 
       <ComboboxContent>
         <ComboboxEmpty>No items found.</ComboboxEmpty>

@@ -190,3 +190,30 @@ export async function editCustomer(customer: Customer) {
     })
     return res.ok;
   }
+
+  export async function addHours(hours: Hour) {
+    const res = await fetch("/api/hours/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(hours),
+    })
+    return res.ok;
+  }
+
+  export async function getEmployees(): Promise<Employee[]> {
+    const res = await fetch("/api/employees/list");
+    if (!res.ok) {
+      throw new Error("Failed to fetch employees");
+    }
+    return res.json();
+  }
+
+  export async function getJobs(): Promise<Job[]> {
+    const res = await fetch("/api/jobs/list");
+    if (!res.ok) {
+      throw new Error("Failed to fetch jobs");
+    }
+    return res.json();
+  }

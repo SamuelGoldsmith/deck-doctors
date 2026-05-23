@@ -3,12 +3,21 @@ import { Customer, editCustomer, editEmployee, Employee, Job } from "@/lib/utils
 import { Checkbox } from "./ui/checkbox";
 import { DatePicker } from "./datePicker";
 import { Label } from "./ui/label";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CustomerSelect } from "./customerSelect";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { Save } from "lucide-react";
+import {
+  Combobox,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxList,
+} from "@/components/ui/combobox";
+import { getEmployees, getJobs } from "@/lib/utils";
 
 
 export function EditJob({ job, customers }: { job: Job, customers: Customer[] }) {
@@ -24,7 +33,7 @@ export function EditJob({ job, customers }: { job: Job, customers: Customer[] })
             }, body: JSON.stringify(obj),
         }).then(res => res.json())
             .then(data => {
-                window.location.href = "/employee-portal/jobs/" + data.jid;
+                window.location.href = "/employee-portal/jobs/" + job.jid;
             }).catch(error => {
                 console.error("Error saving changes:", error)
             });
@@ -117,6 +126,154 @@ export function EditCustomer({ customer }: { customer: Customer }) {
             <Link className="mt-4 ml-3" href={`/employee-portal/customers/${customer.cid}`}>
                 Cancel
             </Link>
+        </div>
+    )
+}
+
+export function QuickAddHours() {
+    const [employees, setEmployees] = useState<Employee[]>([]);
+    const [jobs, setJobs] = useState<Job[]>([]);
+    const [hours, setHours] = useState<number>(0);
+    const [selectedEmployee, setSelectedEmployee] = useState<Employee | null>(null);
+    const [selectedJob, setSelectedJob] = useState<Job | null>(null);
+    const [dateWorked, setDateWorked] = useState<string>("");
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const [empRes, jobRes] = await Promise.all([
+                    getEmployees(),
+                    getJobs()
+                ]);
+                setEmployees(empRes);
+                setJobs(jobRes);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    const handleSave = async () => {
+        if (!selectedEmployee || !selectedJob || !hours || !dateWorked) {
+            alert("Please fill in all fields");
+            return;
+        }
+
+        try {
+            const res = await fetch("/api/hours/add", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ employee_id: selectedEmployee.eid, job_id: selectedJob.jid, hours: hours, date_worked: dateWorked }),
+            });
+
+            if (res.ok) {
+                setHours(0);
+                setSelectedEmployee(null);
+                setSelectedJob(null);
+                setDateWorked("");
+            } else {
+                alert("Failed to add hours");
+            }
+        } catch (error) {
+            console.error("Error saving hours:", error);
+            alert("Error saving hours");
+        }
+    };
+
+    const employeeToString = (employee: Employee) => `${employee.first_name} ${employee.last_name}`;
+    const jobToString = (job: Job) => `${job.address}, ${job.city}, ${job.state_abr}`;
+
+    return (
+        <div className="bg-amber-900 p-5 rounded-lg shadow-md w-min border border-brown-500">
+            <h2 className="text-2xl font-bold mb-6 text-accent-foreground">Quick Add Hours</h2>
+            <div className="lg:flex items-end gap-2 ">
+                <div>
+                    <Label className="text-xs font-semibold text-white mb-1">Employee</Label>
+                                        <div className="bg-amber-50 h-min w-min rounded-md">
+                    <Combobox
+                        items={employees}
+                        itemToStringValue={employeeToString}
+                        onValueChange={(value: any) => {
+                            if (value) {
+                                const employee = employees.find(e => employeeToString(e) === value);
+                                setSelectedEmployee(employee || null);
+                            }
+                        }}
+                    >
+                        <ComboboxInput placeholder="Select employee" className="bg-amber-50 text-black w-80" />
+                        <ComboboxContent>
+                            <ComboboxEmpty>No employees found.</ComboboxEmpty>
+                            <ComboboxList>
+                                {(employee: Employee) => (
+                                    <ComboboxItem
+                                        key={employee.eid}
+                                        value={employeeToString(employee)}
+                                    >
+                                        {employeeToString(employee)}
+                                    </ComboboxItem>
+                                )}
+                            </ComboboxList>
+                        </ComboboxContent>
+                    </Combobox>
+                    </div>
+                </div>
+
+                <div className="">
+                    <Label className="text-xs font-semibold text-white mb-1">Job</Label>
+                    <div className="bg-amber-50 h-min w-min rounded-md">
+                    <Combobox
+                        items={jobs}
+                        itemToStringValue={jobToString}
+                        onValueChange={(value: any) => {
+                            if (value) {
+                                const job = jobs.find(j => jobToString(j) === value);
+                                setSelectedJob(job || null);
+                            }
+                        }}
+                    >
+                        <ComboboxInput placeholder="Select job" className="bg-amber-50 text-black w-80" />
+                        <ComboboxContent className="bg-amber-50 text-black w-80">
+                            <ComboboxEmpty>No jobs found.</ComboboxEmpty>
+                            <ComboboxList>
+                                {(job: Job) => (
+                                    <ComboboxItem
+                                        key={job.jid}
+                                        value={jobToString(job)}
+                                    >
+                                        {jobToString(job)}
+                                    </ComboboxItem>
+                                )}
+                            </ComboboxList>
+                        </ComboboxContent>
+                    </Combobox>
+                    </div>
+                </div>
+                                  <Label className="text-xs font-semibold text-white mb-1">Hours</Label>
+                <input 
+                    type="number" 
+                    placeholder="Hours" 
+                    value={hours || ""} 
+                    onChange={(e) => setHours(e.target.value ? Number(e.target.value) : 0)}
+                    className="border rounded-md p-2 mr-2 bg-amber-50 text-black" 
+                />
+                  <Label className="text-xs font-semibold text-white mb-1">Date</Label>
+                <input 
+                    type="date" 
+                    value={dateWorked}
+                    onChange={(e) => setDateWorked(e.target.value)}
+                    className="border rounded-md p-2 mr-2 bg-amber-50 text-black" 
+                />
+                <button 
+                    onClick={handleSave}
+                    className="bg-green-900 text-accent-foreground p-2 rounded-md mr-3 hover:bg-green-700"
+                >
+                    Save
+                </button>
+            </div>
         </div>
     )
 }
