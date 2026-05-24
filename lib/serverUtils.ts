@@ -105,7 +105,7 @@ export async function getCustomers() {
             Cookie: cookieHeader,
         },  
     }).then((res) => res.json());
-    return customers;
+    return customers as Customer[];
 }
 
 export async function getExpensesByJobId(jid: string) {
