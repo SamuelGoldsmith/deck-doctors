@@ -45,6 +45,24 @@ export interface Hour {
   hours: number;
   date_worked: string; // ISO date string: YYYY-MM-DD
 }
+export interface hoursWithEmployeeAndJob extends Hour {
+  jid: number;
+  address: string;
+  city: string;
+  state_abr: string; 
+  cid: number;
+  quote_cost: number | null;
+  start_date: string | null;
+  end_date: string | null;   
+  completed: boolean;
+  description: string | null;
+  first_name: string;
+  last_name: string;
+  email: string | null;
+  phone: string | null;
+  eid: number;
+  rate: number;
+}
 
 export interface Expense {
   exid: number;

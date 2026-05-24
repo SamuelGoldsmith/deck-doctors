@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "./authOptions";
-import { Customer, Employee, Expense, Hour, Job } from "./utils";
+import { Customer, Employee, Expense, Hour, hoursWithEmployeeAndJob, Job } from "./utils";
 import { cookies } from "next/headers";
 
 export async function getSession() {
@@ -139,4 +139,15 @@ export async function getCustomerById(cid: string) {
         },
     }).then((res) => res.json());
     return customer[0] as Customer;
+}
+
+export async function getHours(){
+    const cookieStore = await cookies();
+    const cookieHeader = cookieStore.toString();
+    const hours = await fetch(`${process.env.NEXTAUTH_URL}/api/hours/list`, {
+        headers: {
+            Cookie: cookieHeader,
+        },
+    }).then((res) => res.json());
+    return hours as hoursWithEmployeeAndJob[];
 }

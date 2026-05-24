@@ -13,13 +13,8 @@ export async function GET() {
         return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
     try {
-        const result = await sql`SELECT * FROM jobs;`;
-        const customers = await sql`SELECT * FROM customers WHERE cid IN (SELECT DISTINCT cid FROM jobs);`;
-        const combinedJobs = result.map((job) => {
-            const customer = customers.find((c) => c.cid === job.cid);
-            return { ...job, customer: { ...customer } };
-        });
-        return NextResponse.json(combinedJobs);
+        const result = await sql`SELECT * FROM hours JOIN employees ON hours.eid = employees.eid JOIN jobs ON hours.jid = jobs.jid;`;
+        return NextResponse.json(result);
     } catch (error) {
         console.error("Database query failed:", error);
         return NextResponse.json({ error: "Database error" }, { status: 500 });

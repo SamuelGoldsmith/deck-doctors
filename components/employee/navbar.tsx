@@ -26,6 +26,9 @@ export default async function Navbar() {
             </NavigationMenuItem>
             {session && (
               <>
+                              <NavigationMenuItem>
+                  <NavigationMenuLink asChild><Link href="/employee-portal/">Home</Link></NavigationMenuLink>
+                </NavigationMenuItem>
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild><Link href="/employee-portal/jobs">Jobs</Link></NavigationMenuLink>
                 </NavigationMenuItem>
@@ -35,6 +38,9 @@ export default async function Navbar() {
 
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild><Link href="/employee-portal/customers">Contacts</Link></NavigationMenuLink>
+                </NavigationMenuItem>
+                                <NavigationMenuItem>
+                  <NavigationMenuLink asChild><Link href="/employee-portal/hours">Hours</Link></NavigationMenuLink>
                 </NavigationMenuItem>
               </>)}
           </NavigationMenuList>
