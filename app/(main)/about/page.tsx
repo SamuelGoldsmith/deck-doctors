@@ -33,7 +33,7 @@ export default function Home() {
               <li>
 
                 <p className="text-left text-2xl mt-4">
-                  <span className="text-left text-2xl mt-4 mr-5 font-bold">Premiun Materials:</span>
+                  <span className="text-left text-2xl mt-4 mr-5 font-bold">Premium Materials:</span>
                   <br /> We use the best materials and products available to ensure that your deck not only looks fantastic but is also protected against the elements. Our high-quality paints and finishes are designed to withstand the test of time.
                 </p>
               </li>
@@ -84,7 +84,7 @@ export default function Home() {
               <br />
               <em>And More!</em></p>
           </div>
-          <Image src="/ppaint.jpg" alt="Paul painting a railing" className="h-full max-w-full ml-3" width={250} height={200} />
+          <Image src="/pback.jpg" alt="Paul painting a railing" className="h-full w-1/2 max-w-full ml-3" width={600} height={600} />
 
         </div>
       </div>
