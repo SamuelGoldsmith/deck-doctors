@@ -204,7 +204,7 @@ export function QuickAddHours() {
                             }
                         }}
                     >
-                        <ComboboxInput placeholder="Select employee" className="bg-amber-50 text-black w-80" />
+                        <ComboboxInput placeholder="Select employee" value={selectedEmployee ? employeeToString(selectedEmployee) : ""} className="bg-amber-50 text-black w-80" />
                         <ComboboxContent>
                             <ComboboxEmpty>No employees found.</ComboboxEmpty>
                             <ComboboxList>
@@ -235,7 +235,7 @@ export function QuickAddHours() {
                             }
                         }}
                     >
-                        <ComboboxInput placeholder="Select job" className="bg-amber-50 text-black w-80" />
+                        <ComboboxInput placeholder="Select job" value={selectedJob ? jobToString(selectedJob) : ""} className="bg-amber-50 text-black w-80" />
                         <ComboboxContent className="bg-amber-50 text-black w-80">
                             <ComboboxEmpty>No jobs found.</ComboboxEmpty>
                             <ComboboxList>
@@ -274,6 +274,37 @@ export function QuickAddHours() {
                     Save
                 </button>
             </div>
+        </div>
+    )
+}
+
+export function EditEmployeeForm({ employee }: { employee: Employee }) {
+    const [obj, setObj] = useState(employee);
+    return (
+        <div className="p-5 px-30 w-200">
+            <Label className="text-lg font-semibold mb-2">First Name</Label>
+            <Input defaultValue={employee.first_name} onChange={(e) => setObj({ ...obj, first_name: e.target.value })} />
+            <Label className="text-lg font-semibold mb-2">Last Name</Label>
+            <Input defaultValue={employee.last_name} onChange={(e) => setObj({ ...obj, last_name: e.target.value })} />
+            <Label className="text-lg font-semibold mb-2">Email</Label>
+            <Input defaultValue={employee.email} onChange={(e) => setObj({ ...obj, email: e.target.value })} />
+            <Label className="text-lg font-semibold mb-2">Phone</Label>
+            <Input defaultValue={employee.phone ?? ""} onChange={(e) => setObj({ ...obj, phone: e.target.value })} />
+            <Label className="text-lg font-semibold mb-2">Rate</Label>
+            <Input defaultValue={employee.rate ? String(employee.rate) : ""} type="number" onChange={(e) => setObj({ ...obj, rate: Number(e.target.value) })} />
+            <Label className="text-lg font-semibold mb-2">Description</Label>
+            <Input defaultValue={employee.description ? employee.description : ""} onChange={(e) => setObj({ ...obj, description: e.target.value })} />
+            <Button className="mt-4" onClick={() => editEmployee(obj).then(success => {
+                if (success) {
+                    window.location.href = "/employee-portal/employees/" + obj.eid;
+                } else {
+                    alert("Failed to save changes");
+                }})}>
+                Save Changes
+            </Button>
+            <Link className="mt-4 ml-3" href={`/employee-portal/employees/${employee.eid}`}>
+                Cancel
+            </Link>
         </div>
     )
 }

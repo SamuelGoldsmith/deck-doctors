@@ -49,8 +49,8 @@ export default function HoursSearch({ hours }: { hours: hoursWithEmployeeAndJob[
             }
 
             if (effectiveStartDate || effectiveEndDate) {
-                if (!hour.start_date) return false;
-                const hourDate = parseISO(hour.start_date);
+                if (!hour.date_worked) return false;
+                const hourDate = parseISO(hour.date_worked);
                 if (!isValid(hourDate)) return false;
 
                 if (effectiveStartDate && effectiveEndDate) {
@@ -219,8 +219,8 @@ export default function HoursSearch({ hours }: { hours: hoursWithEmployeeAndJob[
                             >
                                 <TableCell>{hour.first_name} {hour.last_name}</TableCell>
                                 <TableCell>
-                                    {hour.start_date
-                                        ? new Date(hour.start_date).toLocaleDateString()
+                                    {hour.date_worked
+                                        ? new Date(hour.date_worked).toLocaleDateString()
                                         : "—"}
                                 </TableCell>
                                 <TableCell>{hour.hours}</TableCell>

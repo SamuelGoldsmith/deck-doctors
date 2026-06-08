@@ -41,7 +41,7 @@ export function EmployeeTable({ employees }: { employees: Employee[] }) {
                         <TableHead className="">Name</TableHead>
                         <TableHead className="">Email</TableHead>
                         <TableHead>Phone</TableHead>
-                        {/* <TableHead>Rate</TableHead> */}
+                        <TableHead>Rate</TableHead>
                         <TableHead className="">Description</TableHead>
                         <TableHead>Actions</TableHead>
                     </TableRow>
@@ -65,12 +65,12 @@ export function EmployeeTable({ employees }: { employees: Employee[] }) {
                                     {employee.phone}
                                 </a>
                             </TableCell>
-                            {/* <TableCell className="">
+                            <TableCell className="">
                                 {employee.rate}
-                            </TableCell> */}
+                            </TableCell>
                             <TableCell className="">{employee.description}</TableCell>
                             <TableCell className="flex">
-                                <button>
+                                <button onClick={() => {window.location.href = `/employee-portal/employees/${employee.eid}/edit`}}>
                                     <Pencil className="hover:text-primary mr-3" />
                                 </button>
                                 <button onClick={() => {
