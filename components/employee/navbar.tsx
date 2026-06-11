@@ -30,6 +30,9 @@ export default async function Navbar() {
                   <NavigationMenuLink asChild><Link href="/employee-portal/">Home</Link></NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
+                  <NavigationMenuLink asChild><Link href="/employee-portal/applications">Applications</Link></NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
                   <NavigationMenuLink asChild><Link href="/employee-portal/jobs">Jobs</Link></NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
