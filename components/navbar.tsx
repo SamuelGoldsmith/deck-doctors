@@ -44,6 +44,10 @@ export default function Navbar() {
               <NavigationMenuLink asChild><Link href="/contact">Contact</Link></NavigationMenuLink>
             </NavigationMenuItem>
 
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild><Link href="/apply">Apply</Link></NavigationMenuLink>
+            </NavigationMenuItem>
+
           </NavigationMenuList>
 
         </NavigationMenu>
