@@ -17,7 +17,7 @@ export async function POST(request: Request) {
 
         const result = await sql`
             INSERT INTO hours (eid, jid, hours, date_worked)
-            VALUES (${hoursData.employee_id}, ${hoursData.job_id}, ${hoursData.hours}, ${hoursData.date_worked})
+            VALUES (${hoursData.eid}, ${hoursData.jid}, ${hoursData.hours}, ${hoursData.date_worked})
             RETURNING *;
         `;
         return NextResponse.json(result);

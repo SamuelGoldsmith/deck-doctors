@@ -1,0 +1,1117 @@
+{
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\.mcp.json": {
+    "mtime": 1781379487.623983,
+    "ast_hash": "248f2002b4f078af61910d88240f0d72",
+    "semantic_hash": "248f2002b4f078af61910d88240f0d72"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(employee)\\employee-portal\\applications\\page.tsx": {
+    "mtime": 1781380522.8261547,
+    "ast_hash": "d23055c50f79bbcfcbd0846e2407245e",
+    "semantic_hash": "d23055c50f79bbcfcbd0846e2407245e"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(employee)\\employee-portal\\customers\\[cid]\\edit\\page.tsx": {
+    "mtime": 1779496181.6972003,
+    "ast_hash": "b394d5dd3f520ce3f7622531ef66368e",
+    "semantic_hash": "b394d5dd3f520ce3f7622531ef66368e"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(employee)\\employee-portal\\customers\\[cid]\\page.tsx": {
+    "mtime": 1779496310.367142,
+    "ast_hash": "878fbd4a98b96e5e70149340b92dca45",
+    "semantic_hash": "878fbd4a98b96e5e70149340b92dca45"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(employee)\\employee-portal\\customers\\page.tsx": {
+    "mtime": 1779584385.9856157,
+    "ast_hash": "f265f2c421ff321fa57f21aac17f2971",
+    "semantic_hash": "f265f2c421ff321fa57f21aac17f2971"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(employee)\\employee-portal\\employees\\[eid]\\edit\\page.tsx": {
+    "mtime": 1779496273.681512,
+    "ast_hash": "e58e75933a8bc300fff1a39146d06928",
+    "semantic_hash": "e58e75933a8bc300fff1a39146d06928"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(employee)\\employee-portal\\employees\\[eid]\\page.tsx": {
+    "mtime": 1779496275.3003533,
+    "ast_hash": "5d5c66c7a069aa685bad3a22617c3aef",
+    "semantic_hash": "5d5c66c7a069aa685bad3a22617c3aef"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(employee)\\employee-portal\\employees\\page.tsx": {
+    "mtime": 1779321784.0158088,
+    "ast_hash": "a18047242c74a5621f36b1e45c74c575",
+    "semantic_hash": "a18047242c74a5621f36b1e45c74c575"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(employee)\\employee-portal\\hours\\page.tsx": {
+    "mtime": 1779658558.9803386,
+    "ast_hash": "4d10d302aafcc822d225c9ed114665a0",
+    "semantic_hash": "4d10d302aafcc822d225c9ed114665a0"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(employee)\\employee-portal\\jobs\\[jid]\\edit\\page.tsx": {
+    "mtime": 1779496252.9884217,
+    "ast_hash": "1f0c113840f581a91721de99109cf0b4",
+    "semantic_hash": "1f0c113840f581a91721de99109cf0b4"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(employee)\\employee-portal\\jobs\\[jid]\\page.tsx": {
+    "mtime": 1779497674.6855109,
+    "ast_hash": "d711bcb173bb376a0003ba8745feb35d",
+    "semantic_hash": "d711bcb173bb376a0003ba8745feb35d"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(employee)\\employee-portal\\jobs\\page.tsx": {
+    "mtime": 1779321642.4233987,
+    "ast_hash": "3465d3c628ff68b9669369419fcd7e65",
+    "semantic_hash": "3465d3c628ff68b9669369419fcd7e65"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(employee)\\employee-portal\\layout.tsx": {
+    "mtime": 1779652820.38616,
+    "ast_hash": "650f038b68e8e5ffff6fb12e0b320030",
+    "semantic_hash": "650f038b68e8e5ffff6fb12e0b320030"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(employee)\\employee-portal\\page.tsx": {
+    "mtime": 1779497689.0164506,
+    "ast_hash": "18423d9050e24a33a2e8002a89d747e6",
+    "semantic_hash": "18423d9050e24a33a2e8002a89d747e6"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(main)\\about\\page.tsx": {
+    "mtime": 1780528077.4584734,
+    "ast_hash": "76721d85b14f5af24ec54788299cad55",
+    "semantic_hash": "76721d85b14f5af24ec54788299cad55"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(main)\\apply\\page.tsx": {
+    "mtime": 1781380511.7164955,
+    "ast_hash": "f244d3f1f6f1ae0365b8cbea0c234db6",
+    "semantic_hash": "f244d3f1f6f1ae0365b8cbea0c234db6"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(main)\\contact\\page.tsx": {
+    "mtime": 1755395765.731037,
+    "ast_hash": "f845d9f29a1590c8f9c86329a1d99163",
+    "semantic_hash": "f845d9f29a1590c8f9c86329a1d99163"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(main)\\estimate\\page.tsx": {
+    "mtime": 1779926551.2581437,
+    "ast_hash": "5dddb5bc758a9d601f2a915fe8944765",
+    "semantic_hash": "5dddb5bc758a9d601f2a915fe8944765"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(main)\\gallery\\page.tsx": {
+    "mtime": 1774210083.712217,
+    "ast_hash": "d1775cc8d0f12e9c86f4cd09d226b07c",
+    "semantic_hash": "d1775cc8d0f12e9c86f4cd09d226b07c"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(main)\\layout.tsx": {
+    "mtime": 1777507445.8087518,
+    "ast_hash": "2b599c54b8ff481cf8302f2b8276280f",
+    "semantic_hash": "2b599c54b8ff481cf8302f2b8276280f"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(main)\\page.tsx": {
+    "mtime": 1777507460.6875546,
+    "ast_hash": "340f999368e07bd3cbef459a179de80a",
+    "semantic_hash": "340f999368e07bd3cbef459a179de80a"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\(main)\\testimonials\\page.tsx": {
+    "mtime": 1777506681.878195,
+    "ast_hash": "12a524b506138a72dedbdacd3af7766c",
+    "semantic_hash": "12a524b506138a72dedbdacd3af7766c"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\applications\\[id]\\route.ts": {
+    "mtime": 1781380531.0578277,
+    "ast_hash": "dbe96fa28e01e830112a61d58335d435",
+    "semantic_hash": "dbe96fa28e01e830112a61d58335d435"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\applications\\route.ts": {
+    "mtime": 1781380527.7231376,
+    "ast_hash": "65014ecfa258eef7a0b0b53ba117ed8c",
+    "semantic_hash": "65014ecfa258eef7a0b0b53ba117ed8c"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\apply\\route.tsx": {
+    "mtime": 1781214958.5572376,
+    "ast_hash": "297e6d7a268f7fc493d98ea04ff044c1",
+    "semantic_hash": "297e6d7a268f7fc493d98ea04ff044c1"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\auth\\[...nextauth]\\route.ts": {
+    "mtime": 1755322038.7771802,
+    "ast_hash": "00c1325b0deebe11c0ebbeb487b8ec58",
+    "semantic_hash": "00c1325b0deebe11c0ebbeb487b8ec58"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\customers\\add\\route.ts": {
+    "mtime": 1779239545.229939,
+    "ast_hash": "76dba9fc8a984bf7bbe13dc59a867a8d",
+    "semantic_hash": "76dba9fc8a984bf7bbe13dc59a867a8d"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\customers\\delete\\route.ts": {
+    "mtime": 1779239695.512775,
+    "ast_hash": "35be514d37d0e09f4b8bea7f4994acff",
+    "semantic_hash": "35be514d37d0e09f4b8bea7f4994acff"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\customers\\edit\\route.ts": {
+    "mtime": 1779323964.6668584,
+    "ast_hash": "3c244cf299368eb46ee5ad73aeb7046f",
+    "semantic_hash": "3c244cf299368eb46ee5ad73aeb7046f"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\customers\\list\\route.ts": {
+    "mtime": 1779055135.8504262,
+    "ast_hash": "545f3b0052cd47c2016783e4725caaa7",
+    "semantic_hash": "545f3b0052cd47c2016783e4725caaa7"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\customers\\select\\route.ts": {
+    "mtime": 1779055136.620675,
+    "ast_hash": "9b5d3bb3586d6a5f5c45182b382985f7",
+    "semantic_hash": "9b5d3bb3586d6a5f5c45182b382985f7"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\employees\\add\\route.ts": {
+    "mtime": 1779240370.9703333,
+    "ast_hash": "b70cc838c6bfa70bc630b382121dd9a2",
+    "semantic_hash": "b70cc838c6bfa70bc630b382121dd9a2"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\employees\\delete\\route.ts": {
+    "mtime": 1779240559.8844702,
+    "ast_hash": "f5780479de3902c6563eabd0dd9843ab",
+    "semantic_hash": "f5780479de3902c6563eabd0dd9843ab"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\employees\\edit\\route.ts": {
+    "mtime": 1779323351.03852,
+    "ast_hash": "390e9784442af042d80f8ade8d70b2cc",
+    "semantic_hash": "390e9784442af042d80f8ade8d70b2cc"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\employees\\list\\route.ts": {
+    "mtime": 1779585388.542187,
+    "ast_hash": "78897cd45729db712e06c66117007ef9",
+    "semantic_hash": "78897cd45729db712e06c66117007ef9"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\employees\\select\\route.ts": {
+    "mtime": 1778982491.011534,
+    "ast_hash": "42abde2d24cb74908681e91d4e643fc1",
+    "semantic_hash": "42abde2d24cb74908681e91d4e643fc1"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\expenses\\add\\route.ts": {
+    "mtime": 1779157187.6198022,
+    "ast_hash": "9dd320d17516132f021e22eb887d3b11",
+    "semantic_hash": "9dd320d17516132f021e22eb887d3b11"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\expenses\\delete\\route.ts": {
+    "mtime": 1779157458.2752917,
+    "ast_hash": "70264463a343321e661c974e642b9bfa",
+    "semantic_hash": "70264463a343321e661c974e642b9bfa"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\expenses\\edit\\route.ts": {
+    "mtime": 1779656992.5426672,
+    "ast_hash": "6a5d3f19c196f74151c404ff4e9882e4",
+    "semantic_hash": "6a5d3f19c196f74151c404ff4e9882e4"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\expenses\\list\\route.ts": {
+    "mtime": 1779151676.1778598,
+    "ast_hash": "647594a972036787bf85960e30115865",
+    "semantic_hash": "647594a972036787bf85960e30115865"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\expenses\\select\\route.ts": {
+    "mtime": 1779151717.483501,
+    "ast_hash": "50328832d8f753ce5a55814576412fc6",
+    "semantic_hash": "50328832d8f753ce5a55814576412fc6"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\hours\\add\\route.ts": {
+    "mtime": 1781380490.1417708,
+    "ast_hash": "6de936b1a1a9c9e97b1578dd6f272ed9",
+    "semantic_hash": "6de936b1a1a9c9e97b1578dd6f272ed9"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\hours\\delete\\route.ts": {
+    "mtime": 1779657022.941981,
+    "ast_hash": "83b53ae7ad4703f6e3a818e7c06a04e8",
+    "semantic_hash": "83b53ae7ad4703f6e3a818e7c06a04e8"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\hours\\edit\\route.ts": {
+    "mtime": 1779066204.9507394,
+    "ast_hash": "3b75c2306a1349e63ef2da7e30cbae89",
+    "semantic_hash": "3b75c2306a1349e63ef2da7e30cbae89"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\hours\\list\\route.ts": {
+    "mtime": 1779657515.4447615,
+    "ast_hash": "be6635af5f5c7008444f6e100c345213",
+    "semantic_hash": "be6635af5f5c7008444f6e100c345213"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\hours\\select\\job\\route.ts": {
+    "mtime": 1779152283.8539855,
+    "ast_hash": "10b3c36d11544bb4128170ced231f046",
+    "semantic_hash": "10b3c36d11544bb4128170ced231f046"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\jobs\\add\\route.ts": {
+    "mtime": 1779240098.6523814,
+    "ast_hash": "b8801d4e00dd6249e777f03d112aba23",
+    "semantic_hash": "b8801d4e00dd6249e777f03d112aba23"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\jobs\\delete\\route.ts": {
+    "mtime": 1779055150.7563064,
+    "ast_hash": "571489464bed9f46cb7add28041f9519",
+    "semantic_hash": "571489464bed9f46cb7add28041f9519"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\jobs\\edit\\route.ts": {
+    "mtime": 1779066204.9507394,
+    "ast_hash": "3b75c2306a1349e63ef2da7e30cbae89",
+    "semantic_hash": "3b75c2306a1349e63ef2da7e30cbae89"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\jobs\\list\\route.ts": {
+    "mtime": 1779054698.3429105,
+    "ast_hash": "5734ee28acbe47066aefcc3c271fffb6",
+    "semantic_hash": "5734ee28acbe47066aefcc3c271fffb6"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\api\\jobs\\select\\route.ts": {
+    "mtime": 1779056108.7735846,
+    "ast_hash": "79038d4ec464f6f09fbc7237117d5b99",
+    "semantic_hash": "79038d4ec464f6f09fbc7237117d5b99"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\app\\layout.tsx": {
+    "mtime": 1778894621.5954757,
+    "ast_hash": "6b86c772021c8d294a0faa4bd9ecbd45",
+    "semantic_hash": "6b86c772021c8d294a0faa4bd9ecbd45"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components.json": {
+    "mtime": 1755322038.7791827,
+    "ast_hash": "883a0b7479775a644b93b9e708b89d30",
+    "semantic_hash": "883a0b7479775a644b93b9e708b89d30"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\Forms.tsx": {
+    "mtime": 1781380506.6033323,
+    "ast_hash": "dfefb36cf7242b9dee160a5bd1ec0865",
+    "semantic_hash": "dfefb36cf7242b9dee160a5bd1ec0865"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\ImageCarousel.tsx": {
+    "mtime": 1774209163.637669,
+    "ast_hash": "f12e81d141eb0a9f201fbb08fa16a0c0",
+    "semantic_hash": "f12e81d141eb0a9f201fbb08fa16a0c0"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\Social.tsx": {
+    "mtime": 1755477508.0671031,
+    "ast_hash": "cd69c5d5b927d78559ee01598de6e99f",
+    "semantic_hash": "cd69c5d5b927d78559ee01598de6e99f"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\customerCard.tsx": {
+    "mtime": 1779056347.3800306,
+    "ast_hash": "ee6a5986530e33e83127280f92a2c88b",
+    "semantic_hash": "ee6a5986530e33e83127280f92a2c88b"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\customerSelect.tsx": {
+    "mtime": 1779497116.6326408,
+    "ast_hash": "f0b2729399586cb4c2dc6d27b4104bf6",
+    "semantic_hash": "f0b2729399586cb4c2dc6d27b4104bf6"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\datePicker.tsx": {
+    "mtime": 1779064625.862813,
+    "ast_hash": "6a0d5c67be28499ce3a874af86c819db",
+    "semantic_hash": "6a0d5c67be28499ce3a874af86c819db"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\employee\\footer.tsx": {
+    "mtime": 1778976233.085064,
+    "ast_hash": "f71a726e980f4db03503b1f0a2ad4da1",
+    "semantic_hash": "f71a726e980f4db03503b1f0a2ad4da1"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\employee\\navbar.tsx": {
+    "mtime": 1781215660.0100322,
+    "ast_hash": "578a4a967c052910bd3680a763f10198",
+    "semantic_hash": "578a4a967c052910bd3680a763f10198"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\expieriences.tsx": {
+    "mtime": 1755322038.7801824,
+    "ast_hash": "de5974fc353261fba16beab96685cacf",
+    "semantic_hash": "de5974fc353261fba16beab96685cacf"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\footer.tsx": {
+    "mtime": 1778891796.8967113,
+    "ast_hash": "59fcb42c9724d51a76cba3580116cccd",
+    "semantic_hash": "59fcb42c9724d51a76cba3580116cccd"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\hoursSearch.tsx": {
+    "mtime": 1780877196.982722,
+    "ast_hash": "ecbe48eaa815a94e83f954bdb77c07a9",
+    "semantic_hash": "ecbe48eaa815a94e83f954bdb77c07a9"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\message-box.tsx": {
+    "mtime": 1755322038.7801824,
+    "ast_hash": "be71ef4662939189cdf7303849de7c1c",
+    "semantic_hash": "be71ef4662939189cdf7303849de7c1c"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\navbar.tsx": {
+    "mtime": 1781218168.1743479,
+    "ast_hash": "1fc12988fdeaf35d9a29a194c1efc2fb",
+    "semantic_hash": "1fc12988fdeaf35d9a29a194c1efc2fb"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\projects.tsx": {
+    "mtime": 1755322038.7801824,
+    "ast_hash": "f31958a23b60a2623aa7bcc55b3883c5",
+    "semantic_hash": "f31958a23b60a2623aa7bcc55b3883c5"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\review.tsx": {
+    "mtime": 1755394638.1105976,
+    "ast_hash": "8102c3f7998e723e65ac75a105c34ec4",
+    "semantic_hash": "8102c3f7998e723e65ac75a105c34ec4"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\signin.tsx": {
+    "mtime": 1781214895.2141807,
+    "ast_hash": "a2da67e2d49e48859aff6638bdf039e9",
+    "semantic_hash": "a2da67e2d49e48859aff6638bdf039e9"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\signout.tsx": {
+    "mtime": 1755322038.781183,
+    "ast_hash": "6006160cbf21b7f2853da4a4c390d5fe",
+    "semantic_hash": "6006160cbf21b7f2853da4a4c390d5fe"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\spinner.tsx": {
+    "mtime": 1755322038.781183,
+    "ast_hash": "eb2e811c504420a0dae0facf68860001",
+    "semantic_hash": "eb2e811c504420a0dae0facf68860001"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\table.tsx": {
+    "mtime": 1780877560.394839,
+    "ast_hash": "fc0ae014d911e018f5268ca2a5a88949",
+    "semantic_hash": "fc0ae014d911e018f5268ca2a5a88949"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\ui\\button.tsx": {
+    "mtime": 1755322038.781183,
+    "ast_hash": "ec47dd35a37fd626e7911239dedf5f18",
+    "semantic_hash": "ec47dd35a37fd626e7911239dedf5f18"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\ui\\calendar.tsx": {
+    "mtime": 1779496461.406205,
+    "ast_hash": "2058f654e3b082bc1d27294a891f623f",
+    "semantic_hash": "2058f654e3b082bc1d27294a891f623f"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\ui\\carousel.tsx": {
+    "mtime": 1774208324.9197912,
+    "ast_hash": "61511ca1762ddf6b333c382a4e921c52",
+    "semantic_hash": "61511ca1762ddf6b333c382a4e921c52"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\ui\\checkbox.tsx": {
+    "mtime": 1755322038.7821825,
+    "ast_hash": "d2a583d1dcaf06dcf1ef6d83430f620f",
+    "semantic_hash": "d2a583d1dcaf06dcf1ef6d83430f620f"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\ui\\combobox.tsx": {
+    "mtime": 1779496511.1842606,
+    "ast_hash": "fb9085373304c33e76704cbb987165c7",
+    "semantic_hash": "fb9085373304c33e76704cbb987165c7"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\ui\\input-group.tsx": {
+    "mtime": 1779057639.543058,
+    "ast_hash": "bf1091cf6aa366f8911b67d2b2449502",
+    "semantic_hash": "bf1091cf6aa366f8911b67d2b2449502"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\ui\\input.tsx": {
+    "mtime": 1755322038.7821825,
+    "ast_hash": "e26a9d621d7015887b408d4428a6c869",
+    "semantic_hash": "e26a9d621d7015887b408d4428a6c869"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\ui\\label.tsx": {
+    "mtime": 1755322038.7821825,
+    "ast_hash": "54182f15eaa11b2f35bc2ff903e2557b",
+    "semantic_hash": "54182f15eaa11b2f35bc2ff903e2557b"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\ui\\navigation-menu.tsx": {
+    "mtime": 1755322038.7821825,
+    "ast_hash": "74d588ba6187fb0c5620fcc3e5bfd19a",
+    "semantic_hash": "74d588ba6187fb0c5620fcc3e5bfd19a"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\ui\\popover.tsx": {
+    "mtime": 1779059209.7818303,
+    "ast_hash": "6fc46ad5d685bb0df4429f32e53522e2",
+    "semantic_hash": "6fc46ad5d685bb0df4429f32e53522e2"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\ui\\table.tsx": {
+    "mtime": 1778978752.0872538,
+    "ast_hash": "908dde6e20d6ca61ef44ff007e66311f",
+    "semantic_hash": "908dde6e20d6ca61ef44ff007e66311f"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\components\\ui\\textarea.tsx": {
+    "mtime": 1755322038.7821825,
+    "ast_hash": "16e5d792f0aed75752e902fa141a1f18",
+    "semantic_hash": "16e5d792f0aed75752e902fa141a1f18"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\data\\reviews.json": {
+    "mtime": 1755322423.5406992,
+    "ast_hash": "fdc22ccaa41128a1453d29110e13034d",
+    "semantic_hash": "fdc22ccaa41128a1453d29110e13034d"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\lib\\authOptions.ts": {
+    "mtime": 1780878416.3120794,
+    "ast_hash": "2d207ef602522fa77d7f19f2abe4441b",
+    "semantic_hash": "2d207ef602522fa77d7f19f2abe4441b"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\lib\\serverUtils.ts": {
+    "mtime": 1779657828.3023727,
+    "ast_hash": "9a9be9c5dacdf5848323208ae8d71daf",
+    "semantic_hash": "9a9be9c5dacdf5848323208ae8d71daf"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\lib\\tables.sql": {
+    "mtime": 1781214892.7604878,
+    "ast_hash": "f125f782a33d80b92c0a33895e25903a",
+    "semantic_hash": "f125f782a33d80b92c0a33895e25903a"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\lib\\utils.ts": {
+    "mtime": 1781380497.917458,
+    "ast_hash": "c5427291862be782fa2fdd6a03c3361e",
+    "semantic_hash": "c5427291862be782fa2fdd6a03c3361e"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\next.config.ts": {
+    "mtime": 1755322038.783183,
+    "ast_hash": "025f4fcb6024b3524d19492cf7ce54a2",
+    "semantic_hash": "025f4fcb6024b3524d19492cf7ce54a2"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\package.json": {
+    "mtime": 1781379494.0528705,
+    "ast_hash": "58f45b35376bb63488754c6e40450d5e",
+    "semantic_hash": "58f45b35376bb63488754c6e40450d5e"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\postcss.config.mjs": {
+    "mtime": 1755322038.7841828,
+    "ast_hash": "0a8c5fa8885965eb3d71ee945ff2e9be",
+    "semantic_hash": "0a8c5fa8885965eb3d71ee945ff2e9be"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\scripts\\compress-images.mjs": {
+    "mtime": 1774219119.0064664,
+    "ast_hash": "e86a0cab11b26b69d876a8c26f98adfd",
+    "semantic_hash": "e86a0cab11b26b69d876a8c26f98adfd"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\skills-lock.json": {
+    "mtime": 1781379809.7456617,
+    "ast_hash": "524a4bc74fc98987a0235f17b064907c",
+    "semantic_hash": "524a4bc74fc98987a0235f17b064907c"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\tsconfig.json": {
+    "mtime": 1755322039.6694517,
+    "ast_hash": "e9365bcd13632688b6e2db1cd314207f",
+    "semantic_hash": "e9365bcd13632688b6e2db1cd314207f"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\types\\heic-convert.d.ts": {
+    "mtime": 1755322039.6694517,
+    "ast_hash": "36944f5b52591fba298f4574b01101e0",
+    "semantic_hash": "36944f5b52591fba298f4574b01101e0"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\vercel.json": {
+    "mtime": 1755322039.6694517,
+    "ast_hash": "f36eed5f9c2e03724cb51adc2a7c14a2",
+    "semantic_hash": "f36eed5f9c2e03724cb51adc2a7c14a2"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\CLAUDE.md": {
+    "mtime": 1781379163.4290764,
+    "ast_hash": "0ce6381a923f7f31d1f8f222d7dfbd26",
+    "semantic_hash": "0ce6381a923f7f31d1f8f222d7dfbd26"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\README.md": {
+    "mtime": 1755322038.7761803,
+    "ast_hash": "9162add00befbcdb432430f405c4ad8d",
+    "semantic_hash": "9162add00befbcdb432430f405c4ad8d"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\banner.jpg": {
+    "mtime": 1774219128.0187955,
+    "ast_hash": "8403065b6bb9b5acfd484a73ee22c4c0",
+    "semantic_hash": "8403065b6bb9b5acfd484a73ee22c4c0"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\11-10-24-1-before\\IMG_8232.jpg": {
+    "mtime": 1774219128.6907198,
+    "ast_hash": "8303f8f788361564592b6981b49c950b",
+    "semantic_hash": "8303f8f788361564592b6981b49c950b"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\11-10-24-1-before\\IMG_8238.jpg": {
+    "mtime": 1774219131.2018986,
+    "ast_hash": "c8aeed1ff93821b40a6612c4835ae977",
+    "semantic_hash": "c8aeed1ff93821b40a6612c4835ae977"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\11-10-24-2-after\\IMG_5741.jpg": {
+    "mtime": 1774219132.7973926,
+    "ast_hash": "9f3a3b8ecb51e18e1fbc17228f9c4ad1",
+    "semantic_hash": "9f3a3b8ecb51e18e1fbc17228f9c4ad1"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\11-10-24-2-after\\IMG_5749.jpg": {
+    "mtime": 1774219133.9929385,
+    "ast_hash": "5965837bfbaeb5e73ab377fa54208f44",
+    "semantic_hash": "5965837bfbaeb5e73ab377fa54208f44"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\11-10-24-2-after\\IMG_5750.jpg": {
+    "mtime": 1774219135.378831,
+    "ast_hash": "0688e5ef08fb0313b68779c994359ce9",
+    "semantic_hash": "0688e5ef08fb0313b68779c994359ce9"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\11-10-24-2-after\\IMG_5752.jpg": {
+    "mtime": 1774219138.6122816,
+    "ast_hash": "e0c354d14effc5e23cbfc0d0c2ebdb14",
+    "semantic_hash": "e0c354d14effc5e23cbfc0d0c2ebdb14"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\11-10-24-2-after\\IMG_5753_jpg.jpg": {
+    "mtime": 1774219139.3027337,
+    "ast_hash": "39b389ee96682c30ec54c97ec94c0a43",
+    "semantic_hash": "39b389ee96682c30ec54c97ec94c0a43"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\7-29-24-1-before\\IMG_4490.jpg": {
+    "mtime": 1774219139.8587697,
+    "ast_hash": "86a32862c2a54d4b6cad1dca3bafba70",
+    "semantic_hash": "86a32862c2a54d4b6cad1dca3bafba70"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\7-29-24-1-before\\IMG_4600.HEIC.jpg": {
+    "mtime": 1774219140.4421625,
+    "ast_hash": "9c08484a9bb4029219dec172beab816b",
+    "semantic_hash": "9c08484a9bb4029219dec172beab816b"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\7-29-24-1-before\\IMG_4601.HEIC.jpg": {
+    "mtime": 1774219141.2233748,
+    "ast_hash": "8038f236498bf0ccbce78c016b70c3b0",
+    "semantic_hash": "8038f236498bf0ccbce78c016b70c3b0"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\7-29-24-1-before\\IMG_4602.HEIC.jpg": {
+    "mtime": 1774219142.0148368,
+    "ast_hash": "3bd167cf2bd7c7b6ba9ae3476467fab1",
+    "semantic_hash": "3bd167cf2bd7c7b6ba9ae3476467fab1"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\7-29-24-1-before\\IMG_4604.HEIC.jpg": {
+    "mtime": 1774219143.3052392,
+    "ast_hash": "7227bf50ea72ee640fe7050d649a9063",
+    "semantic_hash": "7227bf50ea72ee640fe7050d649a9063"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\7-29-24-1-before\\IMG_4605.HEIC.jpg": {
+    "mtime": 1774219143.993379,
+    "ast_hash": "532dcad6c500790bf3956ae80ed01c33",
+    "semantic_hash": "532dcad6c500790bf3956ae80ed01c33"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\7-29-24-1-before\\IMG_7444.HEIC.jpg": {
+    "mtime": 1774219145.375731,
+    "ast_hash": "2d9db63dc2f71c3c8d52e9c61ade4c05",
+    "semantic_hash": "2d9db63dc2f71c3c8d52e9c61ade4c05"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\7-29-24-1-before\\IMG_7445.HEIC.jpg": {
+    "mtime": 1774219146.6171942,
+    "ast_hash": "4fc89b27aeacf292a60604e57dd3c136",
+    "semantic_hash": "4fc89b27aeacf292a60604e57dd3c136"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\7-29-24-1-before\\IMG_7446.HEIC.jpg": {
+    "mtime": 1774219147.672325,
+    "ast_hash": "6e5fe1efe79a38f2234bc76be6cb6bd8",
+    "semantic_hash": "6e5fe1efe79a38f2234bc76be6cb6bd8"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\7-29-24-1-before\\IMG_7447.HEIC.jpg": {
+    "mtime": 1774219149.1291783,
+    "ast_hash": "77c29d20aa0324ef02b1fd0718a5db8a",
+    "semantic_hash": "77c29d20aa0324ef02b1fd0718a5db8a"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\7-29-24-1-before\\IMG_7459.HEIC.jpg": {
+    "mtime": 1774219150.395304,
+    "ast_hash": "ad9bad64511ed365da0b7bbb6bcf2d14",
+    "semantic_hash": "ad9bad64511ed365da0b7bbb6bcf2d14"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\7-29-24-1-before\\IMG_7472.jpg": {
+    "mtime": 1774219152.7472703,
+    "ast_hash": "05fd7f2ab424c9e6a87772d0682331ef",
+    "semantic_hash": "05fd7f2ab424c9e6a87772d0682331ef"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\7-29-24-1-before\\IMG_7474.HEIC.jpg": {
+    "mtime": 1774219153.9396899,
+    "ast_hash": "9509d115565b33da766333ac97894f17",
+    "semantic_hash": "9509d115565b33da766333ac97894f17"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\7-29-24-1-before\\IMG_7494.jpg": {
+    "mtime": 1774219154.5509968,
+    "ast_hash": "f824a637af4338daddc95d1c3c34fb6e",
+    "semantic_hash": "f824a637af4338daddc95d1c3c34fb6e"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\7-29-24-1-before\\IMG_7495.jpg": {
+    "mtime": 1774219155.139114,
+    "ast_hash": "065542a183718564be044c904a97a4a0",
+    "semantic_hash": "065542a183718564be044c904a97a4a0"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\7-29-24-2-after\\IMG_4705.HEIC.jpg": {
+    "mtime": 1774219156.0656605,
+    "ast_hash": "4ee1edd12e06ef6a5bb504fb3f6d04d1",
+    "semantic_hash": "4ee1edd12e06ef6a5bb504fb3f6d04d1"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\7-29-24-2-after\\IMG_4707.HEIC.jpg": {
+    "mtime": 1774219156.66525,
+    "ast_hash": "bd86568506c6a543f1e61997ccfa0cb9",
+    "semantic_hash": "bd86568506c6a543f1e61997ccfa0cb9"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\7-29-24-2-after\\IMG_4708.HEIC.jpg": {
+    "mtime": 1774219157.382788,
+    "ast_hash": "3e89ff9babd84e67638e03c2858af5a6",
+    "semantic_hash": "3e89ff9babd84e67638e03c2858af5a6"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-1-before\\IMG_4598.jpg": {
+    "mtime": 1774219159.041964,
+    "ast_hash": "c8aba108ac389be99111be1a3d363662",
+    "semantic_hash": "c8aba108ac389be99111be1a3d363662"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-1-before\\IMG_4613.jpg": {
+    "mtime": 1774219160.676309,
+    "ast_hash": "d8e7b005f95208008bb57944c0c35f41",
+    "semantic_hash": "d8e7b005f95208008bb57944c0c35f41"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-1-before\\IMG_4614.jpg": {
+    "mtime": 1774219161.2561457,
+    "ast_hash": "e6342ddfd5f7dba73668f1e02eeee33a",
+    "semantic_hash": "e6342ddfd5f7dba73668f1e02eeee33a"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-1-before\\IMG_4616.jpg": {
+    "mtime": 1774219162.2529912,
+    "ast_hash": "68e387ce2038653e88abb6b4d6dcd59b",
+    "semantic_hash": "68e387ce2038653e88abb6b4d6dcd59b"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-1-before\\IMG_4826.HEIC.jpg": {
+    "mtime": 1774219163.0696163,
+    "ast_hash": "00da083f3ef1651543abe1810adcf54e",
+    "semantic_hash": "00da083f3ef1651543abe1810adcf54e"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-1-before\\IMG_4828.HEIC.jpg": {
+    "mtime": 1774219164.6100354,
+    "ast_hash": "aed473ef8324324ee3600a1b0b77f301",
+    "semantic_hash": "aed473ef8324324ee3600a1b0b77f301"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-1-before\\IMG_4829.HEIC.jpg": {
+    "mtime": 1774219165.277929,
+    "ast_hash": "11addd4b4a4e8e7515180e7ffa068cda",
+    "semantic_hash": "11addd4b4a4e8e7515180e7ffa068cda"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-1-before\\IMG_4831.HEIC.jpg": {
+    "mtime": 1774219166.055904,
+    "ast_hash": "acb438b8e4523bb222014768970946fb",
+    "semantic_hash": "acb438b8e4523bb222014768970946fb"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-1-before\\IMG_4841.HEIC.jpg": {
+    "mtime": 1774219166.6868565,
+    "ast_hash": "0f8bb87023a7db64a636f266e62f3593",
+    "semantic_hash": "0f8bb87023a7db64a636f266e62f3593"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-1-before\\IMG_4842.HEIC.jpg": {
+    "mtime": 1774219167.317755,
+    "ast_hash": "4d5bf9c4f6986dcf486089e16f0d4460",
+    "semantic_hash": "4d5bf9c4f6986dcf486089e16f0d4460"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-1-before\\IMG_4843.HEIC.jpg": {
+    "mtime": 1774219167.9215233,
+    "ast_hash": "422c8956e8822189610cdc02abb17c1b",
+    "semantic_hash": "422c8956e8822189610cdc02abb17c1b"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-1-before\\IMG_7593.jpg": {
+    "mtime": 1774219168.9252367,
+    "ast_hash": "c887c04e7c6db8f738034b66b6604f7d",
+    "semantic_hash": "c887c04e7c6db8f738034b66b6604f7d"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-1-before\\IMG_7612.jpg": {
+    "mtime": 1774219171.5797255,
+    "ast_hash": "0d5e5e9b5eb669b1d5e14244a64cf498",
+    "semantic_hash": "0d5e5e9b5eb669b1d5e14244a64cf498"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-1-before\\IMG_7626.jpg": {
+    "mtime": 1774219173.4120655,
+    "ast_hash": "dc3941b7bbdf73c321e43d1ea686e8a3",
+    "semantic_hash": "dc3941b7bbdf73c321e43d1ea686e8a3"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-1-before\\IMG_7629.jpg": {
+    "mtime": 1774219175.6612813,
+    "ast_hash": "2f0bc7a0d1e9491ad8437b83f2a216fc",
+    "semantic_hash": "2f0bc7a0d1e9491ad8437b83f2a216fc"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-1-before\\IMG_7630.jpg": {
+    "mtime": 1774219176.9111543,
+    "ast_hash": "f7aab9bb280f63c31f14657ff59c1bb9",
+    "semantic_hash": "f7aab9bb280f63c31f14657ff59c1bb9"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-1-before\\IMG_7631.jpg": {
+    "mtime": 1774219177.8540165,
+    "ast_hash": "7ce9c94daf53cc00962e0b6375fccdd5",
+    "semantic_hash": "7ce9c94daf53cc00962e0b6375fccdd5"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-1-before\\aIMG_7588.jpg": {
+    "mtime": 1774219158.439394,
+    "ast_hash": "4d3df232a2286d822ad1b4f4d9064d81",
+    "semantic_hash": "4d3df232a2286d822ad1b4f4d9064d81"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-2-after\\IMG_4880.jpg": {
+    "mtime": 1774219178.9672918,
+    "ast_hash": "ea973c0ee751a86640737c7c2f12cf5b",
+    "semantic_hash": "ea973c0ee751a86640737c7c2f12cf5b"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-2-after\\IMG_4881.jpg": {
+    "mtime": 1774219179.3547988,
+    "ast_hash": "7c2c50fa935f600f32123959f4fd94cb",
+    "semantic_hash": "7c2c50fa935f600f32123959f4fd94cb"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-2-after\\IMG_4884.jpg": {
+    "mtime": 1774219180.1852763,
+    "ast_hash": "be003c88499c127d54b8f1ee0f6ae112",
+    "semantic_hash": "be003c88499c127d54b8f1ee0f6ae112"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-2-after\\IMG_4887.jpg": {
+    "mtime": 1774219181.097528,
+    "ast_hash": "f68782f9493c609444e1864b13111e3f",
+    "semantic_hash": "f68782f9493c609444e1864b13111e3f"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-2-after\\IMG_4888.jpg": {
+    "mtime": 1774219181.5755303,
+    "ast_hash": "9d495fa055de76d670888fe74c7377b5",
+    "semantic_hash": "9d495fa055de76d670888fe74c7377b5"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-2-after\\IMG_4891.jpg": {
+    "mtime": 1774219183.0481029,
+    "ast_hash": "63e9ac4e1dad147d8132a1aca3c5aa3d",
+    "semantic_hash": "63e9ac4e1dad147d8132a1aca3c5aa3d"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-2-after\\IMG_4893.jpg": {
+    "mtime": 1774219183.9578073,
+    "ast_hash": "06897c94ab528a15cb25258646db1750",
+    "semantic_hash": "06897c94ab528a15cb25258646db1750"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-2-after\\IMG_4896.jpg": {
+    "mtime": 1774219184.389166,
+    "ast_hash": "befa2b8b6645d0135bb764a3960f8691",
+    "semantic_hash": "befa2b8b6645d0135bb764a3960f8691"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-2-after\\IMG_4901.jpg": {
+    "mtime": 1774219184.7165596,
+    "ast_hash": "a38b030136f47925ba0431c4a482f4a1",
+    "semantic_hash": "a38b030136f47925ba0431c4a482f4a1"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\8-25-24-2-after\\IMG_4902.jpg": {
+    "mtime": 1774219185.032721,
+    "ast_hash": "b408130f0d236c98543ed21401567f92",
+    "semantic_hash": "b408130f0d236c98543ed21401567f92"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\bluehouse-1-before\\IMG_7778.jpg": {
+    "mtime": 1774219186.069347,
+    "ast_hash": "adac0f501c0d60a489e992de8d650a3f",
+    "semantic_hash": "adac0f501c0d60a489e992de8d650a3f"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\bluehouse-1-before\\IMG_7779.jpg": {
+    "mtime": 1774219186.9047432,
+    "ast_hash": "d8a2def0afc069814d20181123f28be5",
+    "semantic_hash": "d8a2def0afc069814d20181123f28be5"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\bluehouse-1-before\\IMG_7780.jpg": {
+    "mtime": 1774219187.5571768,
+    "ast_hash": "05a9723a359f4bd73b8ba7f7c2b6f7e3",
+    "semantic_hash": "05a9723a359f4bd73b8ba7f7c2b6f7e3"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\bluehouse-1-before\\IMG_7781.jpg": {
+    "mtime": 1774219188.2145348,
+    "ast_hash": "3f32e180915a422b24328cd01585670e",
+    "semantic_hash": "3f32e180915a422b24328cd01585670e"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\bluehouse-1-before\\IMG_7782.jpg": {
+    "mtime": 1774219189.0535922,
+    "ast_hash": "cd87c707e0d6b056fbc02e62fe39fde9",
+    "semantic_hash": "cd87c707e0d6b056fbc02e62fe39fde9"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\bluehouse-1-before\\IMG_7842.jpg": {
+    "mtime": 1774219189.727429,
+    "ast_hash": "b2ed1036f6a206aba01779cacb2b39ee",
+    "semantic_hash": "b2ed1036f6a206aba01779cacb2b39ee"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\bluehouse-1-before\\IMG_7843.jpg": {
+    "mtime": 1774219190.683704,
+    "ast_hash": "11d2f588a8d3b9f170ec610b38bbec46",
+    "semantic_hash": "11d2f588a8d3b9f170ec610b38bbec46"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\bluehouse-1-before\\IMG_7844.jpg": {
+    "mtime": 1774219191.5779245,
+    "ast_hash": "186f5a6e7d13ff08864c419f6e4fe549",
+    "semantic_hash": "186f5a6e7d13ff08864c419f6e4fe549"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\bluehouse-1-before\\IMG_7845.jpg": {
+    "mtime": 1774219192.2494617,
+    "ast_hash": "cc55b8e4edf54967b064e54da5e0a35d",
+    "semantic_hash": "cc55b8e4edf54967b064e54da5e0a35d"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\bluehouse-1-before\\IMG_7846.jpg": {
+    "mtime": 1774219192.923452,
+    "ast_hash": "f78de3c5cbde8aadec339ce951467eb5",
+    "semantic_hash": "f78de3c5cbde8aadec339ce951467eb5"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\bluehouse-2-after\\IMG_7848.jpg": {
+    "mtime": 1774219193.8857641,
+    "ast_hash": "663fed22fda7039e0189a87994607eea",
+    "semantic_hash": "663fed22fda7039e0189a87994607eea"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\bluehouse-2-after\\IMG_7849.jpg": {
+    "mtime": 1774219194.8349292,
+    "ast_hash": "cc752f164a46a1ebc6aabad6e3530c4a",
+    "semantic_hash": "cc752f164a46a1ebc6aabad6e3530c4a"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\bluehouse-2-after\\IMG_7850.jpg": {
+    "mtime": 1774219195.9732761,
+    "ast_hash": "975f2de1e9447a95ffd0363169509e22",
+    "semantic_hash": "975f2de1e9447a95ffd0363169509e22"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\bluehouse-2-after\\IMG_7851.jpg": {
+    "mtime": 1774219197.4118433,
+    "ast_hash": "8f30529e3e2a008d464d8c7408a60d90",
+    "semantic_hash": "8f30529e3e2a008d464d8c7408a60d90"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\bluehouse-2-after\\IMG_7852.jpg": {
+    "mtime": 1774219198.4370449,
+    "ast_hash": "97b66594fa7090adb1adbd6c959d488b",
+    "semantic_hash": "97b66594fa7090adb1adbd6c959d488b"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\coat-1-before\\IMG_1734.jpg": {
+    "mtime": 1774403915.8564117,
+    "ast_hash": "dbe22a4dfab36d887c6fa64d4311f28c",
+    "semantic_hash": "dbe22a4dfab36d887c6fa64d4311f28c"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\coat-1-before\\IMG_1735.jpg": {
+    "mtime": 1774403917.9952512,
+    "ast_hash": "36650779099f4820f2138506032d7e71",
+    "semantic_hash": "36650779099f4820f2138506032d7e71"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\coat-2-after\\IMG_1727.jpg": {
+    "mtime": 1774403924.734105,
+    "ast_hash": "03900e6b2312eb078eef8102bf54c6b3",
+    "semantic_hash": "03900e6b2312eb078eef8102bf54c6b3"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\coat-2-after\\IMG_1728.jpg": {
+    "mtime": 1774403926.2618372,
+    "ast_hash": "c5449cd43efbc6f7694e539adf1a8a17",
+    "semantic_hash": "c5449cd43efbc6f7694e539adf1a8a17"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\coat-2-after\\IMG_1729.jpg": {
+    "mtime": 1774403928.5190442,
+    "ast_hash": "376a65d9f855130d60f74f93496e1307",
+    "semantic_hash": "376a65d9f855130d60f74f93496e1307"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\coat-2-after\\IMG_1730.jpg": {
+    "mtime": 1774219198.5839026,
+    "ast_hash": "0f0533d3e94517fc65270c34d1ccbd98",
+    "semantic_hash": "0f0533d3e94517fc65270c34d1ccbd98"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\coat-2-after\\IMG_1731.jpg": {
+    "mtime": 1774403929.9656956,
+    "ast_hash": "5cdb7895d6c253ed75bf1bce8fdaf70a",
+    "semantic_hash": "5cdb7895d6c253ed75bf1bce8fdaf70a"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\coat-2-after\\IMG_1732.jpg": {
+    "mtime": 1774403931.4872978,
+    "ast_hash": "0ee0b8914298741d424023de9c75f960",
+    "semantic_hash": "0ee0b8914298741d424023de9c75f960"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\gray-1-before\\IMG_7898.jpg": {
+    "mtime": 1774219199.292028,
+    "ast_hash": "78747bea41a322a0374b1d3b26e71036",
+    "semantic_hash": "78747bea41a322a0374b1d3b26e71036"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\gray-1-before\\IMG_8070_jpg.jpg": {
+    "mtime": 1774219200.5441785,
+    "ast_hash": "4aacdef4e4968681b97ca474dfc2d9d0",
+    "semantic_hash": "4aacdef4e4968681b97ca474dfc2d9d0"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\gray-1-before\\IMG_8071.jpg": {
+    "mtime": 1774219201.643208,
+    "ast_hash": "c6a96384a9ab07c1ceb93ea91d2b384f",
+    "semantic_hash": "c6a96384a9ab07c1ceb93ea91d2b384f"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\gray-1-before\\IMG_8073.jpg": {
+    "mtime": 1774219203.275164,
+    "ast_hash": "6413ae1d742579660698f29416e7f738",
+    "semantic_hash": "6413ae1d742579660698f29416e7f738"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\gray-1-before\\IMG_8078.jpg": {
+    "mtime": 1774219204.4145732,
+    "ast_hash": "80047319c520963486fbab4c869842f8",
+    "semantic_hash": "80047319c520963486fbab4c869842f8"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\gray-2-after\\IMG_5571_jpg.jpg": {
+    "mtime": 1774219204.8271399,
+    "ast_hash": "b160c9cbfda3becb7f1173d68fb21ea3",
+    "semantic_hash": "b160c9cbfda3becb7f1173d68fb21ea3"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\gray-2-after\\IMG_5572.jpg": {
+    "mtime": 1774219205.2443962,
+    "ast_hash": "0a28e55397a16b94f7413f1587431aec",
+    "semantic_hash": "0a28e55397a16b94f7413f1587431aec"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\gray-2-after\\IMG_5573.jpg": {
+    "mtime": 1774219205.660092,
+    "ast_hash": "d1a7cdc7d9dd6a23354e5eee34668147",
+    "semantic_hash": "d1a7cdc7d9dd6a23354e5eee34668147"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\gray-2-after\\IMG_8178.jpg": {
+    "mtime": 1774219206.6573913,
+    "ast_hash": "19de636b12c44e751c4a00625675df3d",
+    "semantic_hash": "19de636b12c44e751c4a00625675df3d"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\jbc-1-before\\IMG_0036.JPG": {
+    "mtime": 1774403953.3137097,
+    "ast_hash": "10fda1df66d459e6b927606da1b00e8d",
+    "semantic_hash": "10fda1df66d459e6b927606da1b00e8d"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\jbc-1-before\\IMG_0037.JPG": {
+    "mtime": 1774403960.1753616,
+    "ast_hash": "9f1220ef669a59d4f5340045253d2207",
+    "semantic_hash": "9f1220ef669a59d4f5340045253d2207"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\jbc-1-before\\IMG_0072.JPG": {
+    "mtime": 1774403958.0814607,
+    "ast_hash": "8dcfe3320b920431a2e27e9856b4276f",
+    "semantic_hash": "8dcfe3320b920431a2e27e9856b4276f"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\jbc-1-before\\IMG_0367.JPG": {
+    "mtime": 1774403955.3721025,
+    "ast_hash": "307b8e8120946dc10acb8f602fe5cfa8",
+    "semantic_hash": "307b8e8120946dc10acb8f602fe5cfa8"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\jbc-1-before\\IMG_0423.JPG": {
+    "mtime": 1774219213.1393764,
+    "ast_hash": "89523659c78fe2cfd300785c59cb6e21",
+    "semantic_hash": "89523659c78fe2cfd300785c59cb6e21"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\jbc-1-before\\IMG_0426.JPG": {
+    "mtime": 1774219214.516631,
+    "ast_hash": "d9b2dacfdfaa60291a69b03d881f4177",
+    "semantic_hash": "d9b2dacfdfaa60291a69b03d881f4177"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\jbc-1-before\\IMG_2514.jpg": {
+    "mtime": 1774219216.8208938,
+    "ast_hash": "a7782c401962df5a513359592b8aaa40",
+    "semantic_hash": "a7782c401962df5a513359592b8aaa40"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\jbc-2-after\\IMG_0427.JPG": {
+    "mtime": 1774219217.8052313,
+    "ast_hash": "8dcdf671f21518f34a55f70f7e1c4702",
+    "semantic_hash": "8dcdf671f21518f34a55f70f7e1c4702"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\jbc-2-after\\IMG_2528.jpg": {
+    "mtime": 1774219218.824049,
+    "ast_hash": "2f11a8f956a4de740cd4880193acab13",
+    "semantic_hash": "2f11a8f956a4de740cd4880193acab13"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\jbc-2-after\\IMG_2529.jpg": {
+    "mtime": 1774219219.9405649,
+    "ast_hash": "dd2d8b98a992f41d9d6b3a2833f0294f",
+    "semantic_hash": "dd2d8b98a992f41d9d6b3a2833f0294f"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\jbc-2-after\\IMG_6981.jpg": {
+    "mtime": 1774219221.249447,
+    "ast_hash": "f67ade9b45ad9e6f5129cebba12384ad",
+    "semantic_hash": "f67ade9b45ad9e6f5129cebba12384ad"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\jbc-2-after\\IMG_7046.jpg": {
+    "mtime": 1774219225.1785092,
+    "ast_hash": "09abf887a36dc4e097359cb56a2c5b5a",
+    "semantic_hash": "09abf887a36dc4e097359cb56a2c5b5a"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\jbc-2-after\\IMG_7050.HEIC.jpg": {
+    "mtime": 1774219226.1154115,
+    "ast_hash": "a2a297fbf90ab59ce614c850e337dc8d",
+    "semantic_hash": "a2a297fbf90ab59ce614c850e337dc8d"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\jbc-2-after\\IMG_7194.jpg": {
+    "mtime": 1774219227.4503691,
+    "ast_hash": "6db8d9fb564dbcd883f558e6e55d2a03",
+    "semantic_hash": "6db8d9fb564dbcd883f558e6e55d2a03"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\jbc-2-after\\IMG_7198.jpg": {
+    "mtime": 1774219228.7309377,
+    "ast_hash": "f23328d47c758985a91eeaafe9398a91",
+    "semantic_hash": "f23328d47c758985a91eeaafe9398a91"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\pool-1-before\\IMG_2453.HEIC.jpg": {
+    "mtime": 1774219229.3705275,
+    "ast_hash": "c7e0003616d7259ae1fdb3aac1fea4a7",
+    "semantic_hash": "c7e0003616d7259ae1fdb3aac1fea4a7"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\pool-1-before\\IMG_2462.HEIC.jpg": {
+    "mtime": 1774219229.9805014,
+    "ast_hash": "57db18f6936d94f336273cfc2743c157",
+    "semantic_hash": "57db18f6936d94f336273cfc2743c157"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\pool-1-before\\IMG_2554.HEIC.jpg": {
+    "mtime": 1774219232.0396738,
+    "ast_hash": "61414602df58f073ad5a7f064c78d1dc",
+    "semantic_hash": "61414602df58f073ad5a7f064c78d1dc"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\pool-2-after\\IMG_0098.jpg": {
+    "mtime": 1774219232.9808402,
+    "ast_hash": "d65868e37a964b22e678e5fd92e5e187",
+    "semantic_hash": "d65868e37a964b22e678e5fd92e5e187"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\pool-2-after\\IMG_0100.jpg": {
+    "mtime": 1774219233.8560474,
+    "ast_hash": "154a8319493f9f32bfc1d43fb93d324f",
+    "semantic_hash": "154a8319493f9f32bfc1d43fb93d324f"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\stairs-1-before\\IMG_2571.HEIC.jpg": {
+    "mtime": 1774219235.014527,
+    "ast_hash": "260f65412e45ef764d7847511bd04065",
+    "semantic_hash": "260f65412e45ef764d7847511bd04065"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\stairs-1-before\\IMG_9989.HEIC.jpg": {
+    "mtime": 1774219235.7830582,
+    "ast_hash": "a040a3dca5b1b67bce70090c92111e9b",
+    "semantic_hash": "a040a3dca5b1b67bce70090c92111e9b"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\stairs-1-before\\IMG_9990.HEIC.jpg": {
+    "mtime": 1774219236.3440862,
+    "ast_hash": "5249b7f68e29b61fe71a7a574d4ca7f1",
+    "semantic_hash": "5249b7f68e29b61fe71a7a574d4ca7f1"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\stairs-2-after\\IMG_2495.HEIC.jpg": {
+    "mtime": 1774219237.5187342,
+    "ast_hash": "94a2507ccc563505f6eef6d7715da010",
+    "semantic_hash": "94a2507ccc563505f6eef6d7715da010"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\stairs-2-after\\IMG_4895.HEIC.jpg": {
+    "mtime": 1774219238.0511947,
+    "ast_hash": "7329bfa4530296129faee6b6d2edfaa5",
+    "semantic_hash": "7329bfa4530296129faee6b6d2edfaa5"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\stairs-2-after\\IMG_4900.HEIC.jpg": {
+    "mtime": 1774219238.5906906,
+    "ast_hash": "ef27916fe7917692ca2a234ccee75e84",
+    "semantic_hash": "ef27916fe7917692ca2a234ccee75e84"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\decks\\stairs-2-after\\IMG_4902.HEIC.jpg": {
+    "mtime": 1774219239.2356696,
+    "ast_hash": "09efbfc212fe92198449fc0a322b9b20",
+    "semantic_hash": "09efbfc212fe92198449fc0a322b9b20"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\file.svg": {
+    "mtime": 1755322039.6664512,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\globe.svg": {
+    "mtime": 1755322039.6664512,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": "2aaafa6a49b6563925fe440891e32717"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\hammer.jpg": {
+    "mtime": 1774219239.2426753,
+    "ast_hash": "2ffadc67a7a084cfc6752bc241468db5",
+    "semantic_hash": "2ffadc67a7a084cfc6752bc241468db5"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\logo-black-tp.png": {
+    "mtime": 1720888153.1061914,
+    "ast_hash": "c19e7338a0b96ec1dcc00c9450c1dd9e",
+    "semantic_hash": "c19e7338a0b96ec1dcc00c9450c1dd9e"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\pback.jpg": {
+    "mtime": 1780527958.479977,
+    "ast_hash": "3aed0e9b064be106f172bf03efc3c63b",
+    "semantic_hash": "3aed0e9b064be106f172bf03efc3c63b"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\ppaint.jpg": {
+    "mtime": 1774219239.9175005,
+    "ast_hash": "f78de3c5cbde8aadec339ce951467eb5",
+    "semantic_hash": "f78de3c5cbde8aadec339ce951467eb5"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\roll.jpg": {
+    "mtime": 1774219239.9237268,
+    "ast_hash": "79acf8d03eea5aa8e8848f7a10c3c4b0",
+    "semantic_hash": "79acf8d03eea5aa8e8848f7a10c3c4b0"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\spray.jpg": {
+    "mtime": 1774219239.9307296,
+    "ast_hash": "3db9bba888b46ff61db8a38bf845d2f1",
+    "semantic_hash": "3db9bba888b46ff61db8a38bf845d2f1"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\stethescope.png": {
+    "mtime": 1755322039.6684513,
+    "ast_hash": "5a205beac3bce67924265139b11a67c9",
+    "semantic_hash": "5a205beac3bce67924265139b11a67c9"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\tape.jpg": {
+    "mtime": 1774219239.9367292,
+    "ast_hash": "476aabc953af968f9ab347e1ecf1ab24",
+    "semantic_hash": "476aabc953af968f9ab347e1ecf1ab24"
+  },
+  "C:\\Users\\Sam\\Desktop\\deck-doctors\\public\\window.svg": {
+    "mtime": 1755322039.6694517,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": "a2760511c65806022ad20adf74370ff3"
+  }
+}

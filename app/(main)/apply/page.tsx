@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { submitApplication } from "@/lib/utils";
 
 type Position = "laborer" | "carpenter" | "painter" | "";
 
@@ -88,12 +89,8 @@ export default function ApplyPage() {
     if (!validate()) return;
     setStatus("submitting");
     try {
-      const res = await fetch("/api/apply", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error("Server error");
+      const ok = await submitApplication(form);
+      if (!ok) throw new Error("Server error");
       setStatus("success");
     } catch {
       setStatus("error");

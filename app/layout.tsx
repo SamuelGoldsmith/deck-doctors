@@ -1,19 +1,24 @@
 import type { Metadata } from "next";
-import { Roboto, Roboto_Mono } from "next/font/google";
+import { Fraunces, Roboto, Roboto_Mono } from "next/font/google";
 import "@/styles/globals.css";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "900"],
+  display: "swap",
+});
 
 const roboto = Roboto({
-  variable: "--font-sans",
+  variable: "--font-roboto",
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
   display: "swap",
 });
 
 const robotoMono = Roboto_Mono({
-  variable: "--font-mono",
+  variable: "--font-roboto-mono",
   subsets: ["latin"],
   weight: ["400", "500", "700"],
   display: "swap",
@@ -31,19 +36,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${roboto.variable} ${robotoMono.variable} antialiased`}
-      >
-        <div className="min-h-screen flex flex-col max-w-screen">
-          <Navbar />
-          <div className="">
-            {children}
-          </div>
-          <div className="fixed bottom-0 w-full z-50">
-          </div>
-        </div>
+      <body className={`${fraunces.variable} ${roboto.variable} ${robotoMono.variable} antialiased`}>
+        {children}
+        <Analytics />
       </body>
-    <Analytics/>
     </html>
   );
 }

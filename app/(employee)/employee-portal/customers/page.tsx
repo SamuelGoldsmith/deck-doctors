@@ -1,16 +1,24 @@
+import Link from "next/link";
+import { CustomersList } from "@/components/portal/CustomersList";
+import { getCustomers, getJobs } from "@/lib/serverUtils";
 
-import { CustomerTable, JobTable } from "@/components/table";
-import { getCustomers, getEmployees, getJobs } from "@/lib/serverUtils";
-import { Customer, Job } from "@/lib/utils";
-import { get } from "http";
-export default async function JobsPortal() {
-  const customers = await getCustomers();
-  const jobs = await getJobs();
+export default async function CustomersPortal() {
+  const [customers, jobs] = await Promise.all([getCustomers(), getJobs()]);
   return (
-    <main className="m-3 ">
-      <div className="p-5 lg:px-30">
-        <CustomerTable customers={customers} jobs={jobs} />
+    <div className="mx-auto w-full max-w-4xl space-y-6">
+      <div className="flex flex-wrap items-end justify-between gap-4">
+        <div className="space-y-1">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent">Deck Doctors</p>
+          <h1 className="font-display text-h2 font-bold text-primary">Customers</h1>
+        </div>
+        <Link
+          href="/employee-portal/customers/new"
+          className="primary rounded-md px-4 py-2 text-sm font-semibold transition-opacity hover:opacity-90"
+        >
+          + Add Customer
+        </Link>
       </div>
-    </main>
+      <CustomersList customers={customers} jobs={jobs} />
+    </div>
   );
 }

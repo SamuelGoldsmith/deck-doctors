@@ -1,10 +1,11 @@
 'use client';
 
-import { deleteExpense, Employee, hoursWithEmployeeAndJob } from "@/lib/utils";
+import { hoursWithEmployeeAndJob } from "@/lib/utils";
 import { Combobox, ComboboxContent, ComboboxEmpty, ComboboxInput, ComboboxItem, ComboboxList } from "./ui/combobox";
 import { TableHeader, TableRow, TableHead, TableBody, TableCell, TableCaption, Table } from "./ui/table";
 import { useState, useMemo } from "react";
 import { Label } from "./ui/label";
+import { Field, inputClass } from "./ui/form-field";
 import { subDays, parseISO, isWithinInterval, startOfDay, endOfDay, isValid } from "date-fns";
 
 export default function HoursSearch({ hours }: { hours: hoursWithEmployeeAndJob[] }) {
@@ -84,91 +85,91 @@ export default function HoursSearch({ hours }: { hours: hoursWithEmployeeAndJob[
         }
     };
 
+    const filtersActive = employeeSearch || startDate || endDate || showLastTwoWeeks;
+
     return (
-        <div className="mb-4 space-y-4">
-            <div>
-                <Label htmlFor="employee-search" className="mb-1">Search by Employee</Label>
-                <Combobox
-                    value={employeeSearch}
-                    onValueChange={(val) => handleEmployeeSearchChange(val)}
-                >
-                    <ComboboxInput
-                        id="employee-search"
-                        placeholder="Enter employee name"
-                        value={employeeSearch}
-                        onChange={(e) => handleEmployeeSearchChange(e.target.value)}
-                    />
-                    <ComboboxContent>
-                        <ComboboxList>
-                            {Object.keys(groupedByEmployee)
-                                .filter((name) =>
-                                    employeeSearch === "" ||
-                                    name.toLowerCase().includes(employeeSearch.toLowerCase())
-                                )
-                                .map((employeeName) => (
-                                    <ComboboxItem
-                                        key={employeeName}
-                                        value={employeeName}
-                                    >
-                                        {employeeName}
-                                    </ComboboxItem>
-                                ))}
-                        </ComboboxList>
-                    </ComboboxContent>
-                </Combobox>
-            </div>
+        <div className="space-y-4">
+            <div className="card space-y-4 p-6">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                    <Field label="Search by Employee">
+                        <Combobox
+                            value={employeeSearch}
+                            onValueChange={(val) => handleEmployeeSearchChange(val)}
+                        >
+                            <ComboboxInput
+                                id="employee-search"
+                                placeholder="Enter employee name"
+                                value={employeeSearch}
+                                onChange={(e) => handleEmployeeSearchChange(e.target.value)}
+                                className="w-full"
+                            />
+                            <ComboboxContent>
+                                <ComboboxEmpty>No employees found.</ComboboxEmpty>
+                                <ComboboxList>
+                                    {Object.keys(groupedByEmployee)
+                                        .filter((name) =>
+                                            employeeSearch === "" ||
+                                            name.toLowerCase().includes(employeeSearch.toLowerCase())
+                                        )
+                                        .map((employeeName) => (
+                                            <ComboboxItem
+                                                key={employeeName}
+                                                value={employeeName}
+                                            >
+                                                {employeeName}
+                                            </ComboboxItem>
+                                        ))}
+                                </ComboboxList>
+                            </ComboboxContent>
+                        </Combobox>
+                    </Field>
 
-            {/* Date range + toggle row */}
-            <div className="flex flex-wrap items-end gap-4">
-                {/* Start date */}
-                <div className="flex flex-col gap-1">
-                    <Label htmlFor="start-date">Start Date</Label>
-                    <input
-                        id="start-date"
-                        type="date"
-                        value={startDate}
-                        disabled={showLastTwoWeeks}
-                        onChange={(e) => setStartDate(e.target.value)}
-                        className="border border-input rounded-md px-3 py-2 text-sm bg-background text-foreground disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-ring"
-                    />
-                </div>
-
-                {/* End date */}
-                <div className="flex flex-col gap-1">
-                    <Label htmlFor="end-date">End Date</Label>
-                    <input
-                        id="end-date"
-                        type="date"
-                        value={endDate}
-                        disabled={showLastTwoWeeks}
-                        onChange={(e) => setEndDate(e.target.value)}
-                        className="border border-input rounded-md px-3 py-2 text-sm bg-background text-foreground disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-ring"
-                    />
-                </div>
-
-                <div className="flex items-center gap-2 pb-2">
-                    <button
-                        id="last-two-weeks"
-                        role="switch"
-                        aria-checked={showLastTwoWeeks}
-                        onClick={handleLastTwoWeeksToggle}
-                        className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
-                            showLastTwoWeeks ? "bg-amber-500" : "bg-amber-800"
-                        }`}
-                    >
-                        <span
-                            className={`pointer-events-none block h-5 w-5 rounded-full bg-background shadow-lg ring-0 transition-transform ${
-                                showLastTwoWeeks ? "translate-x-5" : "translate-x-0"
-                            }`}
+                    <Field label="Start Date">
+                        <input
+                            id="start-date"
+                            type="date"
+                            value={startDate}
+                            disabled={showLastTwoWeeks}
+                            onChange={(e) => setStartDate(e.target.value)}
+                            className={inputClass(false, "disabled:opacity-50 disabled:cursor-not-allowed")}
                         />
-                    </button>
-                    <Label htmlFor="last-two-weeks" className="cursor-pointer select-none">
-                        Last 2 Weeks
-                    </Label>
+                    </Field>
+
+                    <Field label="End Date">
+                        <input
+                            id="end-date"
+                            type="date"
+                            value={endDate}
+                            disabled={showLastTwoWeeks}
+                            onChange={(e) => setEndDate(e.target.value)}
+                            className={inputClass(false, "disabled:opacity-50 disabled:cursor-not-allowed")}
+                        />
+                    </Field>
                 </div>
 
-                {(employeeSearch || startDate || endDate || showLastTwoWeeks) && (
-                    <div className="p-2 border border-border bg-amber-800 rounded-md">
+                <div className="flex flex-wrap items-center gap-4">
+                    <div className="flex items-center gap-2">
+                        <button
+                            id="last-two-weeks"
+                            role="switch"
+                            aria-checked={showLastTwoWeeks}
+                            onClick={handleLastTwoWeeksToggle}
+                            className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
+                                showLastTwoWeeks ? "bg-primary" : "bg-secondary"
+                            }`}
+                        >
+                            <span
+                                className={`pointer-events-none block h-5 w-5 rounded-full bg-card shadow-lg ring-0 transition-transform ${
+                                    showLastTwoWeeks ? "translate-x-5" : "translate-x-0"
+                                }`}
+                            />
+                        </button>
+                        <Label htmlFor="last-two-weeks" className="cursor-pointer select-none text-sm font-medium">
+                            Last 2 Weeks
+                        </Label>
+                    </div>
+
+                    {filtersActive && (
                         <button
                             onClick={() => {
                                 setEmployeeSearch("");
@@ -176,62 +177,55 @@ export default function HoursSearch({ hours }: { hours: hoursWithEmployeeAndJob[
                                 setEndDate("");
                                 setShowLastTwoWeeks(false);
                             }}
-                            className="text-sm text-amber-50 hover:text-foreground transition-colors"
+                            className="rounded-md border border-border px-3 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
                         >
                             Clear filters
                         </button>
-                    </div>
-                )}
+                    )}
+                </div>
             </div>
 
-            {/* Results summary */}
             <p className="text-sm text-muted-foreground">
                 Showing {shownHours.length} of {hours.length} records
             </p>
 
-            {/* Table */}
-            <Table>
-                <TableHeader>
-                    <TableRow className="text-xl">
-                        <TableHead>Name</TableHead>
-                        <TableHead>Date</TableHead>
-                        <TableHead>Count</TableHead>
-                        <TableHead>Cost</TableHead>
-                        <TableHead>Site</TableHead>
-                    </TableRow>
-                </TableHeader>
-                <TableBody className="w-10/11">
-                    {shownHours.length === 0 ? (
+            <div className="overflow-hidden rounded-lg border" style={{ borderColor: "var(--color-border)" }}>
+                <Table>
+                    <TableHeader>
                         <TableRow>
-                            <TableCell colSpan={5} className="text-center text-muted-foreground py-8">
-                                No records match the current filters.
-                            </TableCell>
+                            <TableHead>Name</TableHead>
+                            <TableHead>Date</TableHead>
+                            <TableHead>Hours</TableHead>
+                            <TableHead>Cost</TableHead>
+                            <TableHead>Site</TableHead>
                         </TableRow>
-                    ) : (
-                        shownHours.map((hour, i) => (
-                            <TableRow
-                                key={`hour-${hour.hid}`}
-                                className={`${
-                                    i % 2 === 0
-                                        ? "bg-background hover:bg-secondary"
-                                        : "bg-secondary hover:bg-background"
-                                }`}
-                            >
-                                <TableCell>{hour.first_name} {hour.last_name}</TableCell>
-                                <TableCell>
-                                    {hour.date_worked
-                                        ? new Date(hour.date_worked).toLocaleDateString()
-                                        : "—"}
+                    </TableHeader>
+                    <TableBody>
+                        {shownHours.length === 0 ? (
+                            <TableRow>
+                                <TableCell colSpan={5} className="text-center text-muted-foreground py-8">
+                                    No records match the current filters.
                                 </TableCell>
-                                <TableCell>{hour.hours}</TableCell>
-                                <TableCell>${(hour.hours * hour.rate).toFixed(2)}</TableCell>
-                                <TableCell>{hour.address}</TableCell>
                             </TableRow>
-                        ))
-                    )}
-                </TableBody>
-                <TableCaption>Total Cost: ${totalCost.toFixed(2)}</TableCaption>
-            </Table>
+                        ) : (
+                            shownHours.map((hour) => (
+                                <TableRow key={`hour-${hour.hid}`}>
+                                    <TableCell>{hour.first_name} {hour.last_name}</TableCell>
+                                    <TableCell>
+                                        {hour.date_worked
+                                            ? new Date(hour.date_worked).toLocaleDateString()
+                                            : "—"}
+                                    </TableCell>
+                                    <TableCell>{hour.hours}</TableCell>
+                                    <TableCell>${(hour.hours * hour.rate).toFixed(2)}</TableCell>
+                                    <TableCell>{hour.address}</TableCell>
+                                </TableRow>
+                            ))
+                        )}
+                    </TableBody>
+                    <TableCaption>Total Cost: ${totalCost.toFixed(2)}</TableCaption>
+                </Table>
+            </div>
         </div>
     );
 }

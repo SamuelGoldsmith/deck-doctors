@@ -25,13 +25,15 @@ export function CustomerSelect({ customers, initial, onChange }: { customers: Cu
   }
   
   return (
-    <div className="w-80">
     <Combobox
     items={customers}
      itemToStringValue={itemToStringValue}
      onValueChange={handleChange}
     >
-      <ComboboxInput placeholder={initial ? initial.first_name + " " + initial.last_name : "Select a customer"} />
+      <ComboboxInput
+        className="w-full"
+        placeholder={initial ? initial.first_name + " " + initial.last_name : "Select a customer"}
+      />
 
       <ComboboxContent>
         <ComboboxEmpty>No items found.</ComboboxEmpty>
@@ -40,7 +42,7 @@ export function CustomerSelect({ customers, initial, onChange }: { customers: Cu
           {(customer: Customer) => (
             <ComboboxItem
               key={customer.cid}
-              value={customer.first_name + " " + customer.last_name} 
+              value={customer.first_name + " " + customer.last_name}
             >
               {customer.first_name} {customer.last_name}
             </ComboboxItem>
@@ -48,6 +50,5 @@ export function CustomerSelect({ customers, initial, onChange }: { customers: Cu
         </ComboboxList>
       </ComboboxContent>
     </Combobox>
-    </div>
   )
 }

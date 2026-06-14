@@ -209,6 +209,17 @@ export async function editCustomer(customer: Customer) {
     return res.ok;
   }
 
+export async function editJob(job: Job) {
+    const res = await fetch("/api/jobs/edit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(job),
+    })
+    return res.ok;
+  }
+
   export async function addHours(hours: Hour) {
     const res = await fetch("/api/hours/add", {
       method: "POST",
@@ -235,3 +246,143 @@ export async function editCustomer(customer: Customer) {
     }
     return res.json();
   }
+
+export type ApplicationStatus = "new" | "reviewing" | "interview" | "hired" | "rejected";
+export type ApplicationPosition = "laborer" | "carpenter" | "painter";
+
+export interface JobApplication {
+  id: number;
+  first_name: string;
+  last_name: string;
+  email: string;
+  phone: string;
+  position: ApplicationPosition;
+  experience: string;
+  availability: string;
+  has_driving_license: boolean;
+  message: string | null;
+  status: ApplicationStatus;
+  notes: string | null;
+  submitted_at: string;
+}
+
+export interface JobApplicationInput {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  position: ApplicationPosition | "";
+  experience: string;
+  availability: string;
+  hasDrivingLicense: string;
+  message: string;
+}
+
+export async function submitApplication(application: JobApplicationInput) {
+  const res = await fetch("/api/apply", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(application),
+  })
+  return res.ok;
+}
+
+export async function getApplications(): Promise<JobApplication[]> {
+  const res = await fetch("/api/applications");
+  if (!res.ok) {
+    throw new Error("Failed to fetch applications");
+  }
+  return res.json();
+}
+
+export async function updateApplicationStatus(id: number, status: ApplicationStatus) {
+  const res = await fetch(`/api/applications/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ status }),
+  })
+  return res.ok;
+}
+
+export async function updateApplicationNotes(id: number, notes: string) {
+  const res = await fetch(`/api/applications/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ notes }),
+  })
+  return res.ok;
+}
+
+export type ServiceType = "restoration" | "new_build" | "repair" | "staining_sealing" | "inspection";
+export type EstimateStatus = "new" | "reviewing" | "quoted" | "scheduled" | "won" | "lost";
+
+export interface EstimateRequest {
+  id: number;
+  first_name: string;
+  last_name: string;
+  email: string;
+  phone: string;
+  address: string;
+  service_type: ServiceType;
+  message: string | null;
+  status: EstimateStatus;
+  notes: string | null;
+  submitted_at: string;
+}
+
+export interface EstimateRequestInput {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  address: string;
+  serviceType: ServiceType | "";
+  message: string;
+}
+
+export async function submitEstimateRequest(estimate: EstimateRequestInput) {
+  const res = await fetch("/api/estimate", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(estimate),
+  })
+  return res.ok;
+}
+
+export async function getEstimateRequests(): Promise<EstimateRequest[]> {
+  const res = await fetch("/api/estimates");
+  if (!res.ok) {
+    throw new Error("Failed to fetch estimate requests");
+  }
+  return res.json();
+}
+
+export async function updateEstimateStatus(id: number, status: EstimateStatus) {
+  const res = await fetch(`/api/estimates/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ status }),
+  })
+  return res.ok;
+}
+
+export async function updateEstimateNotes(id: number, notes: string) {
+  const res = await fetch(`/api/estimates/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ notes }),
+  })
+  return res.ok;
+}

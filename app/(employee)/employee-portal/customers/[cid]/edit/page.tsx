@@ -1,25 +1,21 @@
-
+import Link from "next/link";
 import { EditCustomer } from "@/components/Forms";
 import { getCustomerById } from "@/lib/serverUtils";
-import { Edit } from "lucide-react";
 
-
-export default async function JobProfile({ params }: { params: Promise<{ cid: number }> }) { 
+export default async function CustomerEditPage({ params }: { params: Promise<{ cid: number }> }) {
   const p = await params;
   const customer = await getCustomerById(String(p.cid));
 
   if (!customer) {
     return (
-      <main className="m-3 ">
-        <div className="p-5 px-30">
-          <h1 className="text-4xl font-bold mb-6">Customer not found</h1>
-        </div>
-      </main>
+      <div className="mx-auto w-full max-w-2xl space-y-2">
+        <h1 className="font-display text-h2 font-bold text-primary">Customer not found</h1>
+        <Link href="/employee-portal/customers" className="text-sm text-primary hover:underline">
+          ← Back to customers
+        </Link>
+      </div>
     );
   }
-  return (
-    <main className="m-3 ">
-      <EditCustomer customer={customer} />
-    </main>
-  );
+
+  return <EditCustomer customer={customer} />;
 }

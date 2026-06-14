@@ -20,13 +20,12 @@ export function DatePicker({dateInit, type, objSet}: { dateInit: Date | null, ty
     objSet(type, date);
   }
   return (
-    <div className="w-20">
     <Popover>
-      <PopoverTrigger asChild className="hover:text-black">
+      <PopoverTrigger asChild>
         <Button
           variant="outline"
           data-empty={!date}
-          className="w-[280px] justify-start text-left font-normal data-[empty=true]:text-muted-foreground"
+          className="w-full justify-start text-left font-normal data-[empty=true]:text-muted-foreground"
         >
           <CalendarIcon />
           {date ? format(date, "PPP") : <span>Pick a date</span>}
@@ -36,6 +35,5 @@ export function DatePicker({dateInit, type, objSet}: { dateInit: Date | null, ty
         <Calendar mode="single" selected={date} onSelect={(selectedDate) => update(selectedDate)} />
       </PopoverContent>
     </Popover>
-    </div>
   )
 }

@@ -1,61 +1,79 @@
 import fs from "fs";
 import path from "path";
-import sharp from "sharp";
-import heicConvert from "heic-convert";
-import ImageCarousel from "@/components/ImageCarousel";
+import { Section } from "@/components/layout/Section";
+import { Container } from "@/components/layout/Container";
+import { Reveal } from "@/components/motion/Reveal";
+import { ProjectShowcase, type GalleryProject } from "@/components/gallery/ProjectShowcase";
 
-export default async function DeckRestorationPage() {
-  const imagesDir = path.join(process.cwd(), "public/decks");
+const IMAGE_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".webp"]);
+const FOLDER_PATTERN = /^(.+)-(\d+)-(before|after)$/i;
 
-  const folderNames = fs.readdirSync(imagesDir);
-  const imagePaths: string[][] = [];
+function humanizeSlug(slug: string): string {
+  const dateMatch = slug.match(/^(\d{1,2})-(\d{1,2})-(\d{2})$/);
+  if (dateMatch) {
+    const [, month, day, year] = dateMatch;
+    const date = new Date(2000 + Number(year), Number(month) - 1, Number(day));
+    return date.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+  }
+  return slug.charAt(0).toUpperCase() + slug.slice(1).replace(/[-_]/g, " ");
+}
 
-  for (const folder of folderNames) {
-    const folderPath = path.join(imagesDir, folder);
-    const files = fs.readdirSync(folderPath);
+function getProjects(): GalleryProject[] {
+  const decksDir = path.join(process.cwd(), "public/decks");
+  const folders = fs
+    .readdirSync(decksDir, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name);
 
-    const convertedPaths: string[] = [];
+  const projects = new Map<string, GalleryProject>();
 
-    for (const file of files) {
-      const ext = path.extname(file).toLowerCase();
-      const base = path.basename(file, ext);
-      const filePath = path.join(folderPath, file);
+  for (const folder of folders) {
+    const match = folder.match(FOLDER_PATTERN);
+    if (!match) continue;
+    const [, slug, , label] = match;
 
-      if (ext === ".jpg" || ext === ".jpeg" || ext === ".png") {
-        convertedPaths.push(`/decks/${folder}/${file}`);
-      } else if (ext === ".heic") {
-        const jpgPath = path.join(folderPath, base + ".jpg");
+    const images = fs
+      .readdirSync(path.join(decksDir, folder))
+      .filter((file) => IMAGE_EXTENSIONS.has(path.extname(file).toLowerCase()))
+      .sort()
+      .map((file) => `/decks/${folder}/${file}`);
 
-        if (fs.existsSync(jpgPath)) {
-          continue;
-        }
+    if (images.length === 0) continue;
 
-        const inputBuffer = fs.readFileSync(filePath);
-        const outputBuffer = await heicConvert({
-          buffer: inputBuffer,
-          format: "JPEG",
-          quality: 0.9,
-        });
-        fs.writeFileSync(jpgPath, outputBuffer);
-
-        convertedPaths.push(`/decks/${folder}/${base}.jpg`);
-      }
-    }
-
-    if (convertedPaths.length > 0) {
-      imagePaths.push(convertedPaths);
-    }
+    const project = projects.get(slug) ?? { slug, title: humanizeSlug(slug), before: [], after: [] };
+    if (label.toLowerCase() === "before") project.before.push(...images);
+    else project.after.push(...images);
+    projects.set(slug, project);
   }
 
-  return (
-    <main className="p-6 flex flex-col items-center">
-      {imagePaths.map((paths, index) => (
-        <div className={`lg:w-2/5 m:w-8/10 sm:w-7/10 bg-background my-1`} key={`folder-${index}`}>
-          <ImageCarousel images={paths} key={`carousel-${index}`} />
-          {((index - 1) % 2) === 0 && (<hr className="h-px my-8 bg-black border-5 border-primary rounded-2xl w-full"/>)}
-        </div>
-      ))}
-    </main>
+  return Array.from(projects.values()).filter((p) => p.before.length > 0 && p.after.length > 0);
+}
 
+export default function GalleryPage() {
+  const projects = getProjects();
+
+  return (
+    <>
+      <Section tone="dark">
+        <Container className="space-y-4 text-center">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent">Gallery</p>
+          <h1 className="font-display text-hero font-bold">Before &amp; After</h1>
+          <p className="mx-auto max-w-2xl text-lead text-surface-dark-foreground/80">
+            Drag the slider on any project to see the transformation, or browse the full photo set
+            for a closer look.
+          </p>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container className="grid grid-cols-1 gap-x-10 gap-y-16 lg:grid-cols-2">
+          {projects.map((project, i) => (
+            <Reveal key={project.slug} delay={(i % 2) * 100}>
+              <ProjectShowcase project={project} priority={i === 0} />
+            </Reveal>
+          ))}
+        </Container>
+      </Section>
+    </>
   );
 }

@@ -1,25 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-type Status = "new" | "reviewing" | "interview" | "hired" | "rejected";
-type Position = "laborer" | "carpenter" | "painter";
-
-interface Application {
-  id: number;
-  first_name: string;
-  last_name: string;
-  email: string;
-  phone: string;
-  position: Position;
-  experience: string;
-  availability: string;
-  has_driving_license: boolean;
-  message: string | null;
-  status: Status;
-  notes: string | null;
-  submitted_at: string;
-}
+import {
+  getApplications,
+  updateApplicationStatus,
+  updateApplicationNotes,
+  JobApplication as Application,
+  ApplicationStatus as Status,
+  ApplicationPosition as Position,
+} from "@/lib/utils";
+import { InfoSection, Detail, Avatar, formatDate } from "@/components/ui/portal-section";
 
 const STATUS_CONFIG: Record<Status, { label: string; color: string; bg: string }> = {
   new:       { label: "New",       color: "#1d6fa4", bg: "#dbeafe" },
@@ -72,9 +62,7 @@ export default function ApplicationsPage() {
   async function fetchApplications() {
     setLoading(true);
     try {
-      const res = await fetch("/api/applications");
-      if (!res.ok) throw new Error("Failed to load");
-      const data = await res.json();
+      const data = await getApplications();
       setApplications(data);
     } catch {
       setError("Could not load applications. Check your connection.");
@@ -87,25 +75,14 @@ export default function ApplicationsPage() {
     const prev = applications;
     setApplications((a) => a.map((x) => (x.id === id ? { ...x, status } : x)));
     if (selected?.id === id) setSelected((s) => s && { ...s, status });
-    try {
-      await fetch(`/api/applications/${id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ status }),
-      });
-    } catch {
-      setApplications(prev);
-    }
+    const ok = await updateApplicationStatus(id, status);
+    if (!ok) setApplications(prev);
   }
 
   async function saveNotes(id: number) {
     setSaving(true);
     try {
-      await fetch(`/api/applications/${id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ notes: editNotes }),
-      });
+      await updateApplicationNotes(id, editNotes);
       setApplications((a) => a.map((x) => (x.id === id ? { ...x, notes: editNotes } : x)));
       setSelected((s) => s && { ...s, notes: editNotes });
     } finally {
@@ -285,7 +262,7 @@ export default function ApplicationsPage() {
               </div>
 
               {/* Contact */}
-              <Section title="Contact">
+              <InfoSection title="Contact">
                 <Detail label="Email">
                   <a href={`mailto:${selected.email}`} style={{ color: "var(--color-link)" }}>
                     {selected.email}
@@ -296,27 +273,27 @@ export default function ApplicationsPage() {
                     {selected.phone}
                   </a>
                 </Detail>
-              </Section>
+              </InfoSection>
 
               {/* Role */}
-              <Section title="Role">
+              <InfoSection title="Role">
                 <Detail label="Position">{POSITION_LABELS[selected.position]}</Detail>
                 <Detail label="Experience">{EXPERIENCE_LABELS[selected.experience] ?? selected.experience}</Detail>
                 <Detail label="Available">{AVAILABILITY_LABELS[selected.availability] ?? selected.availability}</Detail>
                 <Detail label="Driver's License">{selected.has_driving_license ? "Yes ✓" : "No"}</Detail>
-              </Section>
+              </InfoSection>
 
               {/* Message */}
               {selected.message && (
-                <Section title="Additional Info">
+                <InfoSection title="Additional Info">
                   <p className="text-sm leading-relaxed" style={{ color: "var(--color-foreground)" }}>
                     {selected.message}
                   </p>
-                </Section>
+                </InfoSection>
               )}
 
               {/* Status */}
-              <Section title="Status">
+              <InfoSection title="Status">
                 <div className="flex flex-wrap gap-2">
                   {(Object.keys(STATUS_CONFIG) as Status[]).map((s) => {
                     const cfg = STATUS_CONFIG[s];
@@ -337,10 +314,10 @@ export default function ApplicationsPage() {
                     );
                   })}
                 </div>
-              </Section>
+              </InfoSection>
 
               {/* Notes */}
-              <Section title="Internal Notes">
+              <InfoSection title="Internal Notes">
                 <textarea
                   rows={4}
                   value={editNotes}
@@ -360,7 +337,7 @@ export default function ApplicationsPage() {
                 >
                   {saving ? "Saving…" : "Save Notes"}
                 </button>
-              </Section>
+              </InfoSection>
             </div>
           </aside>
         </div>
@@ -387,12 +364,7 @@ function ApplicationRow({
       onClick={onSelect}
     >
       {/* Avatar */}
-      <div
-        className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
-        style={{ backgroundColor: "var(--color-secondary)", color: "var(--color-primary)" }}
-      >
-        {app.first_name[0]}{app.last_name[0]}
-      </div>
+      <Avatar firstName={app.first_name} lastName={app.last_name} />
 
       {/* Name + meta */}
       <div className="flex-1 min-w-0">
@@ -428,35 +400,3 @@ function ApplicationRow({
   );
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="space-y-2">
-      <p
-        className="text-xs uppercase tracking-widest font-semibold"
-        style={{ color: "var(--color-muted-foreground)" }}
-      >
-        {title}
-      </p>
-      <div className="space-y-1">{children}</div>
-    </div>
-  );
-}
-
-function Detail({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <div className="flex justify-between gap-4 text-sm">
-      <span style={{ color: "var(--color-muted-foreground)" }}>{label}</span>
-      <span className="font-medium text-right" style={{ color: "var(--color-foreground)" }}>
-        {children}
-      </span>
-    </div>
-  );
-}
-
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
-}

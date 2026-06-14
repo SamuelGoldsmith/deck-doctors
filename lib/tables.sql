@@ -98,3 +98,51 @@ CREATE TRIGGER trg_job_applications_updated_at
 CREATE INDEX idx_job_applications_position ON job_applications (position);
 CREATE INDEX idx_job_applications_status   ON job_applications (status);
 CREATE INDEX idx_job_applications_email    ON job_applications (email);
+
+-- ============================================================
+-- Deck Doctors — Estimate Requests Table
+-- Run once against your Neon / PostgreSQL database
+-- ============================================================
+
+CREATE TABLE IF NOT EXISTS estimate_requests (
+  id                  SERIAL PRIMARY KEY,
+
+  -- Contact info
+  first_name          VARCHAR(100)  NOT NULL,
+  last_name           VARCHAR(100)  NOT NULL,
+  email               VARCHAR(255)  NOT NULL,
+  phone               VARCHAR(30)   NOT NULL,
+  address             VARCHAR(255)  NOT NULL,
+
+  -- Project details
+  service_type        VARCHAR(30)   NOT NULL
+                        CHECK (service_type IN ('restoration', 'new_build', 'repair', 'staining_sealing', 'inspection')),
+
+  -- Free-text
+  message             TEXT,
+
+  -- Workflow
+  status              VARCHAR(20)   NOT NULL DEFAULT 'new'
+                        CHECK (status IN ('new', 'reviewing', 'quoted', 'scheduled', 'won', 'lost')),
+  notes               TEXT,                     -- internal sales notes
+
+  -- Timestamps
+  submitted_at        TIMESTAMPTZ   NOT NULL DEFAULT NOW(),
+  updated_at          TIMESTAMPTZ   NOT NULL DEFAULT NOW()
+);
+
+-- Migration: drop the old per-field project-detail columns in favor of a
+-- single free-text `message` field (no-op on a fresh database).
+ALTER TABLE estimate_requests DROP COLUMN IF EXISTS deck_material;
+ALTER TABLE estimate_requests DROP COLUMN IF EXISTS deck_size;
+ALTER TABLE estimate_requests DROP COLUMN IF EXISTS timeline;
+
+-- Reuses set_updated_at() defined above
+CREATE TRIGGER trg_estimate_requests_updated_at
+  BEFORE UPDATE ON estimate_requests
+  FOR EACH ROW EXECUTE FUNCTION set_updated_at();
+
+-- Useful indexes
+CREATE INDEX idx_estimate_requests_service_type ON estimate_requests (service_type);
+CREATE INDEX idx_estimate_requests_status       ON estimate_requests (status);
+CREATE INDEX idx_estimate_requests_email        ON estimate_requests (email);
