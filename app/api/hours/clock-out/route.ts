@@ -35,15 +35,17 @@ export async function POST(request: Request) {
             const jobLat = Number(job.latitude);
             const jobLng = Number(job.longitude);
 
-            const clockInOk =
-                entry.clock_in_latitude != null &&
-                entry.clock_in_longitude != null &&
-                haversineMiles(jobLat, jobLng, Number(entry.clock_in_latitude), Number(entry.clock_in_longitude)) <= MAX_DISTANCE_MILES;
+            const clockInDistance =
+                entry.clock_in_latitude != null && entry.clock_in_longitude != null
+                    ? haversineMiles(jobLat, jobLng, Number(entry.clock_in_latitude), Number(entry.clock_in_longitude))
+                    : null;
+            const clockOutDistance =
+                latitude != null && longitude != null
+                    ? haversineMiles(jobLat, jobLng, latitude, longitude)
+                    : null;
 
-            const clockOutOk =
-                latitude != null &&
-                longitude != null &&
-                haversineMiles(jobLat, jobLng, latitude, longitude) <= MAX_DISTANCE_MILES;
+            const clockInOk = clockInDistance != null && clockInDistance <= MAX_DISTANCE_MILES;
+            const clockOutOk = clockOutDistance != null && clockOutDistance <= MAX_DISTANCE_MILES;
 
             locationVerified = clockInOk && clockOutOk;
         }

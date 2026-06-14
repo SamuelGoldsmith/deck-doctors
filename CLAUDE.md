@@ -9,6 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run start` — run production build
 - `npm run lint` — run Next.js ESLint
 - `node scripts/compress-images.mjs` — compresses all `.jpg`/`.jpeg` files under `public/` in place with sharp
+- `node --env-file=.env.local scripts/geocode-jobs.mjs` — one-time backfill: geocodes any `jobs` rows missing `latitude`/`longitude` (e.g. jobs created before geocoding-on-save existed)
 
 There is no test suite configured.
 

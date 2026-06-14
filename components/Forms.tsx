@@ -528,25 +528,44 @@ export function ClockInOut({ jobs, openEntry }: { jobs: Job[]; openEntry: hoursW
 
   const jobToString = (job: Job) => `${job.address}, ${job.city}, ${job.state_abr}`;
 
-  const getLocation = (): Promise<{ latitude: number | null; longitude: number | null }> => {
+  const ACCURACY_THRESHOLD_METERS = 100;
+
+  const getPosition = (timeoutMs: number): Promise<{ latitude: number | null; longitude: number | null; accuracy: number | null }> => {
     return new Promise((resolve) => {
       if (!navigator.geolocation) {
-        resolve({ latitude: null, longitude: null });
+        resolve({ latitude: null, longitude: null, accuracy: null });
         return;
       }
-      const timeout = setTimeout(() => resolve({ latitude: null, longitude: null }), 8000);
+      const timeout = setTimeout(() => resolve({ latitude: null, longitude: null, accuracy: null }), timeoutMs);
       navigator.geolocation.getCurrentPosition(
         (pos) => {
           clearTimeout(timeout);
-          resolve({ latitude: pos.coords.latitude, longitude: pos.coords.longitude });
+          resolve({ latitude: pos.coords.latitude, longitude: pos.coords.longitude, accuracy: pos.coords.accuracy });
         },
         () => {
           clearTimeout(timeout);
-          resolve({ latitude: null, longitude: null });
+          resolve({ latitude: null, longitude: null, accuracy: null });
         },
-        { enableHighAccuracy: true, timeout: 8000 }
+        { enableHighAccuracy: true, timeout: timeoutMs, maximumAge: 0 }
       );
     });
+  };
+
+  // GPS can be "cold" on the first request and only return a coarse
+  // network-based fix. If the first reading is low-accuracy, wait briefly
+  // for the GPS chip to warm up and try once more, keeping the better fix.
+  const getLocation = async (): Promise<{ latitude: number | null; longitude: number | null; accuracy: number | null }> => {
+    const first = await getPosition(15000);
+    if (first.accuracy != null && first.accuracy <= ACCURACY_THRESHOLD_METERS) {
+      return first;
+    }
+
+    await new Promise((r) => setTimeout(r, 3000));
+    const second = await getPosition(10000);
+
+    if (second.accuracy == null) return first;
+    if (first.accuracy == null) return second;
+    return second.accuracy <= first.accuracy ? second : first;
   };
 
   const handleClockIn = async () => {
