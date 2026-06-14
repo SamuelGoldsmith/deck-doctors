@@ -146,3 +146,36 @@ CREATE TRIGGER trg_estimate_requests_updated_at
 CREATE INDEX idx_estimate_requests_service_type ON estimate_requests (service_type);
 CREATE INDEX idx_estimate_requests_status       ON estimate_requests (status);
 CREATE INDEX idx_estimate_requests_email        ON estimate_requests (email);
+
+-- ============================================================
+-- Deck Doctors — Employee Portal Credentials
+-- Adds optional username/password login for the "employee" role,
+-- and documents the existing `users` table (Google "owner" accounts).
+-- ============================================================
+
+ALTER TABLE employees ADD COLUMN IF NOT EXISTS username VARCHAR(255) UNIQUE;
+ALTER TABLE employees ADD COLUMN IF NOT EXISTS password VARCHAR(255);
+
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    name VARCHAR(255)
+);
+
+-- ============================================================
+-- Deck Doctors — Clock In / Clock Out + GPS Geofencing
+-- Adds geocoded job coordinates and clock-in/out timestamps +
+-- coordinates to hours, plus a flag for whether the employee's
+-- location was verified within 1 mile of the job site.
+-- ============================================================
+
+ALTER TABLE jobs ADD COLUMN IF NOT EXISTS latitude NUMERIC(9,6);
+ALTER TABLE jobs ADD COLUMN IF NOT EXISTS longitude NUMERIC(9,6);
+
+ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_in_at TIMESTAMPTZ;
+ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_out_at TIMESTAMPTZ;
+ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_in_latitude NUMERIC(9,6);
+ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_in_longitude NUMERIC(9,6);
+ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_out_latitude NUMERIC(9,6);
+ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_out_longitude NUMERIC(9,6);
+ALTER TABLE hours ADD COLUMN IF NOT EXISTS location_verified BOOLEAN;

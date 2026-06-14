@@ -4,10 +4,12 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { signOut } from "next-auth/react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import type { PortalRole } from "@/types/next-auth";
 
-const EMPLOYEE_LINKS = [
+const OWNER_LINKS = [
   { href: "/employee-portal", label: "Home" },
   { href: "/employee-portal/applications", label: "Applications" },
   { href: "/employee-portal/estimates", label: "Estimates" },
@@ -17,7 +19,17 @@ const EMPLOYEE_LINKS = [
   { href: "/employee-portal/hours", label: "Hours" },
 ];
 
-export default function EmployeeNavbarClient({ authenticated }: { authenticated: boolean }) {
+const EMPLOYEE_LINKS = [
+  { href: "/employee-portal/general", label: "My Hours" },
+];
+
+export default function EmployeeNavbarClient({
+  authenticated,
+  role,
+}: {
+  authenticated: boolean;
+  role?: PortalRole;
+}) {
   const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
 
@@ -25,12 +37,14 @@ export default function EmployeeNavbarClient({ authenticated }: { authenticated:
     setOpen(false);
   }, [pathname]);
 
-  const links = authenticated ? EMPLOYEE_LINKS : [];
+  const isEmployee = role === "employee";
+  const links = authenticated ? (isEmployee ? EMPLOYEE_LINKS : OWNER_LINKS) : [];
+  const homeHref = isEmployee ? "/employee-portal/general" : "/employee-portal";
 
   return (
     <header className="surface-dark sticky top-0 z-50 shadow-lg">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/employee-portal" className="flex items-center gap-2.5" aria-label="Deck Doctors employee portal">
+        <Link href={homeHref} className="flex items-center gap-2.5" aria-label="Deck Doctors employee portal">
           <Image
             src="/logo-black-tp.png"
             alt=""
@@ -60,12 +74,22 @@ export default function EmployeeNavbarClient({ authenticated }: { authenticated:
               </Link>
             );
           })}
-          <Link
-            href="/"
-            className="rounded-md px-3 py-2 text-sm font-medium text-surface-dark-foreground/70 transition-colors hover:bg-white/10"
-          >
-            Exit
-          </Link>
+          {authenticated && isEmployee ? (
+            <button
+              type="button"
+              onClick={() => signOut({ callbackUrl: "/employee-portal/login" })}
+              className="rounded-md px-3 py-2 text-sm font-medium text-surface-dark-foreground/70 transition-colors hover:bg-white/10"
+            >
+              Sign Out
+            </button>
+          ) : (
+            <Link
+              href="/"
+              className="rounded-md px-3 py-2 text-sm font-medium text-surface-dark-foreground/70 transition-colors hover:bg-white/10"
+            >
+              Exit
+            </Link>
+          )}
         </nav>
 
         <button
@@ -97,12 +121,22 @@ export default function EmployeeNavbarClient({ authenticated }: { authenticated:
                 </Link>
               );
             })}
-            <Link
-              href="/"
-              className="mt-1 rounded-md px-3 py-2.5 text-sm font-medium text-surface-dark-foreground/70 transition-colors hover:bg-white/10"
-            >
-              Exit
-            </Link>
+            {authenticated && isEmployee ? (
+              <button
+                type="button"
+                onClick={() => signOut({ callbackUrl: "/employee-portal/login" })}
+                className="mt-1 rounded-md px-3 py-2.5 text-left text-sm font-medium text-surface-dark-foreground/70 transition-colors hover:bg-white/10"
+              >
+                Sign Out
+              </button>
+            ) : (
+              <Link
+                href="/"
+                className="mt-1 rounded-md px-3 py-2.5 text-sm font-medium text-surface-dark-foreground/70 transition-colors hover:bg-white/10"
+              >
+                Exit
+              </Link>
+            )}
           </div>
         </nav>
       )}

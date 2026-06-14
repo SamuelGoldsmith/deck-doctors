@@ -12,7 +12,7 @@ export async function GET() {
         if (!session) {
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
         }
-        const result = await sql`SELECT * FROM employees;`;
+        const result = await sql`SELECT eid, first_name, last_name, email, phone, rate, description FROM employees;`;
         return NextResponse.json(result);
     } catch (error) {
         console.error("Database query failed:", error);

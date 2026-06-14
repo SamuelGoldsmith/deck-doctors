@@ -198,12 +198,13 @@ export default function HoursSearch({ hours }: { hours: hoursWithEmployeeAndJob[
                             <TableHead>Hours</TableHead>
                             <TableHead>Cost</TableHead>
                             <TableHead>Site</TableHead>
+                            <TableHead>Location</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         {shownHours.length === 0 ? (
                             <TableRow>
-                                <TableCell colSpan={5} className="text-center text-muted-foreground py-8">
+                                <TableCell colSpan={6} className="text-center text-muted-foreground py-8">
                                     No records match the current filters.
                                 </TableCell>
                             </TableRow>
@@ -219,6 +220,15 @@ export default function HoursSearch({ hours }: { hours: hoursWithEmployeeAndJob[
                                     <TableCell>{hour.hours}</TableCell>
                                     <TableCell>${(hour.hours * hour.rate).toFixed(2)}</TableCell>
                                     <TableCell>{hour.address}</TableCell>
+                                    <TableCell title={
+                                        hour.location_verified === true
+                                            ? "Location verified within 1 mile of job site"
+                                            : hour.location_verified === false
+                                                ? "Location not verified"
+                                                : "Location not checked"
+                                    }>
+                                        {hour.location_verified === true ? "✓" : hour.location_verified === false ? "⚠" : "—"}
+                                    </TableCell>
                                 </TableRow>
                             ))
                         )}

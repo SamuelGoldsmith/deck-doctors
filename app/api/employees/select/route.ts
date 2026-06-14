@@ -13,8 +13,8 @@ export async function GET(request: NextRequest) {
         const lastName = searchParams.get('lastName');
         const email = searchParams.get('email');
 
-        const result = await 
-        sql`SELECT * FROM employees WHERE eid = ${eid} OR last_name = ${lastName} OR email = ${email};`;
+        const result = await
+        sql`SELECT eid, first_name, last_name, email, phone, rate, description, username FROM employees WHERE eid = ${eid} OR last_name = ${lastName} OR email = ${email};`;
         return NextResponse.json(result);
     } catch (error) {
         console.error("Database query failed:", error);

@@ -4,6 +4,9 @@ import {
   addEmployees,
   addHours,
   addJobs,
+  changePassword,
+  clockIn,
+  clockOut,
   Customer,
   editCustomer,
   editEmployee,
@@ -11,12 +14,14 @@ import {
   Employee,
   getEmployees,
   getJobs,
+  hoursWithEmployeeAndJob,
   Job,
 } from "@/lib/utils";
 import { Checkbox } from "./ui/checkbox";
 import { DatePicker } from "./datePicker";
 import { Label } from "./ui/label";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { CustomerSelect } from "./customerSelect";
 import Link from "next/link";
 import { Field, inputClass } from "./ui/form-field";
@@ -163,9 +168,10 @@ export function EditJob({ job, customers }: { job?: Job; customers: Customer[] }
   );
 }
 
-export function EditEmployee({ employee }: { employee?: Employee }) {
+export function EditEmployee({ employee, isAdmin = false }: { employee?: Employee; isAdmin?: boolean }) {
   const isNew = !employee;
   const [obj, setObj] = useState<Employee>(employee ?? emptyEmployee);
+  const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<{ first_name?: string; last_name?: string; email?: string }>({});
 
   const saveChanges = async () => {
@@ -176,7 +182,8 @@ export function EditEmployee({ employee }: { employee?: Employee }) {
     setErrors(newErrors);
     if (Object.keys(newErrors).length > 0) return;
 
-    const success = isNew ? await addEmployees([obj]) : await editEmployee(obj);
+    const payload = isAdmin ? { ...obj, password } : obj;
+    const success = isNew ? await addEmployees([obj]) : await editEmployee(payload);
     if (success) {
       window.location.href = isNew ? "/employee-portal/employees" : "/employee-portal/employees/" + obj.eid;
     } else {
@@ -245,6 +252,29 @@ export function EditEmployee({ employee }: { employee?: Employee }) {
             onChange={(e) => setObj((prev) => ({ ...prev, description: e.target.value }))}
           />
         </Field>
+
+        {isAdmin && (
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <Field label="Username">
+              <input
+                className={inputClass(false)}
+                value={obj.username ?? ""}
+                onChange={(e) => setObj((prev) => ({ ...prev, username: e.target.value }))}
+                autoComplete="off"
+              />
+            </Field>
+            <Field label="New Password">
+              <input
+                type="password"
+                className={inputClass(false)}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Leave blank to keep current password"
+                autoComplete="new-password"
+              />
+            </Field>
+          </div>
+        )}
       </div>
 
       <div className="flex gap-3">
@@ -486,6 +516,216 @@ export function QuickAddHours() {
         </button>
         {saved && <span className="text-sm font-medium text-green-700">Hours added ✓</span>}
       </div>
+    </div>
+  );
+}
+
+export function ClockInOut({ jobs, openEntry }: { jobs: Job[]; openEntry: hoursWithEmployeeAndJob | null }) {
+  const router = useRouter();
+  const [selectedJob, setSelectedJob] = useState<Job | null>(null);
+  const [error, setError] = useState<string>("");
+  const [loading, setLoading] = useState(false);
+
+  const jobToString = (job: Job) => `${job.address}, ${job.city}, ${job.state_abr}`;
+
+  const getLocation = (): Promise<{ latitude: number | null; longitude: number | null }> => {
+    return new Promise((resolve) => {
+      if (!navigator.geolocation) {
+        resolve({ latitude: null, longitude: null });
+        return;
+      }
+      const timeout = setTimeout(() => resolve({ latitude: null, longitude: null }), 8000);
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          clearTimeout(timeout);
+          resolve({ latitude: pos.coords.latitude, longitude: pos.coords.longitude });
+        },
+        () => {
+          clearTimeout(timeout);
+          resolve({ latitude: null, longitude: null });
+        },
+        { enableHighAccuracy: true, timeout: 8000 }
+      );
+    });
+  };
+
+  const handleClockIn = async () => {
+    if (!selectedJob) {
+      setError("Select a job");
+      return;
+    }
+    setError("");
+    setLoading(true);
+    const { latitude, longitude } = await getLocation();
+    const success = await clockIn({ jid: selectedJob.jid, latitude, longitude });
+    setLoading(false);
+    if (success) {
+      router.refresh();
+    } else {
+      setError("Failed to clock in. Please try again.");
+    }
+  };
+
+  const handleClockOut = async () => {
+    setError("");
+    setLoading(true);
+    const { latitude, longitude } = await getLocation();
+    const success = await clockOut({ latitude, longitude });
+    setLoading(false);
+    if (success) {
+      router.refresh();
+    } else {
+      setError("Failed to clock out. Please try again.");
+    }
+  };
+
+  if (openEntry) {
+    const since = openEntry.clock_in_at
+      ? new Date(openEntry.clock_in_at).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })
+      : "";
+
+    return (
+      <div className="card space-y-4 p-6">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Clock In / Out</h2>
+        <p className="text-sm text-foreground">
+          Clocked in at <span className="font-semibold">{openEntry.address}, {openEntry.city}, {openEntry.state_abr}</span> since {since}.
+        </p>
+        {error && <p className="text-sm text-red-600">{error}</p>}
+        <div className="flex items-center gap-3">
+          <button
+            onClick={handleClockOut}
+            disabled={loading}
+            className="primary rounded-md px-6 py-2 text-sm font-semibold transition-opacity hover:opacity-90 disabled:opacity-60"
+          >
+            {loading ? "Clocking out…" : "Clock Out"}
+          </button>
+        </div>
+        <p className="text-xs text-muted-foreground">
+          Clocking out shares your location with Deck Doctors to confirm you're at the job site.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="card space-y-4 p-6">
+      <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Clock In / Out</h2>
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <Field label="Job" error={error || undefined} required>
+          <Combobox
+            items={jobs}
+            itemToStringValue={jobToString}
+            onValueChange={(value: any) => {
+              if (value) {
+                const job = jobs.find((j) => jobToString(j) === value);
+                setSelectedJob(job || null);
+              }
+            }}
+          >
+            <ComboboxInput
+              placeholder="Select job"
+              value={selectedJob ? jobToString(selectedJob) : ""}
+              className="w-full"
+            />
+            <ComboboxContent>
+              <ComboboxEmpty>No jobs found.</ComboboxEmpty>
+              <ComboboxList>
+                {(job: Job) => (
+                  <ComboboxItem key={job.jid} value={jobToString(job)}>
+                    {jobToString(job)}
+                  </ComboboxItem>
+                )}
+              </ComboboxList>
+            </ComboboxContent>
+          </Combobox>
+        </Field>
+      </div>
+
+      <div className="flex items-center gap-3">
+        <button
+          onClick={handleClockIn}
+          disabled={loading}
+          className="primary rounded-md px-6 py-2 text-sm font-semibold transition-opacity hover:opacity-90 disabled:opacity-60"
+        >
+          {loading ? "Clocking in…" : "Clock In"}
+        </button>
+      </div>
+      <p className="text-xs text-muted-foreground">
+        Clocking in shares your location with Deck Doctors to confirm you're at the job site.
+      </p>
+    </div>
+  );
+}
+
+export function ChangePasswordForm() {
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    setSuccess(false);
+
+    if (newPassword.length < 8) {
+      setError("Password must be at least 8 characters");
+      return;
+    }
+    if (newPassword !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+
+    setLoading(true);
+    const ok = await changePassword(newPassword);
+    setLoading(false);
+
+    if (ok) {
+      setSuccess(true);
+      setNewPassword("");
+      setConfirmPassword("");
+    } else {
+      setError("Failed to change password. Please try again.");
+    }
+  };
+
+  return (
+    <div className="card space-y-4 p-6">
+      <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Change Password</h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <Field label="New Password" required>
+            <input
+              type="password"
+              className={inputClass(!!error)}
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+              autoComplete="new-password"
+            />
+          </Field>
+          <Field label="Confirm Password" error={error || undefined} required>
+            <input
+              type="password"
+              className={inputClass(!!error)}
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              autoComplete="new-password"
+            />
+          </Field>
+        </div>
+        <div className="flex items-center gap-3">
+          <button
+            type="submit"
+            disabled={loading}
+            className="primary rounded-md px-6 py-2 text-sm font-semibold transition-opacity hover:opacity-90 disabled:opacity-60"
+          >
+            {loading ? "Saving…" : "Update Password"}
+          </button>
+          {success && <span className="text-sm font-medium text-green-700">Password updated ✓</span>}
+        </div>
+      </form>
     </div>
   );
 }

@@ -90,7 +90,7 @@ export default function Home() {
               </h2>
               <p className="text-lead text-muted-foreground">
                 Drag the slider to see how we took this front-entry deck from worn and weathered
-                to freshly restored — railings, steps, and all.
+                to freshly restored railings, steps, and all.
               </p>
               <Link
                 href="/gallery"

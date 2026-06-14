@@ -14,6 +14,7 @@ export interface Employee {
   phone: string | null;
   rate: number;
   description: string | null;
+  username?: string | null;
 }
 
 export interface Customer {
@@ -36,6 +37,8 @@ export interface Job {
   completed: boolean;
   description: string | null;
   customer: Customer; // Embedded customer details for easier access
+  latitude?: number | null;
+  longitude?: number | null;
 }
 
 export interface Hour {
@@ -44,16 +47,23 @@ export interface Hour {
   jid: number; // Foreign key to Job.jid
   hours: number;
   date_worked: string; // ISO date string: YYYY-MM-DD
+  clock_in_at?: string | null;
+  clock_out_at?: string | null;
+  clock_in_latitude?: number | null;
+  clock_in_longitude?: number | null;
+  clock_out_latitude?: number | null;
+  clock_out_longitude?: number | null;
+  location_verified?: boolean | null;
 }
 export interface hoursWithEmployeeAndJob extends Hour {
   jid: number;
   address: string;
   city: string;
-  state_abr: string; 
+  state_abr: string;
   cid: number;
   quote_cost: number | null;
   start_date: string | null;
-  end_date: string | null;   
+  end_date: string | null;
   completed: boolean;
   description: string | null;
   first_name: string;
@@ -62,6 +72,8 @@ export interface hoursWithEmployeeAndJob extends Hour {
   phone: string | null;
   eid: number;
   rate: number;
+  latitude?: number | null;
+  longitude?: number | null;
 }
 
 export interface Expense {
@@ -198,6 +210,17 @@ export async function editEmployee(employee: Employee) {
     return res.ok;
   }
 
+export async function changePassword(newPassword: string) {
+    const res = await fetch("/api/employees/change-password", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ newPassword }),
+    })
+    return res.ok;
+  }
+
 export async function editCustomer(customer: Customer) {
     const res = await fetch("/api/customers/edit", {
       method: "POST",
@@ -227,6 +250,28 @@ export async function editJob(job: Job) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(hours),
+    })
+    return res.ok;
+  }
+
+  export async function clockIn(payload: { jid: number; latitude: number | null; longitude: number | null }) {
+    const res = await fetch("/api/hours/clock-in", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+    return res.ok;
+  }
+
+  export async function clockOut(payload: { latitude: number | null; longitude: number | null }) {
+    const res = await fetch("/api/hours/clock-out", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
     })
     return res.ok;
   }
