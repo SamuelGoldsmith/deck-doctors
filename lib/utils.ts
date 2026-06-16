@@ -437,3 +437,324 @@ export async function updateEstimateNotes(id: number, notes: string) {
   })
   return res.ok;
 }
+
+/* ============================================================
+ * On-site Deck Estimator
+ * ========================================================== */
+
+export type DeckEstimateStatus = "draft" | "ready" | "quoted" | "converted" | "archived";
+export type DeckWorkType = "restoration" | "resurface" | "under_resurface";
+export type DeckMaterial = "pressure_treated" | "trex";
+export type DeckElevation = "ground" | "raised" | "second_story" | "multi_story" | "";
+export type Condition = "good" | "fair" | "poor" | "replace" | "";
+
+export const WORK_TYPE_LABELS: Record<DeckWorkType, string> = {
+  restoration: "Restoration",
+  resurface: "Resurface",
+  under_resurface: "Under-resurface",
+};
+export const MATERIAL_LABELS: Record<DeckMaterial, string> = {
+  pressure_treated: "Pressure-treated wood",
+  trex: "Trex / composite",
+};
+export const ELEVATION_LABELS: Record<Exclude<DeckElevation, "">, string> = {
+  ground: "Ground level",
+  raised: "Raised",
+  second_story: "Second story",
+  multi_story: "Multi-story",
+};
+export const CONDITION_LABELS: Record<Exclude<Condition, "">, string> = {
+  good: "Good",
+  fair: "Fair",
+  poor: "Poor",
+  replace: "Needs replacement",
+};
+
+/* ── Sketch geometry (coordinates are in grid-cell units) ── */
+export interface SketchPoint { x: number; y: number }
+export interface SketchSection { id: string; label: string; points: SketchPoint[]; closed: boolean }
+export interface SketchStroke { id: string; points: SketchPoint[] }
+export type SketchMarkerKind = "rotten" | "bondo" | "railing" | "obstruction" | "note";
+export interface SketchMarker { id: string; x: number; y: number; kind: SketchMarkerKind; note?: string }
+
+export interface DeckSketch {
+  feetPerCell: number; // real-world feet represented by one grid cell
+  cols: number;        // grid width in cells
+  rows: number;        // grid height in cells
+  sections: SketchSection[];
+  strokes: SketchStroke[];
+  markers: SketchMarker[];
+}
+
+export const MARKER_CONFIG: Record<SketchMarkerKind, { label: string; color: string; symbol: string }> = {
+  rotten:      { label: "Rotten board",  color: "#b91c1c", symbol: "✕" },
+  bondo:       { label: "Bondo spot",    color: "#b45309", symbol: "◆" },
+  railing:     { label: "Railing",       color: "#1d4ed8", symbol: "▮" },
+  obstruction: { label: "Obstruction",   color: "#6d28d9", symbol: "⬡" },
+  note:        { label: "Note",          color: "#0f766e", symbol: "✎" },
+};
+
+/* ── Pricing ── */
+export interface QuoteRates {
+  resurfaceSqFt: number;
+  restorationSqFt: number;
+  boardReplacement: number; // per board
+  bondoSpot: number;        // per spot
+  stepStringer: number;     // per step/stringer unit
+  railingLinearFt: number;  // per linear ft
+  laborHour: number;        // per hour
+}
+
+export const DEFAULT_QUOTE_RATES: QuoteRates = {
+  resurfaceSqFt: 8.5,
+  restorationSqFt: 6,
+  boardReplacement: 22,
+  bondoSpot: 15,
+  stepStringer: 45,
+  railingLinearFt: 18,
+  laborHour: 65,
+};
+
+export interface QuoteLineItem {
+  key: string;
+  label: string;
+  qty: number;
+  unit: string;
+  rate: number;
+  total: number;
+}
+
+export interface DeckEstimateData {
+  // Scope of work
+  workTypes: DeckWorkType[];
+  materials: DeckMaterial[];
+  pressureTreatedRestore: boolean; // PT wood that is also being restored
+  elevation: DeckElevation;
+  tiers: number | null;            // number of levels / tiers
+  // Size
+  totalSqFt: number | null;
+  sqFtIsOverride: boolean;         // true when the estimator overrode the sketch's auto value
+  // Repairs
+  boardReplacementCount: number | null;
+  bondoSpotCount: number | null;
+  railingLinearFt: number | null;
+  railingCondition: Condition;
+  fastenersPopped: number | null;
+  // Stairs
+  stepCount: number | null;
+  stringerCount: number | null;
+  stairCondition: Condition;
+  riseIn: number | null;
+  runIn: number | null;
+  // Structural / extras / free-text
+  structuralConcerns: string;
+  siteAccessNotes: string;
+  additionalNotes: string;
+  internalNotes: string;
+  // Sketch
+  sketch: DeckSketch;
+  // Pricing
+  rates: QuoteRates;
+  laborHours: number | null;
+  lineItems: QuoteLineItem[];
+  suggestedTotal: number;
+  overrideTotal: number | null;
+}
+
+export interface DeckEstimate {
+  id: number;
+  created_by: string | null;
+  cid: number | null;
+  jid: number | null;
+  customer_name: string;
+  phone: string | null;
+  email: string | null;
+  address: string;
+  city: string | null;
+  state_abr: string | null;
+  total_sq_ft: number | null;
+  suggested_total: number | null;
+  final_quote: number | null;
+  status: DeckEstimateStatus;
+  data: DeckEstimateData;
+  latitude: number | null;
+  longitude: number | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface DeckEstimateInput {
+  id?: number;
+  cid: number | null;
+  jid?: number | null;
+  customer_name: string;
+  phone: string;
+  email: string;
+  address: string;
+  city: string;
+  state_abr: string;
+  status: DeckEstimateStatus;
+  data: DeckEstimateData;
+}
+
+export function emptyDeckSketch(): DeckSketch {
+  return { feetPerCell: 1, cols: 24, rows: 18, sections: [], strokes: [], markers: [] };
+}
+
+export function emptyDeckEstimateData(): DeckEstimateData {
+  return {
+    workTypes: [],
+    materials: [],
+    pressureTreatedRestore: false,
+    elevation: "",
+    tiers: null,
+    totalSqFt: null,
+    sqFtIsOverride: false,
+    boardReplacementCount: null,
+    bondoSpotCount: null,
+    railingLinearFt: null,
+    railingCondition: "",
+    fastenersPopped: null,
+    stepCount: null,
+    stringerCount: null,
+    stairCondition: "",
+    riseIn: null,
+    runIn: null,
+    structuralConcerns: "",
+    siteAccessNotes: "",
+    additionalNotes: "",
+    internalNotes: "",
+    sketch: emptyDeckSketch(),
+    rates: { ...DEFAULT_QUOTE_RATES },
+    laborHours: null,
+    lineItems: [],
+    suggestedTotal: 0,
+    overrideTotal: null,
+  };
+}
+
+/** Shoelace area of a polygon, in grid-cell² units. */
+export function polygonAreaCells(points: SketchPoint[]): number {
+  if (points.length < 3) return 0;
+  let acc = 0;
+  for (let i = 0; i < points.length; i++) {
+    const p = points[i];
+    const q = points[(i + 1) % points.length];
+    acc += p.x * q.y - q.x * p.y;
+  }
+  return Math.abs(acc) / 2;
+}
+
+/** Total square footage of all closed sections in a sketch. */
+export function sketchTotalSqFt(sketch: DeckSketch): number {
+  const f = sketch.feetPerCell || 1;
+  return sketch.sections
+    .filter((s) => s.closed && s.points.length >= 3)
+    .reduce((sum, s) => sum + polygonAreaCells(s.points) * f * f, 0);
+}
+
+/** Build the suggested quote from the captured assessment + unit rates. */
+export function computeQuote(
+  data: DeckEstimateData,
+  rates: QuoteRates
+): { lineItems: QuoteLineItem[]; suggestedTotal: number } {
+  const sqFt = Number(data.totalSqFt) || 0;
+  const items: QuoteLineItem[] = [];
+  const push = (key: string, label: string, qty: number, unit: string, rate: number) => {
+    const q = Number(qty) || 0;
+    const r = Number(rate) || 0;
+    if (q > 0 && r > 0) items.push({ key, label, qty: q, unit, rate: r, total: q * r });
+  };
+
+  const resurfacing = data.workTypes.includes("resurface") || data.workTypes.includes("under_resurface");
+  if (resurfacing) push("resurface", "Resurface decking", sqFt, "sq ft", rates.resurfaceSqFt);
+  if (data.workTypes.includes("restoration")) push("restoration", "Restoration", sqFt, "sq ft", rates.restorationSqFt);
+
+  push("boards", "Board replacement", data.boardReplacementCount ?? 0, "boards", rates.boardReplacement);
+  push("bondo", "Bondo filler", data.bondoSpotCount ?? 0, "spots", rates.bondoSpot);
+  push("stairs", "Steps & stringers", (Number(data.stepCount) || 0) + (Number(data.stringerCount) || 0), "units", rates.stepStringer);
+  push("railing", "Railing", data.railingLinearFt ?? 0, "lin ft", rates.railingLinearFt);
+  push("labor", "Labor", data.laborHours ?? 0, "hrs", rates.laborHour);
+
+  const suggestedTotal = items.reduce((s, i) => s + i.total, 0);
+  return { lineItems: items, suggestedTotal };
+}
+
+/** The number the business should quote: an explicit override, else the computed total. */
+export function finalQuoteValue(data: DeckEstimateData): number {
+  return data.overrideTotal != null && !Number.isNaN(data.overrideTotal)
+    ? Number(data.overrideTotal)
+    : Number(data.suggestedTotal) || 0;
+}
+
+export async function addDeckEstimate(input: DeckEstimateInput): Promise<{ ok: boolean; id?: number }> {
+  const res = await fetch("/api/deck-estimates/add", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(input),
+  });
+  if (!res.ok) return { ok: false };
+  const row = await res.json().catch(() => null);
+  return { ok: true, id: row?.id };
+}
+
+export async function updateDeckEstimate(input: DeckEstimateInput): Promise<boolean> {
+  const res = await fetch("/api/deck-estimates/edit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(input),
+  });
+  return res.ok;
+}
+
+export async function patchDeckEstimate(
+  id: number,
+  patch: { status?: DeckEstimateStatus; final_quote?: number | null; jid?: number | null }
+): Promise<boolean> {
+  const res = await fetch(`/api/deck-estimates/${id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(patch),
+  });
+  return res.ok;
+}
+
+export async function deleteDeckEstimate(id: number): Promise<boolean> {
+  if (!confirm("Delete this estimate? This action cannot be undone.")) return false;
+  const res = await fetch("/api/deck-estimates/delete", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id }),
+  });
+  return res.ok;
+}
+
+export async function getDeckEstimates(): Promise<DeckEstimate[]> {
+  const res = await fetch("/api/deck-estimates/list");
+  if (!res.ok) throw new Error("Failed to fetch deck estimates");
+  return res.json();
+}
+
+/** Human-readable scope summary, used to prefill a Job's description on conversion. */
+export function summarizeDeckEstimate(e: DeckEstimate): string {
+  const d = e.data ?? emptyDeckEstimateData();
+  const lines: string[] = [];
+
+  const head: string[] = [];
+  if (d.workTypes?.length) head.push(d.workTypes.map((w) => WORK_TYPE_LABELS[w]).join(" + "));
+  if (d.materials?.length) head.push(d.materials.map((m) => MATERIAL_LABELS[m]).join(" / "));
+  if (head.length) lines.push(head.join(" — "));
+
+  if (d.totalSqFt) lines.push(`~${Math.round(d.totalSqFt)} sq ft`);
+
+  const repairs: string[] = [];
+  if (d.boardReplacementCount) repairs.push(`${d.boardReplacementCount} boards`);
+  if (d.bondoSpotCount) repairs.push(`${d.bondoSpotCount} Bondo spots`);
+  if (d.stepCount || d.stringerCount) repairs.push(`${d.stepCount ?? 0} steps / ${d.stringerCount ?? 0} stringers`);
+  if (d.railingLinearFt) repairs.push(`${d.railingLinearFt} lf railing`);
+  if (repairs.length) lines.push(repairs.join(", "));
+
+  if (d.additionalNotes) lines.push(d.additionalNotes);
+  lines.push(`(From on-site estimate #${e.id})`);
+  return lines.join("\n");
+}

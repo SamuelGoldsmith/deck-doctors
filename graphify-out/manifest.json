@@ -265,8 +265,8 @@
     "semantic_hash": "883a0b7479775a644b93b9e708b89d30"
   },
   "components/Forms.tsx": {
-    "mtime": 1781482950.8481493,
-    "ast_hash": "9db0cca142cc7ba45fc74b14588b7d08",
+    "mtime": 1781572634.460355,
+    "ast_hash": "ee2a42675e6b323520f04a0e0a6da9ed",
     "semantic_hash": ""
   },
   "components/Social.tsx": {
@@ -425,18 +425,18 @@
     "semantic_hash": ""
   },
   "lib/serverUtils.ts": {
-    "mtime": 1779657828.3023727,
-    "ast_hash": "9a9be9c5dacdf5848323208ae8d71daf",
-    "semantic_hash": "9a9be9c5dacdf5848323208ae8d71daf"
+    "mtime": 1781572244.1272526,
+    "ast_hash": "cae2225dc4f5c2a84bcbe0fc573f489c",
+    "semantic_hash": ""
   },
   "lib/tables.sql": {
-    "mtime": 1781468277.591033,
-    "ast_hash": "abb84d246bca1b55fab040529e2f6911",
+    "mtime": 1781572131.0335476,
+    "ast_hash": "3e710064b31dcbe1455de4d740f92161",
     "semantic_hash": ""
   },
   "lib/utils.ts": {
-    "mtime": 1781482931.2891798,
-    "ast_hash": "ee92fb752a379bdcd2730dae091570a5",
+    "mtime": 1781572629.4843814,
+    "ast_hash": "d668e627b3bed80daafa5e50d365a110",
     "semantic_hash": ""
   },
   "next.config.ts": {
@@ -2115,8 +2115,8 @@
     "semantic_hash": ""
   },
   "app/(employee)/employee-portal/jobs/new/page.tsx": {
-    "mtime": 1781396842.7609713,
-    "ast_hash": "9e0aa25092e6a2abe00a07497626c9d4",
+    "mtime": 1781572640.9030166,
+    "ast_hash": "3fee3fcb5d178953f20b11c2b9b8f5dd",
     "semantic_hash": ""
   },
   "app/(employee)/employee-portal/login/page.tsx": {
@@ -2165,8 +2165,8 @@
     "semantic_hash": ""
   },
   "components/employee/navbar-client.tsx": {
-    "mtime": 1781464978.613961,
-    "ast_hash": "6969393ab686038c451d3a6026073636",
+    "mtime": 1781572595.2969894,
+    "ast_hash": "bbf2f197b1724638ad7cc97baecbe92f",
     "semantic_hash": ""
   },
   "components/gallery/GalleryImage.tsx": {
@@ -2240,8 +2240,8 @@
     "semantic_hash": ""
   },
   "emails/onboardingTemplate.ts": {
-    "mtime": 1781483001.9455698,
-    "ast_hash": "5ede1e3f395bcdb73968d178084edfce",
+    "mtime": 1781483149.9076624,
+    "ast_hash": "05c49cea97abe6c53604a65786bca41b",
     "semantic_hash": ""
   },
   "hooks/use-in-view.ts": {
@@ -4317,6 +4317,76 @@
   ".claude/skills/writing-guidelines/SKILL.md": {
     "mtime": 1781379809.7386491,
     "ast_hash": "29f58ed0b13c290b859979bab77fa97d",
+    "semantic_hash": ""
+  },
+  "app/(employee)/employee-portal/estimator/[id]/edit/page.tsx": {
+    "mtime": 1781572561.690779,
+    "ast_hash": "c8050f80b95e4c47c0aba9b3806e9eba",
+    "semantic_hash": ""
+  },
+  "app/(employee)/employee-portal/estimator/[id]/page.tsx": {
+    "mtime": 1781572564.366612,
+    "ast_hash": "05c2c55ed82bb5437778a33fa776807f",
+    "semantic_hash": ""
+  },
+  "app/(employee)/employee-portal/estimator/new/page.tsx": {
+    "mtime": 1781572558.3869622,
+    "ast_hash": "f6ff3bba1026c1842bc8ab4ff7cdab38",
+    "semantic_hash": ""
+  },
+  "app/(employee)/employee-portal/estimator/page.tsx": {
+    "mtime": 1781572530.6335726,
+    "ast_hash": "86148bb9a0b2e653825a2d8431c78331",
+    "semantic_hash": ""
+  },
+  "app/api/deck-estimates/[id]/route.ts": {
+    "mtime": 1781572225.7884128,
+    "ast_hash": "7c50bef855b598756c24c3fcaa206a2b",
+    "semantic_hash": ""
+  },
+  "app/api/deck-estimates/add/route.ts": {
+    "mtime": 1781572200.4557674,
+    "ast_hash": "4bf793c2d0b9cbbfb8de2313dc8e7ad9",
+    "semantic_hash": ""
+  },
+  "app/api/deck-estimates/delete/route.ts": {
+    "mtime": 1781572220.4741294,
+    "ast_hash": "137d859be8fdf1ff1ed9ba8c20c81b00",
+    "semantic_hash": ""
+  },
+  "app/api/deck-estimates/edit/route.ts": {
+    "mtime": 1781572207.6441934,
+    "ast_hash": "ce97e602d839b24b97359ee48880d3c4",
+    "semantic_hash": ""
+  },
+  "app/api/deck-estimates/list/route.ts": {
+    "mtime": 1781572212.960116,
+    "ast_hash": "fcc103952ec401aca2c161415ae3141e",
+    "semantic_hash": ""
+  },
+  "app/api/deck-estimates/select/route.ts": {
+    "mtime": 1781572216.7330818,
+    "ast_hash": "9d218609f31644a34e2724456a2b74a0",
+    "semantic_hash": ""
+  },
+  "components/deck-estimate/DeckEstimateForm.tsx": {
+    "mtime": 1781572497.5936575,
+    "ast_hash": "3523d7e7d1a660f97bdd524df5bb07f7",
+    "semantic_hash": ""
+  },
+  "components/deck-estimate/DeckEstimateSummary.tsx": {
+    "mtime": 1781572391.0474792,
+    "ast_hash": "ac47af7be26f84e563c624e189c099ff",
+    "semantic_hash": ""
+  },
+  "components/deck-estimate/DeckSketchCanvas.tsx": {
+    "mtime": 1781572356.7439296,
+    "ast_hash": "be39c86ac937ffdb5acbde4a97c2b9e1",
+    "semantic_hash": ""
+  },
+  "components/deck-estimate/EstimateDetail.tsx": {
+    "mtime": 1781572587.7209332,
+    "ast_hash": "31dcde78958d926af6d548833c9887a5",
     "semantic_hash": ""
   }
 }

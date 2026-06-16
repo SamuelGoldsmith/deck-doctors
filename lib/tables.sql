@@ -179,3 +179,70 @@ ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_in_longitude NUMERIC(9,6);
 ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_out_latitude NUMERIC(9,6);
 ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_out_longitude NUMERIC(9,6);
 ALTER TABLE hours ADD COLUMN IF NOT EXISTS location_verified BOOLEAN;
+
+-- ============================================================
+-- Deck Doctors — On-Site Deck Estimates (estimator tool)
+-- A structured, comprehensive deck assessment an estimator fills
+-- out on site (signed in via Google). Promoted scalar columns are
+-- used for the list/detail views and querying; the full structured
+-- form (scope, repairs, stairs, interactive sketch, rates and the
+-- computed quote line items) lives in the `data` JSONB column.
+--
+-- `data` shape (see DeckEstimateData in lib/utils.ts):
+--   { workTypes, materials, pressureTreatedRestore, elevation, tiers,
+--     totalSqFt, sqFtIsOverride, boardReplacementCount, bondoSpotCount,
+--     railingLinearFt, railingCondition, fastenersPopped, stepCount,
+--     stringerCount, stairCondition, riseIn, runIn, structuralConcerns,
+--     siteAccessNotes, additionalNotes, internalNotes,
+--     sketch: { feetPerCell, cols, rows, sections[], strokes[], markers[] },
+--     rates: { ...per-unit prices }, laborHours, lineItems[],
+--     suggestedTotal, overrideTotal }
+-- ============================================================
+
+CREATE TABLE IF NOT EXISTS deck_estimates (
+  id              SERIAL PRIMARY KEY,
+
+  -- Who created it (estimator email from the session)
+  created_by      VARCHAR(255),
+
+  -- Optional links into the rest of the portal
+  cid             INTEGER REFERENCES customers(cid) ON DELETE SET NULL,
+  jid             INTEGER REFERENCES jobs(jid)      ON DELETE SET NULL,
+
+  -- Customer + site (promoted for list/search; full detail also in data)
+  customer_name   VARCHAR(255)  NOT NULL,
+  phone           VARCHAR(30),
+  email           VARCHAR(255),
+  address         VARCHAR(255)  NOT NULL,
+  city            VARCHAR(255),
+  state_abr       CHAR(2),
+
+  -- Promoted analytics
+  total_sq_ft     NUMERIC(10,2),
+  suggested_total NUMERIC(10,2),
+  final_quote     NUMERIC(10,2),
+
+  -- Workflow
+  status          VARCHAR(20)   NOT NULL DEFAULT 'draft'
+                    CHECK (status IN ('draft', 'ready', 'quoted', 'converted', 'archived')),
+
+  -- Full structured assessment + sketch + pricing
+  data            JSONB         NOT NULL DEFAULT '{}'::jsonb,
+
+  -- Geocoded site coordinates (Nominatim, same as jobs)
+  latitude        NUMERIC(9,6),
+  longitude       NUMERIC(9,6),
+
+  -- Timestamps
+  created_at      TIMESTAMPTZ   NOT NULL DEFAULT NOW(),
+  updated_at      TIMESTAMPTZ   NOT NULL DEFAULT NOW()
+);
+
+-- Reuses set_updated_at() defined above
+CREATE TRIGGER trg_deck_estimates_updated_at
+  BEFORE UPDATE ON deck_estimates
+  FOR EACH ROW EXECUTE FUNCTION set_updated_at();
+
+CREATE INDEX IF NOT EXISTS idx_deck_estimates_status     ON deck_estimates (status);
+CREATE INDEX IF NOT EXISTS idx_deck_estimates_cid        ON deck_estimates (cid);
+CREATE INDEX IF NOT EXISTS idx_deck_estimates_created_at ON deck_estimates (created_at);

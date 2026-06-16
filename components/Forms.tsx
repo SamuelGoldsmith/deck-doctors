@@ -50,9 +50,9 @@ const emptyJob: Job = {
 };
 const emptyEmployee: Employee = { eid: 0, first_name: "", last_name: "", email: "", phone: "", rate: 0, description: "" };
 
-export function EditJob({ job, customers }: { job?: Job; customers: Customer[] }) {
+export function EditJob({ job, customers, prefill }: { job?: Job; customers: Customer[]; prefill?: Partial<Job> }) {
   const isNew = !job;
-  const [obj, setObj] = useState<Job>(job ?? emptyJob);
+  const [obj, setObj] = useState<Job>(job ?? { ...emptyJob, ...prefill });
   const [errors, setErrors] = useState<{ address?: string; cid?: string }>({});
 
   const setDate = (type: "start_date" | "end_date", date: Date | undefined) => {

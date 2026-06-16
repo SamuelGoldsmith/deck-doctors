@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "./authOptions";
-import { Customer, Employee, Expense, Hour, hoursWithEmployeeAndJob, Job } from "./utils";
+import { Customer, DeckEstimate, Employee, Expense, Hour, hoursWithEmployeeAndJob, Job } from "./utils";
 import { cookies } from "next/headers";
 
 export async function getSession() {
@@ -150,4 +150,26 @@ export async function getHours(){
         },
     }).then((res) => res.json());
     return hours as hoursWithEmployeeAndJob[];
+}
+
+export async function getDeckEstimates() {
+    const cookieStore = await cookies();
+    const cookieHeader = cookieStore.toString();
+    const estimates = await fetch(`${process.env.NEXTAUTH_URL}/api/deck-estimates/list`, {
+        headers: {
+            Cookie: cookieHeader,
+        },
+    }).then((res) => res.json());
+    return estimates as DeckEstimate[];
+}
+
+export async function getDeckEstimateById(id: string) {
+    const cookieStore = await cookies();
+    const cookieHeader = cookieStore.toString();
+    const estimate = await fetch(`${process.env.NEXTAUTH_URL}/api/deck-estimates/select?id=${id}`, {
+        headers: {
+            Cookie: cookieHeader,
+        },
+    }).then((res) => res.json());
+    return estimate as DeckEstimate | null;
 }
