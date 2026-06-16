@@ -172,18 +172,24 @@ export function EditEmployee({ employee, isAdmin = false }: { employee?: Employe
   const isNew = !employee;
   const [obj, setObj] = useState<Employee>(employee ?? emptyEmployee);
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState<{ first_name?: string; last_name?: string; email?: string }>({});
+  const [sendOnboarding, setSendOnboarding] = useState(false);
+  const [errors, setErrors] = useState<{ first_name?: string; last_name?: string; email?: string; onboarding?: string }>({});
 
   const saveChanges = async () => {
     const newErrors: typeof errors = {};
     if (!obj.first_name.trim()) newErrors.first_name = "First name is required";
     if (!obj.last_name.trim()) newErrors.last_name = "Last name is required";
     if (!obj.email.trim()) newErrors.email = "Email is required";
+    if (sendOnboarding && (!obj.username?.trim() || !password.trim())) {
+      newErrors.onboarding = "Username and a new password are required to send the onboarding email";
+    }
     setErrors(newErrors);
     if (Object.keys(newErrors).length > 0) return;
 
-    const payload = isAdmin ? { ...obj, password } : obj;
-    const success = isNew ? await addEmployees([obj]) : await editEmployee(payload);
+    const payload = isAdmin
+      ? { ...obj, password, sendOnboarding }
+      : { ...obj, sendOnboarding: false };
+    const success = isNew ? await addEmployees([payload]) : await editEmployee(payload);
     if (success) {
       window.location.href = isNew ? "/employee-portal/employees" : "/employee-portal/employees/" + obj.eid;
     } else {
@@ -254,25 +260,43 @@ export function EditEmployee({ employee, isAdmin = false }: { employee?: Employe
         </Field>
 
         {isAdmin && (
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <Field label="Username">
-              <input
-                className={inputClass(false)}
-                value={obj.username ?? ""}
-                onChange={(e) => setObj((prev) => ({ ...prev, username: e.target.value }))}
-                autoComplete="off"
+          <div className="space-y-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <Field label="Username">
+                <input
+                  className={inputClass(false)}
+                  value={obj.username ?? ""}
+                  onChange={(e) => setObj((prev) => ({ ...prev, username: e.target.value }))}
+                  autoComplete="off"
+                />
+              </Field>
+              <Field label="New Password">
+                <input
+                  type="password"
+                  className={inputClass(false)}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Leave blank to keep current password"
+                  autoComplete="new-password"
+                />
+              </Field>
+            </div>
+            <div className="flex items-center gap-2 pt-2">
+              <Checkbox
+                id="send-onboarding"
+                checked={sendOnboarding}
+                onCheckedChange={(checked) => setSendOnboarding(checked === true)}
               />
-            </Field>
-            <Field label="New Password">
-              <input
-                type="password"
-                className={inputClass(false)}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Leave blank to keep current password"
-                autoComplete="new-password"
-              />
-            </Field>
+              <Label htmlFor="send-onboarding" className="text-sm font-medium">
+                Send onboarding email
+              </Label>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              Emails the employee their portal login info (username and password). Requires a username and a new password to be set above.
+            </p>
+            {errors.onboarding && (
+              <p className="text-xs text-red-500">{errors.onboarding}</p>
+            )}
           </div>
         )}
       </div>

@@ -1,4 +1,5 @@
 import { ServerClient } from "postmark";
+import { buildOnboardingEmail } from "@/emails/onboardingTemplate";
 
 const token = process.env.POSTMARK_SERVER_TOKEN;
 const from = process.env.POSTMARK_FROM;
@@ -16,15 +17,18 @@ interface SendEmailOptions {
   subject: string;
   htmlBody: string;
   textBody: string;
+  to?: string;
 }
 
 /**
  * Sends a notification email via Postmark. No-ops (with a console warning)
  * if POSTMARK_SERVER_TOKEN/POSTMARK_FROM/POSTMARK_TO aren't configured, and
  * never throws — a failed email should never block a form submission.
+ * Pass `to` to override the module-level fixed recipient (POSTMARK_TO).
  */
-export async function sendEmail({ subject, htmlBody, textBody }: SendEmailOptions) {
-  if (!client || !from || !to) {
+export async function sendEmail({ subject, htmlBody, textBody, to: toOverride }: SendEmailOptions) {
+  const recipient = toOverride ?? to;
+  if (!client || !from || !recipient) {
     console.warn("Postmark is not configured — skipping email notification.");
     return;
   }
@@ -32,7 +36,7 @@ export async function sendEmail({ subject, htmlBody, textBody }: SendEmailOption
   try {
     await client.sendEmail({
       From: from,
-      To: to,
+      To: recipient,
       Subject: subject,
       HtmlBody: htmlBody,
       TextBody: textBody,
@@ -91,6 +95,25 @@ export async function sendEstimateNotification(estimate: {
   `;
 
   await sendEmail({ subject, htmlBody, textBody });
+}
+
+export async function sendOnboardingEmail({
+  to,
+  first_name,
+  username,
+  password,
+}: {
+  to: string;
+  first_name: string;
+  username: string;
+  password: string;
+}) {
+  if (!to) {
+    console.warn("sendOnboardingEmail: missing recipient email — skipping.");
+    return;
+  }
+  const { subject, htmlBody, textBody } = buildOnboardingEmail({ first_name, username, password });
+  await sendEmail({ subject, htmlBody, textBody, to });
 }
 
 const POSITION_LABELS: Record<string, string> = {

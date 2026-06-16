@@ -17,6 +17,12 @@ export interface Employee {
   username?: string | null;
 }
 
+export interface EmployeeAdminFields {
+  username?: string | null;
+  password?: string;
+  sendOnboarding?: boolean;
+}
+
 export interface Customer {
   cid: number;
   first_name: string;
@@ -138,7 +144,7 @@ export async function addJobs(jobs: Job[]) {
     return res.ok;
   }
 
-  export async function addEmployees(employees: Employee[]) {
+  export async function addEmployees(employees: (Employee & Partial<EmployeeAdminFields>)[]) {
     const res = await fetch("/api/employees/add", {
       method: "POST",
       headers: {
@@ -199,7 +205,7 @@ export async function addJobs(jobs: Job[]) {
   }
 }
 
-export async function editEmployee(employee: Employee) {
+export async function editEmployee(employee: Employee & Partial<EmployeeAdminFields>) {
     const res = await fetch("/api/employees/edit", {
       method: "POST",
       headers: {

@@ -2,8 +2,10 @@
 import { NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/authOptions";
-import { Employee } from "@/lib/utils";
+import { authOptions, ADMIN_EMAIL } from "@/lib/authOptions";
+import { sendOnboardingEmail } from "@/lib/email";
+import { Employee, EmployeeAdminFields } from "@/lib/utils";
+import bcrypt from "bcryptjs";
 
 const sql = neon(process.env.DATABASE_URL!);
 
@@ -12,10 +14,10 @@ export async function POST(request: Request) {
     if (!session) {
         return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
+    const isAdmin = session.user.email === ADMIN_EMAIL;
     try {
-        const employees = await request.json();
-        console.log(employees);
-        const values = employees.map((e: Employee) => [
+        const employees: (Employee & Partial<EmployeeAdminFields>)[] = await request.json();
+        const values = employees.map((e) => [
             e.first_name,
             e.last_name,
             e.email,
@@ -33,7 +35,40 @@ export async function POST(request: Request) {
         `,
             values.flat()
         );
-        return NextResponse.json(result);
+
+        const safeResult = [];
+        for (let i = 0; i < employees.length; i++) {
+            const e = employees[i];
+            let row = result[i];
+            const newUsername = typeof e.username === "string" ? (e.username.trim() || null) : null;
+
+            if (isAdmin && (newUsername || e.password)) {
+                const hashedPassword = e.password ? await bcrypt.hash(e.password, 12) : null;
+                const updated = await sql`
+                    UPDATE employees SET
+                        username = COALESCE(${newUsername}, username),
+                        password = COALESCE(${hashedPassword}, password)
+                    WHERE eid = ${row.eid} RETURNING *;`;
+                row = updated[0];
+            }
+
+            try {
+                if (isAdmin && e.sendOnboarding && newUsername && e.password) {
+                    await sendOnboardingEmail({
+                        to: row.email,
+                        first_name: row.first_name,
+                        username: newUsername,
+                        password: e.password,
+                    });
+                }
+            } catch (error) {
+                console.error("Failed to send onboarding email:", error);
+            }
+
+            const { password: _pw, ...rest } = row;
+            safeResult.push(rest);
+        }
+        return NextResponse.json(safeResult);
     } catch (error) {
         console.error("Database query failed:", error);
         return NextResponse.json({ error: "Database error" }, { status: 500 });

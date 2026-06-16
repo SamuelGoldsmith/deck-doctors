@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
 import { getServerSession } from "next-auth";
 import { authOptions, ADMIN_EMAIL } from "@/lib/authOptions";
+import { sendOnboardingEmail } from "@/lib/email";
 import bcrypt from "bcryptjs";
 
 const sql = neon(process.env.DATABASE_URL!);
@@ -12,7 +13,7 @@ export async function POST(request: Request) {
     if (!session) {
         return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
-    const { eid, first_name, last_name, email, phone, rate, description, username, password } = await request.json();
+    const { eid, first_name, last_name, email, phone, rate, description, username, password, sendOnboarding } = await request.json();
     const isAdmin = session.user.email === ADMIN_EMAIL;
 
     try {
@@ -36,6 +37,15 @@ export async function POST(request: Request) {
         }
 
         const safe = result.map(({ password: _pw, ...rest }) => rest);
+
+        try {
+            if (isAdmin && sendOnboarding && username && password) {
+                await sendOnboardingEmail({ to: email, first_name, username, password });
+            }
+        } catch (error) {
+            console.error("Failed to send onboarding email:", error);
+        }
+
         return NextResponse.json(safe);
     } catch (error) {
         console.error("Database query failed:", error);
