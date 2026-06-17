@@ -174,6 +174,10 @@ CREATE TABLE IF NOT EXISTS users (
 
 ALTER TABLE jobs ADD COLUMN IF NOT EXISTS latitude NUMERIC(9,6);
 ALTER TABLE jobs ADD COLUMN IF NOT EXISTS longitude NUMERIC(9,6);
+-- How tightly the address geocoded: 'precise' (building/road) | 'approximate'
+-- (neighborhood) | 'area' (town/postcode/admin centroid, NOT trustworthy as an
+-- exact site coordinate). NULL = legacy/unknown, treated as usable.
+ALTER TABLE jobs ADD COLUMN IF NOT EXISTS geocode_precision VARCHAR(20);
 
 ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_in_at TIMESTAMPTZ;
 ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_out_at TIMESTAMPTZ;
@@ -182,6 +186,16 @@ ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_in_longitude NUMERIC(9,6);
 ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_out_latitude NUMERIC(9,6);
 ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_out_longitude NUMERIC(9,6);
 ALTER TABLE hours ADD COLUMN IF NOT EXISTS location_verified BOOLEAN;
+-- GPS accuracy radius (meters) reported by the device for each punch. Used to
+-- avoid trusting a coarse fix: a reading only verifies when its whole accuracy
+-- circle sits inside the geofence.
+ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_in_accuracy_m NUMERIC(8,2);
+ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_out_accuracy_m NUMERIC(8,2);
+-- Richer verification outcome (replaces the ambiguous boolean for display):
+-- 'verified' | 'failed' | 'low_accuracy' | 'no_reading' | 'no_job_location'.
+-- See lib/locationVerification.ts. location_verified is kept in sync as
+-- (location_status = 'verified') for backward compatibility.
+ALTER TABLE hours ADD COLUMN IF NOT EXISTS location_status VARCHAR(20);
 
 -- ============================================================
 -- Deck Doctors — Hours are derived from start/end, not stored

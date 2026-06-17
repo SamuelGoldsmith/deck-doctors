@@ -1,6 +1,7 @@
 'use client';
 
 import { hoursWithEmployeeAndJob, hoursWorked } from "@/lib/utils";
+import { resolveLocationStatus, locationStatusPresentation } from "@/lib/locationVerification";
 import { Combobox, ComboboxContent, ComboboxEmpty, ComboboxInput, ComboboxItem, ComboboxList } from "./ui/combobox";
 import { TableHeader, TableRow, TableHead, TableBody, TableCell, TableCaption, Table } from "./ui/table";
 import { useState, useMemo } from "react";
@@ -220,14 +221,18 @@ export default function HoursSearch({ hours }: { hours: hoursWithEmployeeAndJob[
                                     <TableCell>{hoursWorked(hour)}</TableCell>
                                     <TableCell>${(hoursWorked(hour) * hour.rate).toFixed(2)}</TableCell>
                                     <TableCell>{hour.address}</TableCell>
-                                    <TableCell title={
-                                        hour.location_verified === true
-                                            ? "Location verified within 1 mile of job site"
-                                            : hour.location_verified === false
-                                                ? "Location not verified"
-                                                : "Location not checked"
-                                    }>
-                                        {hour.location_verified === true ? "✓" : hour.location_verified === false ? "⚠" : "—"}
+                                    <TableCell>
+                                        {(() => {
+                                            const status = resolveLocationStatus(hour);
+                                            if (!status) return <span className="text-muted-foreground" title="Location not checked">—</span>;
+                                            const p = locationStatusPresentation(status);
+                                            const tone =
+                                                p.tone === "ok" ? "text-green-700"
+                                                    : p.tone === "bad" ? "text-red-600"
+                                                        : p.tone === "warn" ? "text-amber-600"
+                                                            : "text-muted-foreground";
+                                            return <span className={tone} title={p.label}>{p.icon}</span>;
+                                        })()}
                                     </TableCell>
                                 </TableRow>
                             ))

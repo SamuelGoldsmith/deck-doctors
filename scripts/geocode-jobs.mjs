@@ -15,6 +15,29 @@ if (!process.env.DATABASE_URL) {
 
 const sql = neon(process.env.DATABASE_URL);
 
+const EARTH_RADIUS_METERS = 6_371_000;
+function haversineMeters(lat1, lng1, lat2, lng2) {
+  const toRad = (d) => (d * Math.PI) / 180;
+  const dLat = toRad(lat2 - lat1);
+  const dLng = toRad(lng2 - lng1);
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) ** 2;
+  return EARTH_RADIUS_METERS * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+// Mirror of classifyPrecision in lib/geocode.ts (kept in sync by hand — this
+// script is standalone and can't import the TS module).
+function classifyPrecision(boundingbox) {
+  if (!Array.isArray(boundingbox) || boundingbox.length !== 4) return "approximate";
+  const [south, north, west, east] = boundingbox.map(Number);
+  if ([south, north, west, east].some((n) => Number.isNaN(n))) return "approximate";
+  const diagonalM = haversineMeters(south, west, north, east);
+  if (diagonalM <= 2000) return "precise";
+  if (diagonalM <= 8000) return "approximate";
+  return "area";
+}
+
 async function geocodeAddress(address, city, stateAbr) {
   try {
     const query = `${address}, ${city}, ${stateAbr}`;
@@ -36,12 +59,12 @@ async function geocodeAddress(address, city, stateAbr) {
     const results = await res.json();
     if (!Array.isArray(results) || results.length === 0) return null;
 
-    const { lat, lon } = results[0];
+    const { lat, lon, boundingbox } = results[0];
     const latitude = parseFloat(lat);
     const longitude = parseFloat(lon);
     if (Number.isNaN(latitude) || Number.isNaN(longitude)) return null;
 
-    return { lat: latitude, lng: longitude };
+    return { lat: latitude, lng: longitude, precision: classifyPrecision(boundingbox) };
   } catch (error) {
     console.error("Geocoding failed:", error);
     return null;
@@ -62,8 +85,8 @@ for (const job of jobs) {
     console.log(`- jid ${job.jid}: no match for "${job.address}, ${job.city}, ${job.state_abr}", skipped`);
     skipped++;
   } else {
-    await sql`UPDATE jobs SET latitude = ${coords.lat}, longitude = ${coords.lng} WHERE jid = ${job.jid};`;
-    console.log(`✓ jid ${job.jid}: ${job.address}, ${job.city}, ${job.state_abr} -> ${coords.lat}, ${coords.lng}`);
+    await sql`UPDATE jobs SET latitude = ${coords.lat}, longitude = ${coords.lng}, geocode_precision = ${coords.precision} WHERE jid = ${job.jid};`;
+    console.log(`✓ jid ${job.jid}: ${job.address}, ${job.city}, ${job.state_abr} -> ${coords.lat}, ${coords.lng} (${coords.precision})`);
     updated++;
   }
 

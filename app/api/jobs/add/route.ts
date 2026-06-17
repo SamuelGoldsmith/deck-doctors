@@ -30,13 +30,14 @@ export async function POST(request: Request) {
                 j.description,
                 coords?.lat ?? null,
                 coords?.lng ?? null,
+                coords?.precision ?? null,
             ];
         }));
         const result = await sql.query(
             `
-        INSERT INTO jobs (address, city, state_abr, cid, quote_cost, start_date, end_date, completed, description, latitude, longitude)
+        INSERT INTO jobs (address, city, state_abr, cid, quote_cost, start_date, end_date, completed, description, latitude, longitude, geocode_precision)
         VALUES ${values.map((_:any, i:number) =>
-                `($${i * 11 + 1}, $${i * 11 + 2}, $${i * 11 + 3}, $${i * 11 + 4}, $${i * 11 + 5}, $${i * 11 + 6}, $${i * 11 + 7}, $${i * 11 + 8}, $${i * 11 + 9}, $${i * 11 + 10}, $${i * 11 + 11})`
+                `($${i * 12 + 1}, $${i * 12 + 2}, $${i * 12 + 3}, $${i * 12 + 4}, $${i * 12 + 5}, $${i * 12 + 6}, $${i * 12 + 7}, $${i * 12 + 8}, $${i * 12 + 9}, $${i * 12 + 10}, $${i * 12 + 11}, $${i * 12 + 12})`
             ).join(", ")}
         RETURNING *;
         `,

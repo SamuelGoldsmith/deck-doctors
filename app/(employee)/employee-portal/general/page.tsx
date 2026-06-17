@@ -1,5 +1,6 @@
 import { getSession, getHours, getJobs } from "@/lib/serverUtils";
 import { hoursWorked } from "@/lib/utils";
+import { resolveLocationStatus, locationStatusPresentation } from "@/lib/locationVerification";
 import { ClockInOut, ChangePasswordForm } from "@/components/Forms";
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell, TableCaption } from "@/components/ui/table";
 
@@ -54,9 +55,12 @@ export default async function EmployeeGeneralPage() {
                   <TableRow key={`hour-${hour.hid}`}>
                     <TableCell>
                       {hour.date_worked ? new Date(hour.date_worked).toLocaleDateString() : "—"}
-                      {hour.location_verified === false && (
-                        <span title="Location not verified for this entry" className="ml-1">⚠</span>
-                      )}
+                      {(() => {
+                        const status = resolveLocationStatus(hour);
+                        if (!status || status === "verified") return null;
+                        const p = locationStatusPresentation(status);
+                        return <span title={p.label} className="ml-1">{p.icon}</span>;
+                      })()}
                     </TableCell>
                     <TableCell>{hour.address}</TableCell>
                     <TableCell>{formatTime(hour.clock_in_at)}</TableCell>

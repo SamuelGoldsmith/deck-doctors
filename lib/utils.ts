@@ -1,6 +1,7 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 import { Session } from "next-auth";
+import type { LocationStatus } from "./locationVerification";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -56,9 +57,12 @@ export interface Hour {
   clock_out_at?: string | null; // end of the shift (ISO timestamp)
   clock_in_latitude?: number | null;
   clock_in_longitude?: number | null;
+  clock_in_accuracy_m?: number | null;  // GPS accuracy radius (m) at clock-in
   clock_out_latitude?: number | null;
   clock_out_longitude?: number | null;
-  location_verified?: boolean | null;
+  clock_out_accuracy_m?: number | null; // GPS accuracy radius (m) at clock-out
+  location_verified?: boolean | null;   // legacy boolean; derived from location_status
+  location_status?: LocationStatus | null;
 }
 
 /**
@@ -281,7 +285,7 @@ export async function editJob(job: Job) {
     return res.ok;
   }
 
-  export async function clockIn(payload: { jid: number; latitude: number | null; longitude: number | null }) {
+  export async function clockIn(payload: { jid: number; latitude: number | null; longitude: number | null; accuracy: number | null }) {
     const res = await fetch("/api/hours/clock-in", {
       method: "POST",
       headers: {
@@ -292,7 +296,7 @@ export async function editJob(job: Job) {
     return res.ok;
   }
 
-  export async function clockOut(payload: { latitude: number | null; longitude: number | null }) {
+  export async function clockOut(payload: { latitude: number | null; longitude: number | null; accuracy: number | null }) {
     const res = await fetch("/api/hours/clock-out", {
       method: "POST",
       headers: {

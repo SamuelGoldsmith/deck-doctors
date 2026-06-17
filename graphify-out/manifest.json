@@ -220,8 +220,8 @@
     "semantic_hash": "3b75c2306a1349e63ef2da7e30cbae89"
   },
   "app/api/hours/list/route.ts": {
-    "mtime": 1781657228.7977233,
-    "ast_hash": "f46830686b33ffbbacab537c9250528a",
+    "mtime": 1781658571.890426,
+    "ast_hash": "431ae1e8121b7dc185893aeee1d232c9",
     "semantic_hash": ""
   },
   "app/api/hours/select/job/route.ts": {
@@ -230,8 +230,8 @@
     "semantic_hash": "10b3c36d11544bb4128170ced231f046"
   },
   "app/api/jobs/add/route.ts": {
-    "mtime": 1781468336.2930694,
-    "ast_hash": "ef91b52f5177924034978de881d31835",
+    "mtime": 1781658583.277866,
+    "ast_hash": "5155ec0566f56f3289aaf46de2472c56",
     "semantic_hash": ""
   },
   "app/api/jobs/delete/route.ts": {
@@ -240,8 +240,8 @@
     "semantic_hash": "571489464bed9f46cb7add28041f9519"
   },
   "app/api/jobs/edit/route.ts": {
-    "mtime": 1781468348.460112,
-    "ast_hash": "b3867961f58d8029a21cccdacbfccbd8",
+    "mtime": 1781658585.5189404,
+    "ast_hash": "362882385419baa99fdc004b4fc219b1",
     "semantic_hash": ""
   },
   "app/api/jobs/list/route.ts": {
@@ -265,8 +265,8 @@
     "semantic_hash": "883a0b7479775a644b93b9e708b89d30"
   },
   "components/Forms.tsx": {
-    "mtime": 1781657264.2870872,
-    "ast_hash": "6a80a38a7be93d117b33469acc66561b",
+    "mtime": 1781658528.3589077,
+    "ast_hash": "4826991c636e82526af4d780e8fcd4bf",
     "semantic_hash": ""
   },
   "components/Social.tsx": {
@@ -310,8 +310,8 @@
     "semantic_hash": ""
   },
   "components/hoursSearch.tsx": {
-    "mtime": 1781657271.9112391,
-    "ast_hash": "293c79c35303ec5fc2b5e546f057649d",
+    "mtime": 1781658619.7059329,
+    "ast_hash": "7cff45e2a9cb5ea4b660f6e0dc45b07a",
     "semantic_hash": ""
   },
   "components/message-box.tsx": {
@@ -430,13 +430,13 @@
     "semantic_hash": ""
   },
   "lib/tables.sql": {
-    "mtime": 1781657197.2986174,
-    "ast_hash": "b260aa9bc1e1e2826c1a27ce6c36c70f",
+    "mtime": 1781658643.8175597,
+    "ast_hash": "123fbdf0409e84ff0db06513603941b4",
     "semantic_hash": ""
   },
   "lib/utils.ts": {
-    "mtime": 1781657215.502639,
-    "ast_hash": "26386182e2f0024c46a58b02176630a3",
+    "mtime": 1781658519.0560677,
+    "ast_hash": "f59b5363163a5d464f4bd31fb8503207",
     "semantic_hash": ""
   },
   "next.config.ts": {
@@ -2110,8 +2110,8 @@
     "semantic_hash": ""
   },
   "app/(employee)/employee-portal/general/page.tsx": {
-    "mtime": 1781657280.2208035,
-    "ast_hash": "9ac7936af9d302db21725537a3fdcf68",
+    "mtime": 1781658627.684315,
+    "ast_hash": "1c26fed5645f6c4012b3307b791c0cac",
     "semantic_hash": ""
   },
   "app/(employee)/employee-portal/jobs/new/page.tsx": {
@@ -2145,13 +2145,13 @@
     "semantic_hash": ""
   },
   "app/api/hours/clock-in/route.ts": {
-    "mtime": 1781657224.2452326,
-    "ast_hash": "d47ec2f0d2d504673bf9ecee24e12619",
+    "mtime": 1781658535.6785233,
+    "ast_hash": "fd1369f7958ab820c5798248311ffcab",
     "semantic_hash": ""
   },
   "app/api/hours/clock-out/route.ts": {
-    "mtime": 1781657227.4915338,
-    "ast_hash": "2f26e8e3717421b45b81ad7fd2eaead7",
+    "mtime": 1781658566.5990546,
+    "ast_hash": "89aa0476832b89b3cfc439935f3090a2",
     "semantic_hash": ""
   },
   "components/BeforeAfter.tsx": {
@@ -2255,13 +2255,13 @@
     "semantic_hash": ""
   },
   "lib/geo.ts": {
-    "mtime": 1781468282.3833454,
-    "ast_hash": "8d31697119e184e3bc6253ae4d8a61fe",
+    "mtime": 1781658467.708912,
+    "ast_hash": "baeb955cf2ca09e859ee15b43801ebba",
     "semantic_hash": ""
   },
   "lib/geocode.ts": {
-    "mtime": 1781468288.1076267,
-    "ast_hash": "10247245700cb0761a4587b6357dc8d3",
+    "mtime": 1781658504.4591205,
+    "ast_hash": "b05cea8ddd260ac5350b4296e5d63b0d",
     "semantic_hash": ""
   },
   "middleware.ts": {
@@ -2270,8 +2270,8 @@
     "semantic_hash": ""
   },
   "scripts/geocode-jobs.mjs": {
-    "mtime": 1781475329.0782678,
-    "ast_hash": "99eedc6779b7b305517686d53e080218",
+    "mtime": 1781658601.145101,
+    "ast_hash": "2b842f2fe0814b84715504249127923f",
     "semantic_hash": ""
   },
   "types/next-auth.d.ts": {
@@ -4387,6 +4387,11 @@
   "components/deck-estimate/EstimateDetail.tsx": {
     "mtime": 1781572587.7209332,
     "ast_hash": "31dcde78958d926af6d548833c9887a5",
+    "semantic_hash": ""
+  },
+  "lib/locationVerification.ts": {
+    "mtime": 1781658490.675464,
+    "ast_hash": "dcacdc66ca0815d64d3f4d9dc6f7c53f",
     "semantic_hash": ""
   }
 }

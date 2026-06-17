@@ -629,8 +629,8 @@ export function ClockInOut({ jobs, openEntry }: { jobs: Job[]; openEntry: hoursW
     }
     setError("");
     setLoading(true);
-    const { latitude, longitude } = await getLocation();
-    const success = await clockIn({ jid: selectedJob.jid, latitude, longitude });
+    const { latitude, longitude, accuracy } = await getLocation();
+    const success = await clockIn({ jid: selectedJob.jid, latitude, longitude, accuracy });
     setLoading(false);
     if (success) {
       router.refresh();
@@ -642,8 +642,8 @@ export function ClockInOut({ jobs, openEntry }: { jobs: Job[]; openEntry: hoursW
   const handleClockOut = async () => {
     setError("");
     setLoading(true);
-    const { latitude, longitude } = await getLocation();
-    const success = await clockOut({ latitude, longitude });
+    const { latitude, longitude, accuracy } = await getLocation();
+    const success = await clockOut({ latitude, longitude, accuracy });
     setLoading(false);
     if (success) {
       router.refresh();

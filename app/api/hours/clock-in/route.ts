@@ -13,7 +13,7 @@ export async function POST(request: Request) {
     }
 
     try {
-        const { jid, latitude, longitude } = await request.json();
+        const { jid, latitude, longitude, accuracy } = await request.json();
         const eid = session.user.eid;
 
         const open = await sql`SELECT hid FROM hours WHERE eid = ${eid} AND clock_out_at IS NULL LIMIT 1;`;
@@ -22,8 +22,8 @@ export async function POST(request: Request) {
         }
 
         const result = await sql`
-            INSERT INTO hours (eid, jid, date_worked, clock_in_at, clock_in_latitude, clock_in_longitude)
-            VALUES (${eid}, ${jid}, CURRENT_DATE, now(), ${latitude}, ${longitude})
+            INSERT INTO hours (eid, jid, date_worked, clock_in_at, clock_in_latitude, clock_in_longitude, clock_in_accuracy_m)
+            VALUES (${eid}, ${jid}, CURRENT_DATE, now(), ${latitude}, ${longitude}, ${accuracy ?? null})
             RETURNING *;
         `;
         return NextResponse.json(result[0]);

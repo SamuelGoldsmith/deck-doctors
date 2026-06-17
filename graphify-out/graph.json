@@ -940,7 +940,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "lib_citations_isknownurl",
-      "community": 8,
+      "community": 79,
       "norm_label": "isknownurl()"
     },
     {
@@ -1010,7 +1010,7 @@
       "source_location": "L107",
       "_origin": "ast",
       "id": "lib_citations_sanitizecitations",
-      "community": 8,
+      "community": 79,
       "norm_label": "sanitizecitations()"
     },
     {
@@ -2010,7 +2010,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "gates_build_minutes_fanout",
-      "community": 113,
+      "community": 71,
       "norm_label": "build-minutes-fanout.mjs"
     },
     {
@@ -2020,7 +2020,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "gates_build_minutes_fanout_metadata",
-      "community": 113,
+      "community": 71,
       "norm_label": "metadata"
     },
     {
@@ -2030,7 +2030,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "gates_build_minutes_fanout_gate",
-      "community": 113,
+      "community": 71,
       "norm_label": "gate()"
     },
     {
@@ -2040,7 +2040,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "gates_build_minutes_fanout_unique",
-      "community": 113,
+      "community": 71,
       "norm_label": "unique()"
     },
     {
@@ -2050,7 +2050,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "gates_cold_start",
-      "community": 113,
+      "community": 159,
       "norm_label": "cold-start.mjs"
     },
     {
@@ -2060,7 +2060,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "gates_cold_start_metadata",
-      "community": 113,
+      "community": 159,
       "norm_label": "metadata"
     },
     {
@@ -2070,7 +2070,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "gates_cold_start_gate",
-      "community": 113,
+      "community": 159,
       "norm_label": "gate()"
     },
     {
@@ -2080,7 +2080,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "gates_cold_start_extractcoldstarts",
-      "community": 113,
+      "community": 159,
       "norm_label": "extractcoldstarts()"
     },
     {
@@ -2400,7 +2400,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "gates_isr_overrevalidation",
-      "community": 113,
+      "community": 162,
       "norm_label": "isr-overrevalidation.mjs"
     },
     {
@@ -2410,7 +2410,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "gates_isr_overrevalidation_metadata",
-      "community": 113,
+      "community": 162,
       "norm_label": "metadata"
     },
     {
@@ -2420,7 +2420,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "gates_isr_overrevalidation_gate",
-      "community": 113,
+      "community": 162,
       "norm_label": "gate()"
     },
     {
@@ -2430,7 +2430,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "gates_isr_overrevalidation_extractrows",
-      "community": 113,
+      "community": 162,
       "norm_label": "extractrows()"
     },
     {
@@ -2790,7 +2790,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "gates_select_candidates",
-      "community": 124,
+      "community": 50,
       "norm_label": "select-candidates.mjs"
     },
     {
@@ -2800,7 +2800,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "gates_select_candidates_default_kind_caps",
-      "community": 124,
+      "community": 50,
       "norm_label": "default_kind_caps"
     },
     {
@@ -2810,7 +2810,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "gates_select_candidates_diversity_eligibility",
-      "community": 124,
+      "community": 50,
       "norm_label": "diversity_eligibility"
     },
     {
@@ -2820,7 +2820,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "gates_select_candidates_selectlaunchcandidates",
-      "community": 124,
+      "community": 50,
       "norm_label": "selectlaunchcandidates()"
     },
     {
@@ -2830,7 +2830,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "gates_select_candidates_candidateidentity",
-      "community": 124,
+      "community": 50,
       "norm_label": "candidateidentity()"
     },
     {
@@ -2840,7 +2840,7 @@
       "source_location": "L106",
       "_origin": "ast",
       "id": "gates_select_candidates_isdiversityeligible",
-      "community": 124,
+      "community": 50,
       "norm_label": "isdiversityeligible()"
     },
     {
@@ -2850,7 +2850,7 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "gates_select_candidates_numberfromevidence",
-      "community": 124,
+      "community": 50,
       "norm_label": "numberfromevidence()"
     },
     {
@@ -2860,7 +2860,7 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "gates_select_candidates_numberfromsignal",
-      "community": 124,
+      "community": 50,
       "norm_label": "numberfromsignal()"
     },
     {
@@ -2870,7 +2870,7 @@
       "source_location": "L126",
       "_origin": "ast",
       "id": "gates_select_candidates_durationmsfromsignal",
-      "community": 124,
+      "community": 50,
       "norm_label": "durationmsfromsignal()"
     },
     {
@@ -5640,7 +5640,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "scanners_headers_in_page",
-      "community": 271,
+      "community": 59,
       "norm_label": "headers-in-page.mjs"
     },
     {
@@ -5650,7 +5650,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "scanners_headers_in_page_metadata",
-      "community": 271,
+      "community": 59,
       "norm_label": "metadata"
     },
     {
@@ -5660,7 +5660,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "scanners_headers_in_page_scan",
-      "community": 271,
+      "community": 59,
       "norm_label": "scan()"
     },
     {
@@ -5670,7 +5670,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "scanners_headers_in_page_isapplicable",
-      "community": 271,
+      "community": 59,
       "norm_label": "isapplicable()"
     },
     {
@@ -5800,7 +5800,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "scanners_middleware_broad_matcher",
-      "community": 168,
+      "community": 59,
       "norm_label": "middleware-broad-matcher.mjs"
     },
     {
@@ -5810,7 +5810,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "scanners_middleware_broad_matcher_metadata",
-      "community": 168,
+      "community": 59,
       "norm_label": "metadata"
     },
     {
@@ -5820,7 +5820,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "scanners_middleware_broad_matcher_scan",
-      "community": 168,
+      "community": 59,
       "norm_label": "scan()"
     },
     {
@@ -5830,7 +5830,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "scanners_middleware_broad_matcher_isapplicable",
-      "community": 168,
+      "community": 59,
       "norm_label": "isapplicable()"
     },
     {
@@ -5840,7 +5840,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "scanners_missing_cache_headers",
-      "community": 400,
+      "community": 59,
       "norm_label": "missing-cache-headers.mjs"
     },
     {
@@ -5850,7 +5850,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "scanners_missing_cache_headers_metadata",
-      "community": 400,
+      "community": 59,
       "norm_label": "metadata"
     },
     {
@@ -5860,7 +5860,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "scanners_missing_cache_headers_scan",
-      "community": 400,
+      "community": 59,
       "norm_label": "scan()"
     },
     {
@@ -5870,7 +5870,7 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "scanners_missing_cache_headers_isapplicable",
-      "community": 400,
+      "community": 59,
       "norm_label": "isapplicable()"
     },
     {
@@ -5910,7 +5910,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "scanners_region_pin_in_config",
-      "community": 402,
+      "community": 108,
       "norm_label": "region-pin-in-config.mjs"
     },
     {
@@ -5920,7 +5920,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "scanners_region_pin_in_config_metadata",
-      "community": 402,
+      "community": 108,
       "norm_label": "metadata"
     },
     {
@@ -5930,7 +5930,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "scanners_region_pin_in_config_scan",
-      "community": 402,
+      "community": 108,
       "norm_label": "scan()"
     },
     {
@@ -5940,7 +5940,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "scanners_region_pin_in_config_parseregionlist",
-      "community": 402,
+      "community": 108,
       "norm_label": "parseregionlist()"
     },
     {
@@ -8520,7 +8520,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "scripts_build_docs",
-      "community": 59,
+      "community": 113,
       "norm_label": "build-docs.mjs"
     },
     {
@@ -8530,7 +8530,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "scripts_build_docs_here",
-      "community": 59,
+      "community": 113,
       "norm_label": "here"
     },
     {
@@ -8540,7 +8540,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "scripts_build_docs_refs",
-      "community": 59,
+      "community": 113,
       "norm_label": "refs"
     },
     {
@@ -8550,7 +8550,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "scripts_build_docs_main",
-      "community": 59,
+      "community": 113,
       "norm_label": "main()"
     },
     {
@@ -8560,7 +8560,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "scripts_build_docs_renderscanners",
-      "community": 59,
+      "community": 113,
       "norm_label": "renderscanners()"
     },
     {
@@ -8570,7 +8570,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "scripts_build_docs_rendercandidates",
-      "community": 59,
+      "community": 113,
       "norm_label": "rendercandidates()"
     },
     {
@@ -8580,7 +8580,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "scripts_build_docs_trimtrailingblankline",
-      "community": 59,
+      "community": 113,
       "norm_label": "trimtrailingblankline()"
     },
     {
@@ -9540,7 +9540,7 @@
       "source_location": "L277",
       "_origin": "ast",
       "id": "scripts_render_report_candidatematchesref",
-      "community": 48,
+      "community": 105,
       "norm_label": "candidatematchesref()"
     },
     {
@@ -9859,7 +9859,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "applications_page",
-      "community": 4,
+      "community": 116,
       "norm_label": "page.tsx"
     },
     {
@@ -9869,7 +9869,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "applications_page_status_config",
-      "community": 4,
+      "community": 116,
       "norm_label": "status_config"
     },
     {
@@ -9879,7 +9879,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "applications_page_position_labels",
-      "community": 4,
+      "community": 116,
       "norm_label": "position_labels"
     },
     {
@@ -9889,7 +9889,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "applications_page_experience_labels",
-      "community": 4,
+      "community": 116,
       "norm_label": "experience_labels"
     },
     {
@@ -9899,7 +9899,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "applications_page_availability_labels",
-      "community": 4,
+      "community": 116,
       "norm_label": "availability_labels"
     },
     {
@@ -9909,7 +9909,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "applications_page_applicationspage",
-      "community": 4,
+      "community": 116,
       "norm_label": "applicationspage()"
     },
     {
@@ -9919,7 +9919,7 @@
       "source_location": "L351",
       "_origin": "ast",
       "id": "applications_page_applicationrow",
-      "community": 4,
+      "community": 116,
       "norm_label": "applicationrow()"
     },
     {
@@ -10069,7 +10069,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "employees_page",
-      "community": 5,
+      "community": 401,
       "norm_label": "page.tsx"
     },
     {
@@ -10089,7 +10089,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "estimates_page",
-      "community": 4,
+      "community": 5,
       "norm_label": "page.tsx"
     },
     {
@@ -10099,7 +10099,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "estimates_page_status_config",
-      "community": 4,
+      "community": 5,
       "norm_label": "status_config"
     },
     {
@@ -10109,7 +10109,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "estimates_page_service_type_labels",
-      "community": 4,
+      "community": 5,
       "norm_label": "service_type_labels"
     },
     {
@@ -10119,7 +10119,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "estimates_page_estimatespage",
-      "community": 4,
+      "community": 5,
       "norm_label": "estimatespage()"
     },
     {
@@ -10129,7 +10129,7 @@
       "source_location": "L340",
       "_origin": "ast",
       "id": "estimates_page_estimaterow",
-      "community": 4,
+      "community": 5,
       "norm_label": "estimaterow()"
     },
     {
@@ -10246,10 +10246,10 @@
       "label": "EmployeeGeneralPage()",
       "file_type": "code",
       "source_file": "app/(employee)/employee-portal/general/page.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "_origin": "ast",
       "id": "general_page_employeegeneralpage",
-      "community": 1,
+      "community": 2,
       "norm_label": "employeegeneralpage()"
     },
     {
@@ -10259,7 +10259,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "hours_page",
-      "community": 71,
+      "community": 401,
       "norm_label": "page.tsx"
     },
     {
@@ -10269,7 +10269,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "hours_page_hourspage",
-      "community": 71,
+      "community": 401,
       "norm_label": "hourspage()"
     },
     {
@@ -10399,7 +10399,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "employee_portal_page",
-      "community": 6,
+      "community": 57,
       "norm_label": "page.tsx"
     },
     {
@@ -10459,7 +10459,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apply_page",
-      "community": 162,
+      "community": 116,
       "norm_label": "page.tsx"
     },
     {
@@ -10469,7 +10469,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "apply_page_position",
-      "community": 162,
+      "community": 116,
       "norm_label": "position"
     },
     {
@@ -10479,7 +10479,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "apply_page_formdata",
-      "community": 162,
+      "community": 116,
       "norm_label": "formdata"
     },
     {
@@ -10489,7 +10489,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "apply_page_positions",
-      "community": 162,
+      "community": 116,
       "norm_label": "positions"
     },
     {
@@ -10499,7 +10499,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "apply_page_applypage",
-      "community": 162,
+      "community": 116,
       "norm_label": "applypage()"
     },
     {
@@ -10509,7 +10509,7 @@
       "source_location": "L331",
       "_origin": "ast",
       "id": "apply_page_field",
-      "community": 162,
+      "community": 116,
       "norm_label": "field()"
     },
     {
@@ -10519,7 +10519,7 @@
       "source_location": "L353",
       "_origin": "ast",
       "id": "apply_page_inputclass",
-      "community": 162,
+      "community": 116,
       "norm_label": "inputclass()"
     },
     {
@@ -10559,7 +10559,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "estimate_page",
-      "community": 80,
+      "community": 57,
       "norm_label": "page.tsx"
     },
     {
@@ -10569,7 +10569,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "estimate_page_formdata",
-      "community": 80,
+      "community": 57,
       "norm_label": "formdata"
     },
     {
@@ -10579,7 +10579,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "estimate_page_service_types",
-      "community": 80,
+      "community": 57,
       "norm_label": "service_types"
     },
     {
@@ -10589,7 +10589,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "estimate_page_initialform",
-      "community": 80,
+      "community": 57,
       "norm_label": "initialform"
     },
     {
@@ -10599,7 +10599,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "estimate_page_estimatepage",
-      "community": 80,
+      "community": 57,
       "norm_label": "estimatepage()"
     },
     {
@@ -10609,7 +10609,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "gallery_page",
-      "community": 80,
+      "community": 4,
       "norm_label": "page.tsx"
     },
     {
@@ -10619,7 +10619,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "gallery_page_image_extensions",
-      "community": 80,
+      "community": 4,
       "norm_label": "image_extensions"
     },
     {
@@ -10629,7 +10629,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "gallery_page_humanizeslug",
-      "community": 80,
+      "community": 4,
       "norm_label": "humanizeslug()"
     },
     {
@@ -10639,7 +10639,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "gallery_page_getprojects",
-      "community": 80,
+      "community": 4,
       "norm_label": "getprojects()"
     },
     {
@@ -10649,7 +10649,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "gallery_page_gallerypage",
-      "community": 80,
+      "community": 4,
       "norm_label": "gallerypage()"
     },
     {
@@ -10659,7 +10659,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "main_layout",
-      "community": 73,
+      "community": 69,
       "norm_label": "layout.tsx"
     },
     {
@@ -10699,7 +10699,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "main_page_home",
-      "community": 80,
+      "community": 62,
       "norm_label": "home()"
     },
     {
@@ -10779,7 +10779,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "applications_route",
-      "community": 85,
+      "community": 406,
       "norm_label": "route.ts"
     },
     {
@@ -10789,7 +10789,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "applications_route_sql",
-      "community": 85,
+      "community": 406,
       "norm_label": "sql"
     },
     {
@@ -10799,7 +10799,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "applications_route_get",
-      "community": 85,
+      "community": 406,
       "norm_label": "get()"
     },
     {
@@ -10859,7 +10859,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_customers_add_route_ts_add_route",
-      "community": 85,
+      "community": 47,
       "norm_label": "route.ts"
     },
     {
@@ -10869,7 +10869,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_api_customers_add_route_ts_add_route_sql",
-      "community": 85,
+      "community": 47,
       "norm_label": "sql"
     },
     {
@@ -10879,7 +10879,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_api_customers_add_route_ts_add_route_post",
-      "community": 85,
+      "community": 47,
       "norm_label": "post()"
     },
     {
@@ -10889,7 +10889,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_customers_delete_route_ts_delete_route",
-      "community": 405,
+      "community": 47,
       "norm_label": "route.ts"
     },
     {
@@ -10899,7 +10899,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_api_customers_delete_route_ts_delete_route_sql",
-      "community": 405,
+      "community": 47,
       "norm_label": "sql"
     },
     {
@@ -10909,7 +10909,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_api_customers_delete_route_ts_delete_route_post",
-      "community": 405,
+      "community": 47,
       "norm_label": "post()"
     },
     {
@@ -10949,7 +10949,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_customers_list_route_ts_list_route",
-      "community": 85,
+      "community": 168,
       "norm_label": "route.ts"
     },
     {
@@ -10959,7 +10959,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_api_customers_list_route_ts_list_route_sql",
-      "community": 85,
+      "community": 168,
       "norm_label": "sql"
     },
     {
@@ -10969,7 +10969,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_api_customers_list_route_ts_list_route_get",
-      "community": 85,
+      "community": 168,
       "norm_label": "get()"
     },
     {
@@ -11009,7 +11009,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_deck_estimates_id_route_ts_id_route",
-      "community": 85,
+      "community": 70,
       "norm_label": "route.ts"
     },
     {
@@ -11019,7 +11019,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_api_deck_estimates_id_route_ts_id_route_sql",
-      "community": 85,
+      "community": 70,
       "norm_label": "sql"
     },
     {
@@ -11029,7 +11029,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_api_deck_estimates_id_route_ts_id_route_valid_statuses",
-      "community": 85,
+      "community": 70,
       "norm_label": "valid_statuses"
     },
     {
@@ -11039,7 +11039,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_api_deck_estimates_id_route_ts_id_route_patch",
-      "community": 85,
+      "community": 70,
       "norm_label": "patch()"
     },
     {
@@ -11049,7 +11049,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_deck_estimates_add_route_ts_add_route",
-      "community": 66,
+      "community": 67,
       "norm_label": "route.ts"
     },
     {
@@ -11059,7 +11059,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_api_deck_estimates_add_route_ts_add_route_sql",
-      "community": 66,
+      "community": 67,
       "norm_label": "sql"
     },
     {
@@ -11069,7 +11069,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_api_deck_estimates_add_route_ts_add_route_post",
-      "community": 66,
+      "community": 67,
       "norm_label": "post()"
     },
     {
@@ -11079,7 +11079,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_deck_estimates_delete_route_ts_delete_route",
-      "community": 85,
+      "community": 182,
       "norm_label": "route.ts"
     },
     {
@@ -11089,7 +11089,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_api_deck_estimates_delete_route_ts_delete_route_sql",
-      "community": 85,
+      "community": 182,
       "norm_label": "sql"
     },
     {
@@ -11099,7 +11099,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_api_deck_estimates_delete_route_ts_delete_route_post",
-      "community": 85,
+      "community": 182,
       "norm_label": "post()"
     },
     {
@@ -11109,7 +11109,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_deck_estimates_edit_route_ts_edit_route",
-      "community": 66,
+      "community": 67,
       "norm_label": "route.ts"
     },
     {
@@ -11119,7 +11119,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_api_deck_estimates_edit_route_ts_edit_route_sql",
-      "community": 66,
+      "community": 67,
       "norm_label": "sql"
     },
     {
@@ -11129,7 +11129,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_api_deck_estimates_edit_route_ts_edit_route_post",
-      "community": 66,
+      "community": 67,
       "norm_label": "post()"
     },
     {
@@ -11139,7 +11139,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_deck_estimates_list_route_ts_list_route",
-      "community": 85,
+      "community": 271,
       "norm_label": "route.ts"
     },
     {
@@ -11149,7 +11149,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_api_deck_estimates_list_route_ts_list_route_sql",
-      "community": 85,
+      "community": 271,
       "norm_label": "sql"
     },
     {
@@ -11159,7 +11159,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_api_deck_estimates_list_route_ts_list_route_get",
-      "community": 85,
+      "community": 271,
       "norm_label": "get()"
     },
     {
@@ -11169,7 +11169,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_deck_estimates_select_route_ts_select_route",
-      "community": 85,
+      "community": 400,
       "norm_label": "route.ts"
     },
     {
@@ -11179,7 +11179,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_api_deck_estimates_select_route_ts_select_route_sql",
-      "community": 85,
+      "community": 400,
       "norm_label": "sql"
     },
     {
@@ -11189,7 +11189,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_api_deck_estimates_select_route_ts_select_route_get",
-      "community": 85,
+      "community": 400,
       "norm_label": "get()"
     },
     {
@@ -11229,7 +11229,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "change_password_route",
-      "community": 85,
+      "community": 407,
       "norm_label": "route.ts"
     },
     {
@@ -11239,7 +11239,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "change_password_route_sql",
-      "community": 85,
+      "community": 407,
       "norm_label": "sql"
     },
     {
@@ -11249,7 +11249,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "change_password_route_post",
-      "community": 85,
+      "community": 407,
       "norm_label": "post()"
     },
     {
@@ -11349,7 +11349,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_employees_select_route_ts_select_route",
-      "community": 85,
+      "community": 402,
       "norm_label": "route.ts"
     },
     {
@@ -11359,7 +11359,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_api_employees_select_route_ts_select_route_sql",
-      "community": 85,
+      "community": 402,
       "norm_label": "sql"
     },
     {
@@ -11369,7 +11369,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_api_employees_select_route_ts_select_route_get",
-      "community": 85,
+      "community": 402,
       "norm_label": "get()"
     },
     {
@@ -11459,7 +11459,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "estimates_route",
-      "community": 85,
+      "community": 409,
       "norm_label": "route.ts"
     },
     {
@@ -11469,7 +11469,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "estimates_route_sql",
-      "community": 85,
+      "community": 409,
       "norm_label": "sql"
     },
     {
@@ -11479,7 +11479,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "estimates_route_get",
-      "community": 85,
+      "community": 409,
       "norm_label": "get()"
     },
     {
@@ -11519,7 +11519,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_expenses_delete_route_ts_delete_route",
-      "community": 50,
+      "community": 47,
       "norm_label": "route.ts"
     },
     {
@@ -11529,7 +11529,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_api_expenses_delete_route_ts_delete_route_sql",
-      "community": 50,
+      "community": 47,
       "norm_label": "sql"
     },
     {
@@ -11539,7 +11539,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_api_expenses_delete_route_ts_delete_route_post",
-      "community": 50,
+      "community": 47,
       "norm_label": "post()"
     },
     {
@@ -11549,7 +11549,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_expenses_edit_route_ts_edit_route",
-      "community": 85,
+      "community": 403,
       "norm_label": "route.ts"
     },
     {
@@ -11559,7 +11559,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_api_expenses_edit_route_ts_edit_route_sql",
-      "community": 85,
+      "community": 403,
       "norm_label": "sql"
     },
     {
@@ -11569,7 +11569,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_api_expenses_edit_route_ts_edit_route_post",
-      "community": 85,
+      "community": 403,
       "norm_label": "post()"
     },
     {
@@ -11579,7 +11579,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_expenses_list_route_ts_list_route",
-      "community": 85,
+      "community": 404,
       "norm_label": "route.ts"
     },
     {
@@ -11589,7 +11589,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_api_expenses_list_route_ts_list_route_sql",
-      "community": 85,
+      "community": 404,
       "norm_label": "sql"
     },
     {
@@ -11599,7 +11599,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_api_expenses_list_route_ts_list_route_get",
-      "community": 85,
+      "community": 404,
       "norm_label": "get()"
     },
     {
@@ -11639,7 +11639,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_hours_add_route_ts_add_route",
-      "community": 62,
+      "community": 53,
       "norm_label": "route.ts"
     },
     {
@@ -11649,7 +11649,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_api_hours_add_route_ts_add_route_sql",
-      "community": 62,
+      "community": 53,
       "norm_label": "sql"
     },
     {
@@ -11659,7 +11659,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_api_hours_add_route_ts_add_route_post",
-      "community": 62,
+      "community": 53,
       "norm_label": "post()"
     },
     {
@@ -11669,7 +11669,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "clock_in_route",
-      "community": 85,
+      "community": 408,
       "norm_label": "route.ts"
     },
     {
@@ -11679,7 +11679,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "clock_in_route_sql",
-      "community": 85,
+      "community": 408,
       "norm_label": "sql"
     },
     {
@@ -11689,7 +11689,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "clock_in_route_post",
-      "community": 85,
+      "community": 408,
       "norm_label": "post()"
     },
     {
@@ -11699,27 +11699,27 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "clock_out_route",
-      "community": 182,
+      "community": 66,
       "norm_label": "route.ts"
     },
     {
       "label": "sql",
       "file_type": "code",
       "source_file": "app/api/hours/clock-out/route.ts",
-      "source_location": "L8",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "clock_out_route_sql",
-      "community": 182,
+      "community": 66,
       "norm_label": "sql"
     },
     {
       "label": "POST()",
       "file_type": "code",
       "source_file": "app/api/hours/clock-out/route.ts",
-      "source_location": "L12",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "clock_out_route_post",
-      "community": 182,
+      "community": 66,
       "norm_label": "post()"
     },
     {
@@ -11759,7 +11759,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_hours_edit_route_ts_edit_route",
-      "community": 85,
+      "community": 405,
       "norm_label": "route.ts"
     },
     {
@@ -11769,7 +11769,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_api_hours_edit_route_ts_edit_route_sql",
-      "community": 85,
+      "community": 405,
       "norm_label": "sql"
     },
     {
@@ -11779,7 +11779,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_api_hours_edit_route_ts_edit_route_post",
-      "community": 85,
+      "community": 405,
       "norm_label": "post()"
     },
     {
@@ -11789,7 +11789,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_hours_list_route_ts_list_route",
-      "community": 85,
+      "community": 47,
       "norm_label": "route.ts"
     },
     {
@@ -11799,17 +11799,17 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_api_hours_list_route_ts_list_route_sql",
-      "community": 85,
+      "community": 47,
       "norm_label": "sql"
     },
     {
       "label": "GET()",
       "file_type": "code",
       "source_file": "app/api/hours/list/route.ts",
-      "source_location": "L40",
+      "source_location": "L43",
       "_origin": "ast",
       "id": "app_api_hours_list_route_ts_list_route_get",
-      "community": 85,
+      "community": 47,
       "norm_label": "get()"
     },
     {
@@ -11939,7 +11939,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_jobs_list_route_ts_list_route",
-      "community": 69,
+      "community": 47,
       "norm_label": "route.ts"
     },
     {
@@ -11949,7 +11949,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_api_jobs_list_route_ts_list_route_sql",
-      "community": 69,
+      "community": 47,
       "norm_label": "sql"
     },
     {
@@ -11959,7 +11959,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_api_jobs_list_route_ts_list_route_get",
-      "community": 69,
+      "community": 47,
       "norm_label": "get()"
     },
     {
@@ -11969,7 +11969,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_jobs_select_route_ts_select_route",
-      "community": 70,
+      "community": 53,
       "norm_label": "route.ts"
     },
     {
@@ -11979,7 +11979,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_api_jobs_select_route_ts_select_route_sql",
-      "community": 70,
+      "community": 53,
       "norm_label": "sql"
     },
     {
@@ -11989,7 +11989,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_api_jobs_select_route_ts_select_route_get",
-      "community": 70,
+      "community": 53,
       "norm_label": "get()"
     },
     {
@@ -12239,7 +12239,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_beforeafter",
-      "community": 80,
+      "community": 4,
       "norm_label": "beforeafter.tsx"
     },
     {
@@ -12249,7 +12249,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "components_beforeafter_beforeafterprops",
-      "community": 80,
+      "community": 4,
       "norm_label": "beforeafterprops"
     },
     {
@@ -12259,7 +12259,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "components_beforeafter_beforeafter",
-      "community": 80,
+      "community": 4,
       "norm_label": "beforeafter()"
     },
     {
@@ -12409,7 +12409,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_customerselect",
-      "community": 57,
+      "community": 3,
       "norm_label": "customerselect.tsx"
     },
     {
@@ -12439,7 +12439,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "components_datepicker_datepicker",
-      "community": 100,
+      "community": 57,
       "norm_label": "datepicker()"
     },
     {
@@ -12459,7 +12459,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "deck_estimate_deckestimateform_money",
-      "community": 66,
+      "community": 199,
       "norm_label": "money()"
     },
     {
@@ -12509,7 +12509,7 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "deck_estimate_deckestimateform_deckestimateform",
-      "community": 66,
+      "community": 199,
       "norm_label": "deckestimateform()"
     },
     {
@@ -12779,7 +12779,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "components_expieriences_work",
-      "community": 73,
+      "community": 69,
       "norm_label": "work()"
     },
     {
@@ -12829,7 +12829,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "gallery_galleryimage",
-      "community": 80,
+      "community": 4,
       "norm_label": "galleryimage.tsx"
     },
     {
@@ -12839,7 +12839,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "gallery_galleryimage_galleryimageprops",
-      "community": 80,
+      "community": 4,
       "norm_label": "galleryimageprops"
     },
     {
@@ -12849,7 +12849,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "gallery_galleryimage_galleryimage",
-      "community": 80,
+      "community": 4,
       "norm_label": "galleryimage()"
     },
     {
@@ -12859,7 +12859,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "gallery_gallerylightbox",
-      "community": 80,
+      "community": 4,
       "norm_label": "gallerylightbox.tsx"
     },
     {
@@ -12869,7 +12869,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "gallery_gallerylightbox_gallerylightboxprops",
-      "community": 80,
+      "community": 4,
       "norm_label": "gallerylightboxprops"
     },
     {
@@ -12879,7 +12879,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "gallery_gallerylightbox_gallerylightbox",
-      "community": 80,
+      "community": 4,
       "norm_label": "gallerylightbox()"
     },
     {
@@ -12889,7 +12889,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "gallery_projectshowcase",
-      "community": 80,
+      "community": 4,
       "norm_label": "projectshowcase.tsx"
     },
     {
@@ -12899,7 +12899,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "gallery_projectshowcase_galleryproject",
-      "community": 80,
+      "community": 4,
       "norm_label": "galleryproject"
     },
     {
@@ -12909,7 +12909,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "gallery_projectshowcase_projectshowcase",
-      "community": 80,
+      "community": 4,
       "norm_label": "projectshowcase()"
     },
     {
@@ -12926,7 +12926,7 @@
       "label": "HoursSearch()",
       "file_type": "code",
       "source_file": "components/hoursSearch.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "components_hourssearch_hourssearch",
       "community": 101,
@@ -13099,7 +13099,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_navbar",
-      "community": 73,
+      "community": 69,
       "norm_label": "navbar.tsx"
     },
     {
@@ -13109,7 +13109,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "components_navbar_links",
-      "community": 73,
+      "community": 69,
       "norm_label": "links"
     },
     {
@@ -13119,7 +13119,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "components_navbar_navbar",
-      "community": 73,
+      "community": 69,
       "norm_label": "navbar()"
     },
     {
@@ -13169,7 +13169,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "portal_employeeslist",
-      "community": 5,
+      "community": 401,
       "norm_label": "employeeslist.tsx"
     },
     {
@@ -13179,7 +13179,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "portal_employeeslist_employeeslist",
-      "community": 5,
+      "community": 401,
       "norm_label": "employeeslist()"
     },
     {
@@ -13229,7 +13229,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "components_projects_projects",
-      "community": 73,
+      "community": 69,
       "norm_label": "projects()"
     },
     {
@@ -13279,7 +13279,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_signin",
-      "community": 80,
+      "community": 62,
       "norm_label": "signin.tsx"
     },
     {
@@ -13289,7 +13289,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "components_signin_signinbutton",
-      "community": 80,
+      "community": 62,
       "norm_label": "signinbutton()"
     },
     {
@@ -13339,7 +13339,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "components_table_expensetable",
-      "community": 5,
+      "community": 101,
       "norm_label": "expensetable()"
     },
     {
@@ -13619,7 +13619,7 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "ui_combobox_comboboxcontent",
-      "community": 57,
+      "community": 3,
       "norm_label": "comboboxcontent()"
     },
     {
@@ -13629,7 +13629,7 @@
       "source_location": "L129",
       "_origin": "ast",
       "id": "ui_combobox_comboboxlist",
-      "community": 57,
+      "community": 3,
       "norm_label": "comboboxlist()"
     },
     {
@@ -13639,7 +13639,7 @@
       "source_location": "L142",
       "_origin": "ast",
       "id": "ui_combobox_comboboxitem",
-      "community": 57,
+      "community": 3,
       "norm_label": "comboboxitem()"
     },
     {
@@ -13679,7 +13679,7 @@
       "source_location": "L201",
       "_origin": "ast",
       "id": "ui_combobox_comboboxempty",
-      "community": 57,
+      "community": 3,
       "norm_label": "comboboxempty()"
     },
     {
@@ -14129,7 +14129,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "ui_portal_section_formatdate",
-      "community": 4,
+      "community": 5,
       "norm_label": "formatdate()"
     },
     {
@@ -14139,7 +14139,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_stat_card",
-      "community": 6,
+      "community": 57,
       "norm_label": "stat-card.tsx"
     },
     {
@@ -14149,7 +14149,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "ui_stat_card_statcardprops",
-      "community": 6,
+      "community": 57,
       "norm_label": "statcardprops"
     },
     {
@@ -14159,7 +14159,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "ui_stat_card_statcard",
-      "community": 6,
+      "community": 57,
       "norm_label": "statcard()"
     },
     {
@@ -14209,7 +14209,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "ui_table_tablefooter",
-      "community": 101,
+      "community": 73,
       "norm_label": "tablefooter()"
     },
     {
@@ -14339,7 +14339,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_authoptions",
-      "community": 85,
+      "community": 53,
       "norm_label": "authoptions.ts"
     },
     {
@@ -14349,7 +14349,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "lib_authoptions_sql",
-      "community": 85,
+      "community": 53,
       "norm_label": "sql"
     },
     {
@@ -14359,7 +14359,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "lib_authoptions_dummy_hash",
-      "community": 85,
+      "community": 53,
       "norm_label": "dummy_hash"
     },
     {
@@ -14469,28 +14469,48 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_geo",
-      "community": 182,
+      "community": 66,
       "norm_label": "geo.ts"
     },
     {
       "label": "toRadians()",
       "file_type": "code",
       "source_file": "lib/geo.ts",
-      "source_location": "L3",
+      "source_location": "L4",
       "_origin": "ast",
       "id": "lib_geo_toradians",
-      "community": 182,
+      "community": 66,
       "norm_label": "toradians()"
+    },
+    {
+      "label": "centralAngle()",
+      "file_type": "code",
+      "source_file": "lib/geo.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "lib_geo_centralangle",
+      "community": 66,
+      "norm_label": "centralangle()"
     },
     {
       "label": "haversineMiles()",
       "file_type": "code",
       "source_file": "lib/geo.ts",
-      "source_location": "L7",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "lib_geo_haversinemiles",
-      "community": 182,
+      "community": 66,
       "norm_label": "haversinemiles()"
+    },
+    {
+      "label": "haversineMeters()",
+      "file_type": "code",
+      "source_file": "lib/geo.ts",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "lib_geo_haversinemeters",
+      "community": 66,
+      "norm_label": "haversinemeters()"
     },
     {
       "label": "geocode.ts",
@@ -14503,14 +14523,154 @@
       "norm_label": "geocode.ts"
     },
     {
+      "label": "GeocodePrecision",
+      "file_type": "code",
+      "source_file": "lib/geocode.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "lib_geocode_geocodeprecision",
+      "community": 66,
+      "norm_label": "geocodeprecision"
+    },
+    {
+      "label": "classifyPrecision()",
+      "file_type": "code",
+      "source_file": "lib/geocode.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "lib_geocode_classifyprecision",
+      "community": 66,
+      "norm_label": "classifyprecision()"
+    },
+    {
       "label": "geocodeAddress()",
       "file_type": "code",
       "source_file": "lib/geocode.ts",
-      "source_location": "L1",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "lib_geocode_geocodeaddress",
       "community": 66,
       "norm_label": "geocodeaddress()"
+    },
+    {
+      "label": "locationVerification.ts",
+      "file_type": "code",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "lib_locationverification",
+      "community": 66,
+      "norm_label": "locationverification.ts"
+    },
+    {
+      "label": "LocationStatus",
+      "file_type": "code",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "lib_locationverification_locationstatus",
+      "community": 67,
+      "norm_label": "locationstatus"
+    },
+    {
+      "label": "GpsReading",
+      "file_type": "code",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "lib_locationverification_gpsreading",
+      "community": 66,
+      "norm_label": "gpsreading"
+    },
+    {
+      "label": "JobLocation",
+      "file_type": "code",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "lib_locationverification_joblocation",
+      "community": 66,
+      "norm_label": "joblocation"
+    },
+    {
+      "label": "ReadingVerdict",
+      "file_type": "code",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "lib_locationverification_readingverdict",
+      "community": 66,
+      "norm_label": "readingverdict"
+    },
+    {
+      "label": "evaluateReading()",
+      "file_type": "code",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "lib_locationverification_evaluatereading",
+      "community": 66,
+      "norm_label": "evaluatereading()"
+    },
+    {
+      "label": "evaluateLocation()",
+      "file_type": "code",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "lib_locationverification_evaluatelocation",
+      "community": 66,
+      "norm_label": "evaluatelocation()"
+    },
+    {
+      "label": "isLocationVerified()",
+      "file_type": "code",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L82",
+      "_origin": "ast",
+      "id": "lib_locationverification_islocationverified",
+      "community": 66,
+      "norm_label": "islocationverified()"
+    },
+    {
+      "label": "resolveLocationStatus()",
+      "file_type": "code",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L90",
+      "_origin": "ast",
+      "id": "lib_locationverification_resolvelocationstatus",
+      "community": 101,
+      "norm_label": "resolvelocationstatus()"
+    },
+    {
+      "label": "Tone",
+      "file_type": "code",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L100",
+      "_origin": "ast",
+      "id": "lib_locationverification_tone",
+      "community": 66,
+      "norm_label": "tone"
+    },
+    {
+      "label": "STATUS_PRESENTATION",
+      "file_type": "code",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L102",
+      "_origin": "ast",
+      "id": "lib_locationverification_status_presentation",
+      "community": 66,
+      "norm_label": "status_presentation"
+    },
+    {
+      "label": "locationStatusPresentation()",
+      "file_type": "code",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L110",
+      "_origin": "ast",
+      "id": "lib_locationverification_locationstatuspresentation",
+      "community": 101,
+      "norm_label": "locationstatuspresentation()"
     },
     {
       "label": "serverUtils.ts",
@@ -14519,7 +14679,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_serverutils",
-      "community": 2,
+      "community": 401,
       "norm_label": "serverutils.ts"
     },
     {
@@ -14539,7 +14699,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "lib_serverutils_getemployees",
-      "community": 5,
+      "community": 401,
       "norm_label": "getemployees()"
     },
     {
@@ -14569,7 +14729,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "lib_serverutils_getemployeebyemail",
-      "community": 2,
+      "community": 401,
       "norm_label": "getemployeebyemail()"
     },
     {
@@ -14599,7 +14759,7 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "lib_serverutils_getjobbyid",
-      "community": 5,
+      "community": 199,
       "norm_label": "getjobbyid()"
     },
     {
@@ -14629,7 +14789,7 @@
       "source_location": "L122",
       "_origin": "ast",
       "id": "lib_serverutils_gethoursbyjob",
-      "community": 5,
+      "community": 401,
       "norm_label": "gethoursbyjob()"
     },
     {
@@ -14649,7 +14809,7 @@
       "source_location": "L144",
       "_origin": "ast",
       "id": "lib_serverutils_gethours",
-      "community": 71,
+      "community": 401,
       "norm_label": "gethours()"
     },
     {
@@ -14659,7 +14819,7 @@
       "source_location": "L155",
       "_origin": "ast",
       "id": "lib_serverutils_getdeckestimates",
-      "community": 2,
+      "community": 401,
       "norm_label": "getdeckestimates()"
     },
     {
@@ -14686,17 +14846,17 @@
       "label": "cn()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L5",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "lib_utils_cn",
-      "community": 3,
+      "community": 73,
       "norm_label": "cn()"
     },
     {
       "label": "Employee",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L9",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "lib_utils_employee",
       "community": 401,
@@ -14706,7 +14866,7 @@
       "label": "EmployeeAdminFields",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L20",
+      "source_location": "L21",
       "_origin": "ast",
       "id": "lib_utils_employeeadminfields",
       "community": 52,
@@ -14716,17 +14876,17 @@
       "label": "Customer",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L26",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "lib_utils_customer",
-      "community": 1,
+      "community": 47,
       "norm_label": "customer"
     },
     {
       "label": "Job",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L34",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "lib_utils_job",
       "community": 1,
@@ -14736,17 +14896,17 @@
       "label": "Hour",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L50",
+      "source_location": "L51",
       "_origin": "ast",
       "id": "lib_utils_hour",
-      "community": 71,
+      "community": 401,
       "norm_label": "hour"
     },
     {
       "label": "hoursWorked()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L70",
+      "source_location": "L74",
       "_origin": "ast",
       "id": "lib_utils_hoursworked",
       "community": 57,
@@ -14756,27 +14916,27 @@
       "label": "hoursWithEmployeeAndJob",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L77",
+      "source_location": "L81",
       "_origin": "ast",
       "id": "lib_utils_hourswithemployeeandjob",
-      "community": 71,
+      "community": 401,
       "norm_label": "hourswithemployeeandjob"
     },
     {
       "label": "Expense",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L98",
+      "source_location": "L102",
       "_origin": "ast",
       "id": "lib_utils_expense",
-      "community": 5,
+      "community": 101,
       "norm_label": "expense"
     },
     {
       "label": "addJobs()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L105",
+      "source_location": "L109",
       "_origin": "ast",
       "id": "lib_utils_addjobs",
       "community": 1,
@@ -14786,7 +14946,7 @@
       "label": "deleteJob()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L116",
+      "source_location": "L120",
       "_origin": "ast",
       "id": "lib_utils_deletejob",
       "community": 1,
@@ -14796,17 +14956,17 @@
       "label": "addExpenses()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L138",
+      "source_location": "L142",
       "_origin": "ast",
       "id": "lib_utils_addexpenses",
-      "community": 5,
+      "community": 101,
       "norm_label": "addexpenses()"
     },
     {
       "label": "deleteExpense()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L149",
+      "source_location": "L153",
       "_origin": "ast",
       "id": "lib_utils_deleteexpense",
       "community": 101,
@@ -14816,17 +14976,17 @@
       "label": "addEmployees()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L160",
+      "source_location": "L164",
       "_origin": "ast",
       "id": "lib_utils_addemployees",
-      "community": 401,
+      "community": 101,
       "norm_label": "addemployees()"
     },
     {
       "label": "deleteEmployee()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L171",
+      "source_location": "L175",
       "_origin": "ast",
       "id": "lib_utils_deleteemployee",
       "community": 401,
@@ -14836,7 +14996,7 @@
       "label": "addCustomers()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L193",
+      "source_location": "L197",
       "_origin": "ast",
       "id": "lib_utils_addcustomers",
       "community": 1,
@@ -14846,7 +15006,7 @@
       "label": "deleteCustomer()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L204",
+      "source_location": "L208",
       "_origin": "ast",
       "id": "lib_utils_deletecustomer",
       "community": 1,
@@ -14856,7 +15016,7 @@
       "label": "editEmployee()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L221",
+      "source_location": "L225",
       "_origin": "ast",
       "id": "lib_utils_editemployee",
       "community": 401,
@@ -14866,37 +15026,37 @@
       "label": "changePassword()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L232",
+      "source_location": "L236",
       "_origin": "ast",
       "id": "lib_utils_changepassword",
-      "community": 67,
+      "community": 57,
       "norm_label": "changepassword()"
     },
     {
       "label": "editCustomer()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L243",
+      "source_location": "L247",
       "_origin": "ast",
       "id": "lib_utils_editcustomer",
-      "community": 67,
+      "community": 47,
       "norm_label": "editcustomer()"
     },
     {
       "label": "editJob()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L254",
+      "source_location": "L258",
       "_origin": "ast",
       "id": "lib_utils_editjob",
-      "community": 67,
+      "community": 1,
       "norm_label": "editjob()"
     },
     {
       "label": "AddHoursInput",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L265",
+      "source_location": "L269",
       "_origin": "ast",
       "id": "lib_utils_addhoursinput",
       "community": 67,
@@ -14906,37 +15066,37 @@
       "label": "addHours()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L273",
+      "source_location": "L277",
       "_origin": "ast",
       "id": "lib_utils_addhours",
-      "community": 71,
+      "community": 57,
       "norm_label": "addhours()"
     },
     {
       "label": "clockIn()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L284",
+      "source_location": "L288",
       "_origin": "ast",
       "id": "lib_utils_clockin",
-      "community": 67,
+      "community": 57,
       "norm_label": "clockin()"
     },
     {
       "label": "clockOut()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L295",
+      "source_location": "L299",
       "_origin": "ast",
       "id": "lib_utils_clockout",
-      "community": 67,
+      "community": 57,
       "norm_label": "clockout()"
     },
     {
       "label": "getEmployees()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L306",
+      "source_location": "L310",
       "_origin": "ast",
       "id": "lib_utils_getemployees",
       "community": 401,
@@ -14946,7 +15106,7 @@
       "label": "getJobs()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L314",
+      "source_location": "L318",
       "_origin": "ast",
       "id": "lib_utils_getjobs",
       "community": 1,
@@ -14956,17 +15116,17 @@
       "label": "ApplicationStatus",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L322",
+      "source_location": "L326",
       "_origin": "ast",
       "id": "lib_utils_applicationstatus",
-      "community": 4,
+      "community": 116,
       "norm_label": "applicationstatus"
     },
     {
       "label": "ApplicationPosition",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L323",
+      "source_location": "L327",
       "_origin": "ast",
       "id": "lib_utils_applicationposition",
       "community": 116,
@@ -14976,7 +15136,7 @@
       "label": "JobApplication",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L325",
+      "source_location": "L329",
       "_origin": "ast",
       "id": "lib_utils_jobapplication",
       "community": 116,
@@ -14986,7 +15146,7 @@
       "label": "JobApplicationInput",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L341",
+      "source_location": "L345",
       "_origin": "ast",
       "id": "lib_utils_jobapplicationinput",
       "community": 116,
@@ -14996,7 +15156,7 @@
       "label": "submitApplication()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L353",
+      "source_location": "L357",
       "_origin": "ast",
       "id": "lib_utils_submitapplication",
       "community": 116,
@@ -15006,7 +15166,7 @@
       "label": "getApplications()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L364",
+      "source_location": "L368",
       "_origin": "ast",
       "id": "lib_utils_getapplications",
       "community": 116,
@@ -15016,107 +15176,107 @@
       "label": "updateApplicationStatus()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L372",
+      "source_location": "L376",
       "_origin": "ast",
       "id": "lib_utils_updateapplicationstatus",
-      "community": 4,
+      "community": 116,
       "norm_label": "updateapplicationstatus()"
     },
     {
       "label": "updateApplicationNotes()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L383",
+      "source_location": "L387",
       "_origin": "ast",
       "id": "lib_utils_updateapplicationnotes",
-      "community": 4,
+      "community": 116,
       "norm_label": "updateapplicationnotes()"
     },
     {
       "label": "ServiceType",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L394",
+      "source_location": "L398",
       "_origin": "ast",
       "id": "lib_utils_servicetype",
-      "community": 80,
+      "community": 57,
       "norm_label": "servicetype"
     },
     {
       "label": "EstimateStatus",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L395",
+      "source_location": "L399",
       "_origin": "ast",
       "id": "lib_utils_estimatestatus",
-      "community": 4,
+      "community": 5,
       "norm_label": "estimatestatus"
     },
     {
       "label": "EstimateRequest",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L397",
+      "source_location": "L401",
       "_origin": "ast",
       "id": "lib_utils_estimaterequest",
-      "community": 4,
+      "community": 5,
       "norm_label": "estimaterequest"
     },
     {
       "label": "EstimateRequestInput",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L411",
+      "source_location": "L415",
       "_origin": "ast",
       "id": "lib_utils_estimaterequestinput",
-      "community": 80,
+      "community": 57,
       "norm_label": "estimaterequestinput"
     },
     {
       "label": "submitEstimateRequest()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L421",
+      "source_location": "L425",
       "_origin": "ast",
       "id": "lib_utils_submitestimaterequest",
-      "community": 80,
+      "community": 57,
       "norm_label": "submitestimaterequest()"
     },
     {
       "label": "getEstimateRequests()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L432",
+      "source_location": "L436",
       "_origin": "ast",
       "id": "lib_utils_getestimaterequests",
-      "community": 4,
+      "community": 5,
       "norm_label": "getestimaterequests()"
     },
     {
       "label": "updateEstimateStatus()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L440",
+      "source_location": "L444",
       "_origin": "ast",
       "id": "lib_utils_updateestimatestatus",
-      "community": 4,
+      "community": 5,
       "norm_label": "updateestimatestatus()"
     },
     {
       "label": "updateEstimateNotes()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L451",
+      "source_location": "L455",
       "_origin": "ast",
       "id": "lib_utils_updateestimatenotes",
-      "community": 4,
+      "community": 5,
       "norm_label": "updateestimatenotes()"
     },
     {
       "label": "DeckEstimateStatus",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L466",
+      "source_location": "L470",
       "_origin": "ast",
       "id": "lib_utils_deckestimatestatus",
       "community": 67,
@@ -15126,7 +15286,7 @@
       "label": "DeckWorkType",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L467",
+      "source_location": "L471",
       "_origin": "ast",
       "id": "lib_utils_deckworktype",
       "community": 67,
@@ -15136,7 +15296,7 @@
       "label": "DeckMaterial",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L468",
+      "source_location": "L472",
       "_origin": "ast",
       "id": "lib_utils_deckmaterial",
       "community": 67,
@@ -15146,7 +15306,7 @@
       "label": "DeckElevation",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L469",
+      "source_location": "L473",
       "_origin": "ast",
       "id": "lib_utils_deckelevation",
       "community": 67,
@@ -15156,7 +15316,7 @@
       "label": "Condition",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L470",
+      "source_location": "L474",
       "_origin": "ast",
       "id": "lib_utils_condition",
       "community": 67,
@@ -15166,7 +15326,7 @@
       "label": "WORK_TYPE_LABELS",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L472",
+      "source_location": "L476",
       "_origin": "ast",
       "id": "lib_utils_work_type_labels",
       "community": 67,
@@ -15176,7 +15336,7 @@
       "label": "MATERIAL_LABELS",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L477",
+      "source_location": "L481",
       "_origin": "ast",
       "id": "lib_utils_material_labels",
       "community": 67,
@@ -15186,7 +15346,7 @@
       "label": "ELEVATION_LABELS",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L481",
+      "source_location": "L485",
       "_origin": "ast",
       "id": "lib_utils_elevation_labels",
       "community": 67,
@@ -15196,7 +15356,7 @@
       "label": "CONDITION_LABELS",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L487",
+      "source_location": "L491",
       "_origin": "ast",
       "id": "lib_utils_condition_labels",
       "community": 67,
@@ -15206,7 +15366,7 @@
       "label": "SketchPoint",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L495",
+      "source_location": "L499",
       "_origin": "ast",
       "id": "lib_utils_sketchpoint",
       "community": 67,
@@ -15216,7 +15376,7 @@
       "label": "SketchSection",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L496",
+      "source_location": "L500",
       "_origin": "ast",
       "id": "lib_utils_sketchsection",
       "community": 67,
@@ -15226,7 +15386,7 @@
       "label": "SketchStroke",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L497",
+      "source_location": "L501",
       "_origin": "ast",
       "id": "lib_utils_sketchstroke",
       "community": 67,
@@ -15236,7 +15396,7 @@
       "label": "SketchMarkerKind",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L498",
+      "source_location": "L502",
       "_origin": "ast",
       "id": "lib_utils_sketchmarkerkind",
       "community": 67,
@@ -15246,7 +15406,7 @@
       "label": "SketchMarker",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L499",
+      "source_location": "L503",
       "_origin": "ast",
       "id": "lib_utils_sketchmarker",
       "community": 67,
@@ -15256,7 +15416,7 @@
       "label": "DeckSketch",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L501",
+      "source_location": "L505",
       "_origin": "ast",
       "id": "lib_utils_decksketch",
       "community": 67,
@@ -15266,7 +15426,7 @@
       "label": "MARKER_CONFIG",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L510",
+      "source_location": "L514",
       "_origin": "ast",
       "id": "lib_utils_marker_config",
       "community": 67,
@@ -15276,7 +15436,7 @@
       "label": "QuoteRates",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L519",
+      "source_location": "L523",
       "_origin": "ast",
       "id": "lib_utils_quoterates",
       "community": 67,
@@ -15286,7 +15446,7 @@
       "label": "DEFAULT_QUOTE_RATES",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L529",
+      "source_location": "L533",
       "_origin": "ast",
       "id": "lib_utils_default_quote_rates",
       "community": 67,
@@ -15296,7 +15456,7 @@
       "label": "QuoteLineItem",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L539",
+      "source_location": "L543",
       "_origin": "ast",
       "id": "lib_utils_quotelineitem",
       "community": 67,
@@ -15306,7 +15466,7 @@
       "label": "DeckEstimateData",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L548",
+      "source_location": "L552",
       "_origin": "ast",
       "id": "lib_utils_deckestimatedata",
       "community": 67,
@@ -15316,7 +15476,7 @@
       "label": "DeckEstimate",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L585",
+      "source_location": "L589",
       "_origin": "ast",
       "id": "lib_utils_deckestimate",
       "community": 67,
@@ -15326,17 +15486,17 @@
       "label": "DeckEstimateInput",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L607",
+      "source_location": "L611",
       "_origin": "ast",
       "id": "lib_utils_deckestimateinput",
-      "community": 66,
+      "community": 67,
       "norm_label": "deckestimateinput"
     },
     {
       "label": "emptyDeckSketch()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L621",
+      "source_location": "L625",
       "_origin": "ast",
       "id": "lib_utils_emptydecksketch",
       "community": 67,
@@ -15346,7 +15506,7 @@
       "label": "emptyDeckEstimateData()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L625",
+      "source_location": "L629",
       "_origin": "ast",
       "id": "lib_utils_emptydeckestimatedata",
       "community": 67,
@@ -15356,7 +15516,7 @@
       "label": "polygonAreaCells()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L658",
+      "source_location": "L662",
       "_origin": "ast",
       "id": "lib_utils_polygonareacells",
       "community": 67,
@@ -15366,7 +15526,7 @@
       "label": "sketchTotalSqFt()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L670",
+      "source_location": "L674",
       "_origin": "ast",
       "id": "lib_utils_sketchtotalsqft",
       "community": 67,
@@ -15376,7 +15536,7 @@
       "label": "computeQuote()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L678",
+      "source_location": "L682",
       "_origin": "ast",
       "id": "lib_utils_computequote",
       "community": 67,
@@ -15386,17 +15546,17 @@
       "label": "finalQuoteValue()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L705",
+      "source_location": "L709",
       "_origin": "ast",
       "id": "lib_utils_finalquotevalue",
-      "community": 66,
+      "community": 67,
       "norm_label": "finalquotevalue()"
     },
     {
       "label": "addDeckEstimate()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L711",
+      "source_location": "L715",
       "_origin": "ast",
       "id": "lib_utils_adddeckestimate",
       "community": 67,
@@ -15406,7 +15566,7 @@
       "label": "updateDeckEstimate()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L722",
+      "source_location": "L726",
       "_origin": "ast",
       "id": "lib_utils_updatedeckestimate",
       "community": 67,
@@ -15416,7 +15576,7 @@
       "label": "patchDeckEstimate()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L731",
+      "source_location": "L735",
       "_origin": "ast",
       "id": "lib_utils_patchdeckestimate",
       "community": 67,
@@ -15426,7 +15586,7 @@
       "label": "deleteDeckEstimate()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L743",
+      "source_location": "L747",
       "_origin": "ast",
       "id": "lib_utils_deletedeckestimate",
       "community": 67,
@@ -15436,7 +15596,7 @@
       "label": "getDeckEstimates()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L753",
+      "source_location": "L757",
       "_origin": "ast",
       "id": "lib_utils_getdeckestimates",
       "community": 67,
@@ -15446,10 +15606,10 @@
       "label": "summarizeDeckEstimate()",
       "file_type": "code",
       "source_file": "lib/utils.ts",
-      "source_location": "L760",
+      "source_location": "L764",
       "_origin": "ast",
       "id": "lib_utils_summarizedeckestimate",
-      "community": 67,
+      "community": 199,
       "norm_label": "summarizedeckestimate()"
     },
     {
@@ -16043,10 +16203,30 @@
       "norm_label": "sql"
     },
     {
+      "label": "haversineMeters()",
+      "file_type": "code",
+      "source_file": "scripts/geocode-jobs.mjs",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "scripts_geocode_jobs_haversinemeters",
+      "community": 274,
+      "norm_label": "haversinemeters()"
+    },
+    {
+      "label": "classifyPrecision()",
+      "file_type": "code",
+      "source_file": "scripts/geocode-jobs.mjs",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "scripts_geocode_jobs_classifyprecision",
+      "community": 274,
+      "norm_label": "classifyprecision()"
+    },
+    {
       "label": "geocodeAddress()",
       "file_type": "code",
       "source_file": "scripts/geocode-jobs.mjs",
-      "source_location": "L18",
+      "source_location": "L41",
       "_origin": "ast",
       "id": "scripts_geocode_jobs_geocodeaddress",
       "community": 274,
@@ -27799,7 +27979,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "claude_data_layer",
-      "community": 71,
+      "community": 401,
       "norm_label": "data layer"
     },
     {
@@ -27899,7 +28079,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "gates_index_max_code_candidates",
-      "community": 59,
+      "community": 113,
       "norm_label": "max_code_candidates"
     },
     {
@@ -27921,7 +28101,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 116,
       "norm_label": "section",
       "id": "applications_page_section"
     },
@@ -27934,7 +28114,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 116,
       "norm_label": "detail",
       "id": "applications_page_detail"
     },
@@ -27947,7 +28127,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 116,
       "norm_label": "formatdate",
       "id": "applications_page_formatdate"
     },
@@ -27960,7 +28140,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 116,
       "norm_label": "getapplications",
       "id": "utils_utils_getapplications"
     },
@@ -27973,7 +28153,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 116,
       "norm_label": "jobapplication (interface)",
       "id": "utils_utils_jobapplication"
     },
@@ -28077,7 +28257,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 57,
       "norm_label": "jobprofile (job edit page)",
       "id": "jid_edit_page_jobprofile"
     },
@@ -28129,7 +28309,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 57,
       "norm_label": "editjob",
       "id": "forms_forms_editjob"
     },
@@ -28207,7 +28387,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 80,
+      "community": 62,
       "norm_label": "home (about page)",
       "id": "about_home"
     },
@@ -28350,7 +28530,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 80,
+      "community": 62,
       "norm_label": "home (estimate page)",
       "id": "estimate_home"
     },
@@ -28376,7 +28556,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 80,
+      "community": 62,
       "norm_label": "reviews (testimonials page)",
       "id": "testimonials_reviews"
     },
@@ -28454,7 +28634,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 80,
+      "community": 62,
       "norm_label": "review component",
       "id": "review_review"
     },
@@ -28506,7 +28686,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 80,
+      "community": 62,
       "norm_label": "reviews.json data",
       "id": "reviews_data"
     },
@@ -28519,7 +28699,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "post /api/customers/add",
       "id": "add_post"
     },
@@ -28532,7 +28712,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "post /api/customers/delete",
       "id": "delete_post"
     },
@@ -28545,7 +28725,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "post /api/customers/edit",
       "id": "edit_post"
     },
@@ -28558,7 +28738,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "get /api/customers/list",
       "id": "list_get"
     },
@@ -28571,7 +28751,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "get /api/customers/select",
       "id": "select_get"
     },
@@ -28584,7 +28764,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "post /api/employees/add",
       "id": "add_post_emp"
     },
@@ -28597,7 +28777,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "post /api/employees/delete",
       "id": "delete_post_emp"
     },
@@ -28610,7 +28790,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "post /api/employees/edit",
       "id": "edit_post_emp"
     },
@@ -28623,7 +28803,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "get /api/employees/list",
       "id": "list_get_emp"
     },
@@ -28636,7 +28816,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "get /api/employees/select",
       "id": "select_get_emp"
     },
@@ -28649,7 +28829,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "post /api/expenses/add",
       "id": "add_post_exp"
     },
@@ -28662,7 +28842,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "post /api/expenses/delete",
       "id": "delete_post_exp"
     },
@@ -28675,7 +28855,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "post /api/expenses/edit",
       "id": "edit_post_exp"
     },
@@ -28688,7 +28868,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "get /api/expenses/list",
       "id": "list_get_exp"
     },
@@ -28701,7 +28881,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "get /api/expenses/select",
       "id": "select_get_exp"
     },
@@ -28740,7 +28920,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "expense (type)",
       "id": "utils_expense"
     },
@@ -28753,7 +28933,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "authoptions (nextauth config)",
       "id": "authoptions_authoptions"
     },
@@ -28766,7 +28946,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 1,
       "norm_label": "post /api/hours/add (insert hour record)",
       "id": "add_route"
     },
@@ -28779,7 +28959,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 47,
       "norm_label": "post /api/hours/delete (delete hour by hid)",
       "id": "delete_route"
     },
@@ -28831,7 +29011,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "post /api/jobs/delete (delete job by jid)",
       "id": "delete_route_jobs"
     },
@@ -29039,7 +29219,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 1,
       "norm_label": "addhours helper",
       "id": "utils_addhours"
     },
@@ -29078,7 +29258,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 73,
+      "community": 69,
       "norm_label": "listitem (employee navbar)",
       "id": "employee_navbar_listitem"
     },
@@ -29104,7 +29284,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 73,
+      "community": 69,
       "norm_label": "listitem (public navbar)",
       "id": "components_navbar_listitem"
     },
@@ -29117,7 +29297,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 401,
+      "community": 101,
       "norm_label": "spinneroverlay (commented out)",
       "id": "components_spinner_spinneroverlay"
     },
@@ -29130,7 +29310,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 401,
+      "community": 101,
       "norm_label": "employeetable",
       "id": "components_table_employeetable"
     },
@@ -29169,7 +29349,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 57,
+      "community": 101,
       "norm_label": "combobox (and subcomponents)",
       "id": "ui_combobox_combobox"
     },
@@ -29195,7 +29375,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 401,
       "norm_label": "employees table",
       "id": "lib_tables_employees"
     },
@@ -29208,7 +29388,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "customers table",
       "id": "lib_tables_customers"
     },
@@ -29221,7 +29401,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "jobs table",
       "id": "lib_tables_jobs"
     },
@@ -29234,7 +29414,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 401,
       "norm_label": "hours table",
       "id": "lib_tables_hours"
     },
@@ -29247,7 +29427,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 0,
       "norm_label": "expenses table",
       "id": "lib_tables_expenses"
     },
@@ -29455,7 +29635,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 85,
+      "community": 401,
       "norm_label": "rest-ish api route convention",
       "id": "claude_rest_api_convention"
     },
@@ -29494,7 +29674,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 71,
+      "community": 401,
       "norm_label": "required environment variables",
       "id": "claude_environment_vars"
     },
@@ -52498,6 +52678,39 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(employee)/employee-portal/general/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "general_page",
+      "target": "lib_locationverification",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(employee)/employee-portal/general/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "general_page",
+      "target": "lib_locationverification_locationstatuspresentation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(employee)/employee-portal/general/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "general_page",
+      "target": "lib_locationverification_resolvelocationstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(employee)/employee-portal/general/page.tsx",
       "source_location": "L1",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -52544,9 +52757,9 @@
       "source_file": "app/(employee)/employee-portal/general/page.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "general_page",
-      "target": "lib_utils",
-      "confidence_score": 1.0
+      "target": "lib_utils"
     },
     {
       "relation": "imports",
@@ -52555,9 +52768,9 @@
       "source_file": "app/(employee)/employee-portal/general/page.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "general_page",
-      "target": "lib_utils_hoursworked",
-      "confidence_score": 1.0
+      "target": "lib_utils_hoursworked"
     },
     {
       "relation": "imports_from",
@@ -52969,9 +53182,9 @@
       "source_file": "app/(employee)/employee-portal/jobs/[jid]/page.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jid_page",
-      "target": "lib_utils_hoursworked",
-      "confidence_score": 1.0
+      "target": "lib_utils_hoursworked"
     },
     {
       "relation": "imports_from",
@@ -53656,9 +53869,9 @@
       "source_file": "app/(employee)/employee-portal/page.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "employee_portal_page",
-      "target": "lib_utils",
-      "confidence_score": 1.0
+      "target": "lib_utils"
     },
     {
       "relation": "imports",
@@ -53667,9 +53880,9 @@
       "source_file": "app/(employee)/employee-portal/page.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "employee_portal_page",
-      "target": "lib_utils_hoursworked",
-      "confidence_score": 1.0
+      "target": "lib_utils_hoursworked"
     },
     {
       "relation": "imports_from",
@@ -56817,6 +57030,61 @@
       "target": "lib_geo_haversinemiles"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/hours/clock-out/route.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "clock_out_route",
+      "target": "lib_geocode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/hours/clock-out/route.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "clock_out_route",
+      "target": "lib_geocode_geocodeprecision",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/hours/clock-out/route.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "clock_out_route",
+      "target": "lib_locationverification",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/hours/clock-out/route.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "clock_out_route",
+      "target": "lib_locationverification_evaluatelocation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/hours/clock-out/route.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "clock_out_route",
+      "target": "lib_locationverification_islocationverified",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -56837,6 +57105,28 @@
       "weight": 1.0,
       "source": "clock_out_route_post",
       "target": "lib_geo_haversinemiles"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/hours/clock-out/route.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "clock_out_route_post",
+      "target": "lib_locationverification_evaluatelocation"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/hours/clock-out/route.ts",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "clock_out_route_post",
+      "target": "lib_locationverification_islocationverified"
     },
     {
       "relation": "contains",
@@ -58165,9 +58455,9 @@
       "source_file": "components/Forms.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_forms",
-      "target": "lib_utils_hoursworked",
-      "confidence_score": 1.0
+      "target": "lib_utils_hoursworked"
     },
     {
       "relation": "imports",
@@ -60268,6 +60558,39 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/hoursSearch.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_hourssearch",
+      "target": "lib_locationverification",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/hoursSearch.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_hourssearch",
+      "target": "lib_locationverification_locationstatuspresentation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/hoursSearch.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_hourssearch",
+      "target": "lib_locationverification_resolvelocationstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/hoursSearch.tsx",
       "source_location": "L3",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -60292,9 +60615,9 @@
       "source_file": "components/hoursSearch.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_hourssearch",
-      "target": "lib_utils_hoursworked",
-      "confidence_score": 1.0
+      "target": "lib_utils_hoursworked"
     },
     {
       "relation": "imports_from",
@@ -63869,6 +64192,26 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/geo.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "lib_geo",
+      "target": "lib_geo_centralangle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/geo.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "lib_geo",
+      "target": "lib_geo_haversinemeters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/geo.ts",
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -63886,6 +64229,39 @@
       "target": "lib_geo_toradians"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/geocode.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "lib_geocode",
+      "target": "lib_geo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "lib_locationverification",
+      "target": "lib_geo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/geo.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "lib_geo_centralangle",
+      "target": "lib_geo_toradians",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -63897,6 +64273,82 @@
       "target": "lib_geo_toradians"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/geo.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "lib_geo_haversinemeters",
+      "target": "lib_geo_centralangle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/geo.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "lib_geo_haversinemiles",
+      "target": "lib_geo_centralangle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/geocode.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "lib_geocode",
+      "target": "lib_geo_haversinemeters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/geocode.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "lib_geocode_classifyprecision",
+      "target": "lib_geo_haversinemeters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "lib_locationverification",
+      "target": "lib_geo_haversinemeters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "lib_locationverification_evaluatereading",
+      "target": "lib_geo_haversinemeters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/geocode.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "lib_geocode",
+      "target": "lib_geocode_classifyprecision",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/geocode.ts",
@@ -63905,6 +64357,214 @@
       "confidence_score": 1.0,
       "source": "lib_geocode",
       "target": "lib_geocode_geocodeaddress"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/geocode.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "lib_geocode",
+      "target": "lib_geocode_geocodeprecision",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "lib_locationverification",
+      "target": "lib_geocode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "lib_locationverification",
+      "target": "lib_geocode_geocodeprecision",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "lib_locationverification_joblocation",
+      "target": "lib_geocode_geocodeprecision",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/geocode.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "lib_geocode_geocodeaddress",
+      "target": "lib_geocode_classifyprecision",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "lib_locationverification",
+      "target": "lib_locationverification_evaluatelocation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "lib_locationverification",
+      "target": "lib_locationverification_evaluatereading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "lib_locationverification",
+      "target": "lib_locationverification_gpsreading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "lib_locationverification",
+      "target": "lib_locationverification_islocationverified",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "lib_locationverification",
+      "target": "lib_locationverification_joblocation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "lib_locationverification",
+      "target": "lib_locationverification_locationstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L110",
+      "weight": 1.0,
+      "source": "lib_locationverification",
+      "target": "lib_locationverification_locationstatuspresentation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "lib_locationverification",
+      "target": "lib_locationverification_readingverdict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "lib_locationverification",
+      "target": "lib_locationverification_resolvelocationstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "lib_locationverification",
+      "target": "lib_locationverification_status_presentation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "lib_locationverification",
+      "target": "lib_locationverification_tone",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/utils.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "lib_utils",
+      "target": "lib_locationverification",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/utils.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "lib_utils",
+      "target": "lib_locationverification_locationstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/utils.ts",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "lib_utils_hour",
+      "target": "lib_locationverification_locationstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/locationVerification.ts",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "lib_locationverification_evaluatelocation",
+      "target": "lib_locationverification_evaluatereading",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -64601,9 +65261,9 @@
       "source_file": "lib/utils.ts",
       "source_location": "L265",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_utils",
-      "target": "lib_utils_addhoursinput",
-      "confidence_score": 1.0
+      "target": "lib_utils_addhoursinput"
     },
     {
       "relation": "contains",
@@ -65061,9 +65721,9 @@
       "source_file": "lib/utils.ts",
       "source_location": "L70",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_utils",
-      "target": "lib_utils_hoursworked",
-      "confidence_score": 1.0
+      "target": "lib_utils_hoursworked"
     },
     {
       "relation": "contains",
@@ -66551,6 +67211,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/geocode-jobs.mjs",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "scripts_geocode_jobs",
+      "target": "scripts_geocode_jobs_classifyprecision",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/geocode-jobs.mjs",
       "source_location": "L18",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -66561,11 +67231,43 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/geocode-jobs.mjs",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "scripts_geocode_jobs",
+      "target": "scripts_geocode_jobs_haversinemeters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/geocode-jobs.mjs",
       "source_location": "L16",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "scripts_geocode_jobs",
       "target": "scripts_geocode_jobs_sql"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/geocode-jobs.mjs",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "scripts_geocode_jobs_classifyprecision",
+      "target": "scripts_geocode_jobs_haversinemeters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/geocode-jobs.mjs",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "scripts_geocode_jobs_geocodeaddress",
+      "target": "scripts_geocode_jobs_classifyprecision",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -79221,5 +79923,5 @@
       "source_file": "public/decks/stairs-1-before/IMG_2571.HEIC.jpg"
     }
   ],
-  "built_at_commit": "448e1c1dbb586496c2ab52a81b50cc9d3ec86fb5"
+  "built_at_commit": "5975c49ace3881714ed030ecde38bba39d2fb9bf"
 }
