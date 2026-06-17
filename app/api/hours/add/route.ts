@@ -13,11 +13,13 @@ export async function POST(request: Request) {
         return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
     try {
-        const hoursData = await request.json();
+        const { eid, jid, date_worked, clock_in_at, clock_out_at } = await request.json();
 
+        // Manual entry: no GPS, so location_verified stays NULL. Hours are
+        // derived from clock_in_at/clock_out_at, never stored.
         const result = await sql`
-            INSERT INTO hours (eid, jid, hours, date_worked)
-            VALUES (${hoursData.eid}, ${hoursData.jid}, ${hoursData.hours}, ${hoursData.date_worked})
+            INSERT INTO hours (eid, jid, date_worked, clock_in_at, clock_out_at)
+            VALUES (${eid}, ${jid}, ${date_worked}, ${clock_in_at}, ${clock_out_at})
             RETURNING *;
         `;
         return NextResponse.json(result);

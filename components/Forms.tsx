@@ -15,6 +15,7 @@ import {
   getEmployees,
   getJobs,
   hoursWithEmployeeAndJob,
+  hoursWorked,
   Job,
 } from "@/lib/utils";
 import { Checkbox } from "./ui/checkbox";
@@ -399,12 +400,23 @@ export function EditCustomer({ customer }: { customer?: Customer }) {
 export function QuickAddHours() {
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [jobs, setJobs] = useState<Job[]>([]);
-  const [hours, setHours] = useState<number>(0);
   const [selectedEmployee, setSelectedEmployee] = useState<Employee | null>(null);
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
   const [dateWorked, setDateWorked] = useState<string>("");
-  const [errors, setErrors] = useState<{ employee?: string; job?: string; hours?: string; date?: string }>({});
+  const [startTime, setStartTime] = useState<string>("");
+  const [endTime, setEndTime] = useState<string>("");
+  const [errors, setErrors] = useState<{ employee?: string; job?: string; date?: string; start?: string; end?: string }>({});
   const [saved, setSaved] = useState(false);
+
+  // Live preview of the duration that will be saved (hours are derived from
+  // start/end, never entered or stored directly).
+  const previewHours =
+    dateWorked && startTime && endTime
+      ? hoursWorked({
+          clock_in_at: new Date(`${dateWorked}T${startTime}`).toISOString(),
+          clock_out_at: new Date(`${dateWorked}T${endTime}`).toISOString(),
+        })
+      : 0;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -427,35 +439,42 @@ export function QuickAddHours() {
     const newErrors: typeof errors = {};
     if (!selectedEmployee) newErrors.employee = "Select an employee";
     if (!selectedJob) newErrors.job = "Select a job";
-    if (!hours) newErrors.hours = "Enter hours worked";
     if (!dateWorked) newErrors.date = "Select a date";
+    if (!startTime) newErrors.start = "Enter a start time";
+    if (!endTime) newErrors.end = "Enter an end time";
+    if (dateWorked && startTime && endTime) {
+      const start = new Date(`${dateWorked}T${startTime}`);
+      const end = new Date(`${dateWorked}T${endTime}`);
+      if (end <= start) newErrors.end = "End must be after start";
+    }
     setErrors(newErrors);
     if (Object.keys(newErrors).length > 0) return;
 
     const success = await addHours({
-      hid: Date.now(),
       eid: selectedEmployee!.eid,
       jid: selectedJob!.jid,
-      hours,
       date_worked: dateWorked,
+      clock_in_at: new Date(`${dateWorked}T${startTime}`).toISOString(),
+      clock_out_at: new Date(`${dateWorked}T${endTime}`).toISOString(),
     });
 
     if (success) {
-      setHours(0);
       setSelectedEmployee(null);
       setSelectedJob(null);
       setDateWorked("");
+      setStartTime("");
+      setEndTime("");
       setSaved(true);
       setTimeout(() => setSaved(false), 2000);
     } else {
-      setErrors({ hours: "Failed to save. Please try again." });
+      setErrors({ end: "Failed to save. Please try again." });
     }
   };
 
   return (
     <div className="card space-y-4 p-6">
       <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Quick Add Hours</h2>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
         <Field label="Employee" error={errors.employee} required>
           <Combobox
             items={employees}
@@ -514,16 +533,6 @@ export function QuickAddHours() {
           </Combobox>
         </Field>
 
-        <Field label="Hours" error={errors.hours} required>
-          <input
-            type="number"
-            placeholder="0"
-            value={hours || ""}
-            onChange={(e) => setHours(e.target.value ? Number(e.target.value) : 0)}
-            className={inputClass(!!errors.hours)}
-          />
-        </Field>
-
         <Field label="Date" error={errors.date} required>
           <input
             type="date"
@@ -532,12 +541,33 @@ export function QuickAddHours() {
             className={inputClass(!!errors.date)}
           />
         </Field>
+
+        <Field label="Start Time" error={errors.start} required>
+          <input
+            type="time"
+            value={startTime}
+            onChange={(e) => setStartTime(e.target.value)}
+            className={inputClass(!!errors.start)}
+          />
+        </Field>
+
+        <Field label="End Time" error={errors.end} required>
+          <input
+            type="time"
+            value={endTime}
+            onChange={(e) => setEndTime(e.target.value)}
+            className={inputClass(!!errors.end)}
+          />
+        </Field>
       </div>
 
       <div className="flex items-center gap-3">
         <button onClick={handleSave} className="primary rounded-md px-6 py-2 text-sm font-semibold transition-opacity hover:opacity-90">
           Save Hours
         </button>
+        {previewHours > 0 && (
+          <span className="text-sm text-muted-foreground">= {previewHours} {previewHours === 1 ? "hour" : "hours"}</span>
+        )}
         {saved && <span className="text-sm font-medium text-green-700">Hours added ✓</span>}
       </div>
     </div>

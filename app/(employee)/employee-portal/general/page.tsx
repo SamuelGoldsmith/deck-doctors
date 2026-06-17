@@ -1,4 +1,5 @@
 import { getSession, getHours, getJobs } from "@/lib/serverUtils";
+import { hoursWorked } from "@/lib/utils";
 import { ClockInOut, ChangePasswordForm } from "@/components/Forms";
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell, TableCaption } from "@/components/ui/table";
 
@@ -10,7 +11,7 @@ export default async function EmployeeGeneralPage() {
   const myHours = allHours.filter((hour) => hour.eid === eid);
   const openEntry = myHours.find((hour) => hour.clock_in_at && !hour.clock_out_at) ?? null;
   const completedHours = myHours.filter((hour) => hour.clock_out_at);
-  const totalAmount = completedHours.reduce((acc, hour) => acc + hour.hours * hour.rate, 0);
+  const totalAmount = completedHours.reduce((acc, hour) => acc + hoursWorked(hour) * hour.rate, 0);
 
   const formatTime = (value?: string | null) =>
     value ? new Date(value).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) : "—";
@@ -60,8 +61,8 @@ export default async function EmployeeGeneralPage() {
                     <TableCell>{hour.address}</TableCell>
                     <TableCell>{formatTime(hour.clock_in_at)}</TableCell>
                     <TableCell>{formatTime(hour.clock_out_at)}</TableCell>
-                    <TableCell>{hour.hours}</TableCell>
-                    <TableCell>${(hour.hours * hour.rate).toFixed(2)}</TableCell>
+                    <TableCell>{hoursWorked(hour)}</TableCell>
+                    <TableCell>${(hoursWorked(hour) * hour.rate).toFixed(2)}</TableCell>
                   </TableRow>
                 ))
               )}

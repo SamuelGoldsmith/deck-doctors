@@ -51,15 +51,28 @@ export interface Hour {
   hid: number;
   eid: number; // Foreign key to Employee.eid
   jid: number; // Foreign key to Job.jid
-  hours: number;
   date_worked: string; // ISO date string: YYYY-MM-DD
-  clock_in_at?: string | null;
-  clock_out_at?: string | null;
+  clock_in_at?: string | null;  // start of the shift (ISO timestamp)
+  clock_out_at?: string | null; // end of the shift (ISO timestamp)
   clock_in_latitude?: number | null;
   clock_in_longitude?: number | null;
   clock_out_latitude?: number | null;
   clock_out_longitude?: number | null;
   location_verified?: boolean | null;
+}
+
+/**
+ * Hours worked for an entry, derived from the start (clock_in_at) and end
+ * (clock_out_at) timestamps. The single source of truth for hours — the value
+ * is never stored, only computed at runtime. Returns 0 for an open entry (not
+ * yet clocked out) or when a timestamp is missing/invalid.
+ */
+export function hoursWorked(h: { clock_in_at?: string | null; clock_out_at?: string | null }): number {
+  if (!h.clock_in_at || !h.clock_out_at) return 0;
+  const start = new Date(h.clock_in_at).getTime();
+  const end = new Date(h.clock_out_at).getTime();
+  if (Number.isNaN(start) || Number.isNaN(end) || end <= start) return 0;
+  return Math.round(((end - start) / 3_600_000) * 100) / 100;
 }
 export interface hoursWithEmployeeAndJob extends Hour {
   jid: number;
@@ -249,13 +262,21 @@ export async function editJob(job: Job) {
     return res.ok;
   }
 
-  export async function addHours(hours: Hour) {
+  export interface AddHoursInput {
+    eid: number;
+    jid: number;
+    date_worked: string;  // YYYY-MM-DD
+    clock_in_at: string;  // ISO timestamp (start)
+    clock_out_at: string; // ISO timestamp (end)
+  }
+
+  export async function addHours(input: AddHoursInput) {
     const res = await fetch("/api/hours/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(hours),
+      body: JSON.stringify(input),
     })
     return res.ok;
   }

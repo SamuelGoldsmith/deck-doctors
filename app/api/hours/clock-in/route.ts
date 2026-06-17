@@ -22,8 +22,8 @@ export async function POST(request: Request) {
         }
 
         const result = await sql`
-            INSERT INTO hours (eid, jid, hours, date_worked, clock_in_at, clock_in_latitude, clock_in_longitude)
-            VALUES (${eid}, ${jid}, 0, CURRENT_DATE, now(), ${latitude}, ${longitude})
+            INSERT INTO hours (eid, jid, date_worked, clock_in_at, clock_in_latitude, clock_in_longitude)
+            VALUES (${eid}, ${jid}, CURRENT_DATE, now(), ${latitude}, ${longitude})
             RETURNING *;
         `;
         return NextResponse.json(result[0]);

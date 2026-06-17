@@ -29,11 +29,14 @@ CREATE TABLE IF NOT EXISTS jobs (
     description TEXT
 );
 
+-- Hours are NOT stored. Every entry records a start (clock_in_at) and end
+-- (clock_out_at) timestamp; the duration is computed at runtime. See the
+-- clock-in/out migration block below for the columns and the drop of the
+-- legacy stored `hours` column.
 CREATE TABLE IF NOT EXISTS hours (
     hid SERIAL PRIMARY KEY,
     eid INTEGER NOT NULL REFERENCES employees(eid) ON DELETE CASCADE,
     jid INTEGER NOT NULL REFERENCES jobs(jid) ON DELETE CASCADE,
-    hours NUMERIC(5,2) NOT NULL CHECK (hours >= 0),
     date_worked DATE NOT NULL
 );
 
@@ -179,6 +182,34 @@ ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_in_longitude NUMERIC(9,6);
 ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_out_latitude NUMERIC(9,6);
 ALTER TABLE hours ADD COLUMN IF NOT EXISTS clock_out_longitude NUMERIC(9,6);
 ALTER TABLE hours ADD COLUMN IF NOT EXISTS location_verified BOOLEAN;
+
+-- ============================================================
+-- Deck Doctors — Hours are derived from start/end, not stored
+-- Both logging paths (manual "Quick Add" and employee clock in/out)
+-- now record only a start (clock_in_at) and end (clock_out_at). The
+-- worked duration is computed at runtime. This migration backfills
+-- start/end for legacy manual rows that only had a raw `hours` value
+-- (anchored at 08:00 on the date worked so the duration is preserved),
+-- then drops the now-derived `hours` column. Guarded so it is a no-op
+-- on a fresh database where the column was never created.
+-- ============================================================
+
+DO $$
+BEGIN
+  IF EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_name = 'hours' AND column_name = 'hours'
+  ) THEN
+    UPDATE hours
+    SET clock_in_at  = date_worked + INTERVAL '8 hours',
+        clock_out_at = date_worked + INTERVAL '8 hours' + (hours::double precision * INTERVAL '1 hour')
+    WHERE clock_in_at IS NULL
+      AND clock_out_at IS NULL
+      AND hours IS NOT NULL;
+
+    ALTER TABLE hours DROP COLUMN hours;
+  END IF;
+END $$;
 
 -- ============================================================
 -- Deck Doctors — On-Site Deck Estimates (estimator tool)

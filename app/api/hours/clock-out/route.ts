@@ -55,8 +55,7 @@ export async function POST(request: Request) {
             SET clock_out_at = now(),
                 clock_out_latitude = ${latitude},
                 clock_out_longitude = ${longitude},
-                location_verified = ${locationVerified},
-                hours = ROUND(EXTRACT(EPOCH FROM (now() - clock_in_at)) / 3600, 2)
+                location_verified = ${locationVerified}
             WHERE hid = ${entry.hid}
             RETURNING *;
         `;

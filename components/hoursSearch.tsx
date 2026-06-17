@@ -1,6 +1,6 @@
 'use client';
 
-import { hoursWithEmployeeAndJob } from "@/lib/utils";
+import { hoursWithEmployeeAndJob, hoursWorked } from "@/lib/utils";
 import { Combobox, ComboboxContent, ComboboxEmpty, ComboboxInput, ComboboxItem, ComboboxList } from "./ui/combobox";
 import { TableHeader, TableRow, TableHead, TableBody, TableCell, TableCaption, Table } from "./ui/table";
 import { useState, useMemo } from "react";
@@ -68,7 +68,7 @@ export default function HoursSearch({ hours }: { hours: hoursWithEmployeeAndJob[
     }, [hours, employeeSearch, effectiveStartDate, effectiveEndDate]);
 
     const totalCost = useMemo(
-        () => shownHours.reduce((acc, hour) => acc + hour.hours * hour.rate, 0),
+        () => shownHours.reduce((acc, hour) => acc + hoursWorked(hour) * hour.rate, 0),
         [shownHours]
     );
 
@@ -217,8 +217,8 @@ export default function HoursSearch({ hours }: { hours: hoursWithEmployeeAndJob[
                                             ? new Date(hour.date_worked).toLocaleDateString()
                                             : "—"}
                                     </TableCell>
-                                    <TableCell>{hour.hours}</TableCell>
-                                    <TableCell>${(hour.hours * hour.rate).toFixed(2)}</TableCell>
+                                    <TableCell>{hoursWorked(hour)}</TableCell>
+                                    <TableCell>${(hoursWorked(hour) * hour.rate).toFixed(2)}</TableCell>
                                     <TableCell>{hour.address}</TableCell>
                                     <TableCell title={
                                         hour.location_verified === true

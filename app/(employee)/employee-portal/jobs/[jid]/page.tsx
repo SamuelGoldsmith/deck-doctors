@@ -2,7 +2,7 @@ import Link from "next/link";
 import CustomerCard from "@/components/customerCard";
 import { ExpenseTable } from "@/components/table";
 import { getEmployees, getExpensesByJobId, getHoursByJob, getJobById } from "@/lib/serverUtils";
-import { Expense } from "@/lib/utils";
+import { Expense, hoursWorked } from "@/lib/utils";
 import { Detail, InfoSection, formatDate } from "@/components/ui/portal-section";
 import { DeleteButton } from "@/components/portal/DeleteButton";
 
@@ -31,12 +31,12 @@ export default async function JobProfile({ params }: { params: Promise<{ jid: nu
   hours.forEach((hour) => {
     const existing = groupedHourlyExpense.find((e) => e.description === "Labor" + hour.date_worked);
     if (existing) {
-      existing.cost += hour.hours * getRate(hour.eid);
+      existing.cost += hoursWorked(hour) * getRate(hour.eid);
     } else {
       groupedHourlyExpense.push({
         exid: hour.eid + Math.random(),
         jid: hour.jid,
-        cost: hour.hours * getRate(hour.eid),
+        cost: hoursWorked(hour) * getRate(hour.eid),
         description: "Labor" + " " + new Date(hour.date_worked).toLocaleDateString(),
       } as Expense);
     }

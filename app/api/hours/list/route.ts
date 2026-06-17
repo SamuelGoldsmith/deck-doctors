@@ -11,7 +11,6 @@ const HOURS_COLUMNS = `
     hours.hid,
     hours.eid,
     hours.jid,
-    hours.hours,
     hours.date_worked,
     hours.clock_in_at,
     hours.clock_out_at,

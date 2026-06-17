@@ -50,8 +50,8 @@
     "semantic_hash": ""
   },
   "app/(employee)/employee-portal/jobs/[jid]/page.tsx": {
-    "mtime": 1781657296.2493806,
-    "ast_hash": "e15827d490dfca71b4a0065cc62cec81",
+    "mtime": 1781396950.5489864,
+    "ast_hash": "e8b483562510c33d82f99215b9f8131e",
     "semantic_hash": ""
   },
   "app/(employee)/employee-portal/jobs/page.tsx": {
@@ -65,8 +65,8 @@
     "semantic_hash": ""
   },
   "app/(employee)/employee-portal/page.tsx": {
-    "mtime": 1781657287.5518918,
-    "ast_hash": "2d17b320245e2b7ef72d656e92fbe83a",
+    "mtime": 1781393172.527515,
+    "ast_hash": "4bcb579ed3ca48579b1cfd7353f4c0a7",
     "semantic_hash": ""
   },
   "app/(main)/about/page.tsx": {
@@ -205,9 +205,9 @@
     "semantic_hash": "50328832d8f753ce5a55814576412fc6"
   },
   "app/api/hours/add/route.ts": {
-    "mtime": 1781657221.4538662,
-    "ast_hash": "2a7351a65614068a4f0732b85a0e16e1",
-    "semantic_hash": ""
+    "mtime": 1781380490.1417708,
+    "ast_hash": "6de936b1a1a9c9e97b1578dd6f272ed9",
+    "semantic_hash": "6de936b1a1a9c9e97b1578dd6f272ed9"
   },
   "app/api/hours/delete/route.ts": {
     "mtime": 1779657022.941981,
@@ -220,8 +220,8 @@
     "semantic_hash": "3b75c2306a1349e63ef2da7e30cbae89"
   },
   "app/api/hours/list/route.ts": {
-    "mtime": 1781657228.7977233,
-    "ast_hash": "f46830686b33ffbbacab537c9250528a",
+    "mtime": 1781468409.1386232,
+    "ast_hash": "58a06c6fa6e1ab30c00f32fa179bebc5",
     "semantic_hash": ""
   },
   "app/api/hours/select/job/route.ts": {
@@ -265,8 +265,8 @@
     "semantic_hash": "883a0b7479775a644b93b9e708b89d30"
   },
   "components/Forms.tsx": {
-    "mtime": 1781657264.2870872,
-    "ast_hash": "6a80a38a7be93d117b33469acc66561b",
+    "mtime": 1781572634.460355,
+    "ast_hash": "ee2a42675e6b323520f04a0e0a6da9ed",
     "semantic_hash": ""
   },
   "components/Social.tsx": {
@@ -310,8 +310,8 @@
     "semantic_hash": ""
   },
   "components/hoursSearch.tsx": {
-    "mtime": 1781657271.9112391,
-    "ast_hash": "293c79c35303ec5fc2b5e546f057649d",
+    "mtime": 1781468494.036889,
+    "ast_hash": "7796504fb83789d05a131d8fe19337ac",
     "semantic_hash": ""
   },
   "components/message-box.tsx": {
@@ -430,13 +430,13 @@
     "semantic_hash": ""
   },
   "lib/tables.sql": {
-    "mtime": 1781657197.2986174,
-    "ast_hash": "b260aa9bc1e1e2826c1a27ce6c36c70f",
+    "mtime": 1781572131.0335476,
+    "ast_hash": "3e710064b31dcbe1455de4d740f92161",
     "semantic_hash": ""
   },
   "lib/utils.ts": {
-    "mtime": 1781657215.502639,
-    "ast_hash": "26386182e2f0024c46a58b02176630a3",
+    "mtime": 1781572629.4843814,
+    "ast_hash": "d668e627b3bed80daafa5e50d365a110",
     "semantic_hash": ""
   },
   "next.config.ts": {
@@ -2110,8 +2110,8 @@
     "semantic_hash": ""
   },
   "app/(employee)/employee-portal/general/page.tsx": {
-    "mtime": 1781657280.2208035,
-    "ast_hash": "9ac7936af9d302db21725537a3fdcf68",
+    "mtime": 1781468482.6225388,
+    "ast_hash": "e4d481e7a41559b2a4f2c64284bc3a34",
     "semantic_hash": ""
   },
   "app/(employee)/employee-portal/jobs/new/page.tsx": {
@@ -2145,13 +2145,13 @@
     "semantic_hash": ""
   },
   "app/api/hours/clock-in/route.ts": {
-    "mtime": 1781657224.2452326,
-    "ast_hash": "d47ec2f0d2d504673bf9ecee24e12619",
+    "mtime": 1781477113.8193574,
+    "ast_hash": "667828b5d0eb34d43ffd24c765ad0b63",
     "semantic_hash": ""
   },
   "app/api/hours/clock-out/route.ts": {
-    "mtime": 1781657227.4915338,
-    "ast_hash": "2f26e8e3717421b45b81ad7fd2eaead7",
+    "mtime": 1781477127.5099857,
+    "ast_hash": "2449409273314680363c2008e65b967f",
     "semantic_hash": ""
   },
   "components/BeforeAfter.tsx": {

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { QuickAddHours } from "@/components/Forms";
 import { getEmployees, getJobs, getCustomers, getHours } from "@/lib/serverUtils";
+import { hoursWorked } from "@/lib/utils";
 import { StatCard } from "@/components/ui/stat-card";
 
 export default async function EmployeesPortal() {
@@ -17,7 +18,7 @@ export default async function EmployeesPortal() {
   oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
   const hoursThisWeek = hours
     .filter((hour) => new Date(hour.date_worked) >= oneWeekAgo)
-    .reduce((sum, hour) => sum + Number(hour.hours), 0);
+    .reduce((sum, hour) => sum + hoursWorked(hour), 0);
 
   return (
     <div className="mx-auto w-full max-w-6xl space-y-10">

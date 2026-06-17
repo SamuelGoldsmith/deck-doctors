@@ -1,16 +1,16 @@
-# Graph Report - deck-doctors  (2026-06-16)
+# Graph Report - deck-doctors  (2026-06-15)
 
 ## Corpus Check
-- 754 files · ~7,727,066 words
+- 754 files · ~7,726,585 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2972 nodes · 4567 edges · 405 communities (222 shown, 183 thin omitted)
+- 2970 nodes · 4557 edges · 415 communities (222 shown, 193 thin omitted)
 - Extraction: 95% EXTRACTED · 4% INFERRED · 1% AMBIGUOUS · INFERRED: 179 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `448e1c1d`
+- Built from commit: `fe229bfc`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -414,7 +414,17 @@
 - [[_COMMUNITY_Community 400|Community 400]]
 - [[_COMMUNITY_Community 401|Community 401]]
 - [[_COMMUNITY_Community 402|Community 402]]
+- [[_COMMUNITY_Community 403|Community 403]]
+- [[_COMMUNITY_Community 404|Community 404]]
 - [[_COMMUNITY_Community 405|Community 405]]
+- [[_COMMUNITY_Community 406|Community 406]]
+- [[_COMMUNITY_Community 407|Community 407]]
+- [[_COMMUNITY_Community 408|Community 408]]
+- [[_COMMUNITY_Community 409|Community 409]]
+- [[_COMMUNITY_Community 410|Community 410]]
+- [[_COMMUNITY_Community 411|Community 411]]
+- [[_COMMUNITY_Community 412|Community 412]]
+- [[_COMMUNITY_Community 413|Community 413]]
 - [[_COMMUNITY_Community 414|Community 414]]
 
 ## God Nodes (most connected - your core abstractions)
@@ -436,10 +446,10 @@
   lib/utils.ts → app/api/hours/list/route.ts
 - `CustomerProfile()` --references--> `getEmployeeById()`  [AMBIGUOUS]
   app/(employee)/employee-portal/customers/[cid]/page.tsx → lib/serverUtils.ts
-- `EmployeesPortal()` --references--> `reviews.json data`  [AMBIGUOUS]
-  app/(employee)/employee-portal/employees/page.tsx → data/reviews.json
-- `JobsPortal()` --references--> `getEmployees()`  [AMBIGUOUS]
-  app/(employee)/employee-portal/jobs/page.tsx → lib/serverUtils.ts
+- `CustomerProfile()` --references--> `getEmployees()`  [AMBIGUOUS]
+  app/(employee)/employee-portal/customers/[cid]/page.tsx → lib/serverUtils.ts
+- `CustomerProfile()` --references--> `getJobById()`  [AMBIGUOUS]
+  app/(employee)/employee-portal/customers/[cid]/page.tsx → lib/serverUtils.ts
 
 ## Import Cycles
 - None detected.
@@ -484,35 +494,35 @@
 - **Deck Job Pool - Before and After Restoration** — pool_1_before_img_2453, pool_1_before_img_2462, pool_1_before_img_2554, pool_2_after_img_0098, pool_2_after_img_0100 [INFERRED 0.75]
 - **Deck Job Stairs - Before and After Restoration** — stairs_1_before_img_2571, stairs_1_before_img_9989, stairs_1_before_img_9990, stairs_2_after_img_2495, stairs_2_after_img_4895, stairs_2_after_img_4900, stairs_2_after_img_4902 [INFERRED 0.75]
 
-## Communities (405 total, 183 thin omitted)
+## Communities (415 total, 193 thin omitted)
 
 ### Community 0 - "authOptions (NextAuth config) & Related"
-Cohesion: 0.13
-Nodes (24): POST /api/hours/add (insert hour record), POST /api/jobs/add (bulk insert jobs), CustomerCard component, CustomerSelect component, POST /api/hours/edit (mislabeled: updates jobs table), POST /api/jobs/edit (update job by jid), EditCustomer component, EditEmployee component (+16 more)
+Cohesion: 0.09
+Nodes (42): POST /api/customers/add, POST /api/employees/add, POST /api/expenses/add, POST /api/hours/add (insert hour record), POST /api/jobs/add (bulk insert jobs), authOptions (NextAuth config), CustomerCard component, CustomerSelect component (+34 more)
 
 ### Community 1 - "Data layer architecture & Related"
-Cohesion: 0.16
-Nodes (17): CustomerTable, JobTable, CustomersPortal(), POST /api/hours/delete (delete hour by hid), EmployeeGeneralPage(), JobsPortal(), deleteJob(), getJobs() (+9 more)
+Cohesion: 0.18
+Nodes (13): JobTable, CustomersPortal(), EmployeeGeneralPage(), JobsPortal(), deleteJob(), getJobs(), addJobs(), deleteJob() (+5 more)
 
 ### Community 2 - "getSession & Related"
-Cohesion: 0.16
-Nodes (13): Internal employee portal (app/(employee)/employee-portal/), Public marketing site (app/(main)/), Footer(), LINK_COLUMNS, SignOutButton(), Social(), Footer(), Navbar() (+5 more)
+Cohesion: 0.17
+Nodes (12): Internal employee portal (app/(employee)/employee-portal/), Public marketing site (app/(main)/), Footer(), LINK_COLUMNS, SignOutButton(), Social(), Footer(), Navbar() (+4 more)
 
 ### Community 3 - "cn & Related"
-Cohesion: 0.17
-Nodes (20): cn(), ComboboxChip(), ComboboxChips(), ComboboxChipsInput(), ComboboxClear(), ComboboxGroup(), ComboboxInput(), ComboboxLabel() (+12 more)
+Cohesion: 0.12
+Nodes (17): ComboboxChips(), ComboboxChipsInput(), ComboboxClear(), ComboboxGroup(), ComboboxLabel(), ComboboxSeparator(), ComboboxTrigger(), InputGroup() (+9 more)
 
 ### Community 4 - "job_applications table & Related"
-Cohesion: 0.11
-Nodes (24): ApplicationRow(), ApplicationsPage(), AVAILABILITY_LABELS, Detail, EXPERIENCE_LABELS, formatDate, POSITION_LABELS, Section (+16 more)
+Cohesion: 0.13
+Nodes (23): GET /api/applications, ApplicationRow(), ApplicationsPage(), AVAILABILITY_LABELS, Detail, EXPERIENCE_LABELS, formatDate, POSITION_LABELS (+15 more)
 
 ### Community 5 - "CustomerProfile & Related"
-Cohesion: 0.16
-Nodes (21): CustomerProfile(), CustomerCard(), ExpenseTable(), EditJob, JobProfile (job edit page), getRate (inline helper), JobProfile(), getEmployees() (+13 more)
+Cohesion: 0.21
+Nodes (17): CustomerProfile(), CustomerCard(), ExpenseTable(), getRate (inline helper), JobProfile(), getExpensesByJobId(), getHoursByJob(), expenses table (+9 more)
 
 ### Community 6 - "EmployeeLayout & Related"
-Cohesion: 0.15
-Nodes (14): Review(), ReviewProps, reviews.json data, EmployeeLayout(), EmployeesPortal(), EmployeesPortal(), Footer (employee), QuickAddHours (+6 more)
+Cohesion: 0.17
+Nodes (13): Review(), ReviewProps, reviews.json data, EmployeeLayout(), EmployeesPortal(), EmployeesPortal(), Footer (employee), QuickAddHours (+5 more)
 
 ### Community 7 - "package.json (nextjs project & Related"
 Cohesion: 0.14
@@ -579,12 +589,20 @@ Cohesion: 0.67
 Nodes (3): JBC Before - New White Vinyl Deck Railing Installed, Boards Awaiting Finish, JBC After - Finished Dark-Stained Deck with White Railings and Grill, JBC After - Finished Dark Deck with White Railings, Solar Post Caps and Lattice
 
 ### Community 46 - "Home"
-Cohesion: 0.11
-Nodes (11): metadata, STRING_FIELDS, metadata, STRING_FIELDS, metadata, STRING_FIELDS, applySanitizers(), applySanitizersBatch() (+3 more)
+Cohesion: 0.07
+Nodes (26): applyDollarStrip(), impactMagnitude(), stripDollarLiterals(), metadata, STRING_FIELDS, metadata, STRING_FIELDS, metadata (+18 more)
+
+### Community 47 - "Customers_Add_Route_Ts Add API Route"
+Cohesion: 0.13
+Nodes (12): sql, sql, POST(), sql, POST(), sql, CustomerTable, POST /api/hours/delete (delete hour by hid) (+4 more)
 
 ### Community 48 - "Customers_Delete_Route_Ts Delete API Route"
 Cohesion: 0.07
 Nodes (57): affectedFiles(), appliesAlsoEntry(), cacheLifeIntent(), dedupEditTarget(), dedupeRecommendations(), dedupIntent(), firstAffectedFile(), fixShape() (+49 more)
+
+### Community 50 - "Customers_List_Route_Ts List API Route"
+Cohesion: 0.28
+Nodes (6): POST(), sql, POST(), sql, DUMMY_HASH, sql
 
 ### Community 52 - "Employees_Add_Route_Ts Add API Route"
 Cohesion: 0.13
@@ -594,29 +612,17 @@ Nodes (19): POST(), sql, POST(), sql, buildOnboardingEmail(), BuiltEmail, Onboar
 Cohesion: 0.07
 Nodes (48): buildPackageLookup(), buildResolver(), DEFAULT_RESOLVE_OPTIONS, detectMonorepoRoot(), escapeRegExp(), expandParts(), expandResolvedSpecifier(), expandWorkspaceGlob() (+40 more)
 
-### Community 56 - "Employees_Select_Route_Ts Select API Route"
-Cohesion: 0.27
-Nodes (12): summarizeClaimResults(), applyQualityFloor(), deriveProjectFacts(), deriveRootFromSignals(), detectRepoRoot(), fileResolvesAt(), pickProbeFile(), resolveRepoRoot() (+4 more)
-
 ### Community 57 - "Expenses_Add_Route_Ts Add API Route"
-Cohesion: 0.12
-Nodes (20): CustomerSelect(), ChangePasswordForm(), ClockInOut(), EditCustomer(), EditEmployee(), emptyCustomer, emptyEmployee, emptyJob (+12 more)
+Cohesion: 0.11
+Nodes (22): CustomerSelect(), DatePicker(), ChangePasswordForm(), ClockInOut(), EditCustomer(), EditEmployee(), emptyCustomer, emptyEmployee (+14 more)
 
 ### Community 58 - "Expenses_Delete_Route_Ts Delete API Route"
-Cohesion: 0.12
-Nodes (27): assertValidObservations(), escape(), formatBytes(), formatEvidenceText(), formatGatedTargets(), formatNum(), formatUsage(), groupGbHoursByCanonicalRoute() (+19 more)
-
-### Community 59 - "Expenses_Edit_Route_Ts Edit API Route"
-Cohesion: 0.22
-Nodes (9): MAX_CODE_CANDIDATES, scanners, metadata, HERE, main(), REFS, renderCandidates(), renderScanners() (+1 more)
-
-### Community 60 - "Expenses_List_Route_Ts List API Route"
-Cohesion: 0.39
-Nodes (11): grade(), gradeRecommendation(), isAccountScope(), roundTo(), scoreActionability(), scoreEvidence(), scoreEvidenceAccount(), scoreGrounding() (+3 more)
+Cohesion: 0.11
+Nodes (30): assertValidObservations(), buildFinalReportMessage(), escape(), extractCoverageLine(), formatBytes(), formatEvidenceText(), formatGatedTargets(), formatNum() (+22 more)
 
 ### Community 61 - "Expenses_Select_Route_Ts Select API Route"
-Cohesion: 0.18
-Nodes (31): asArray(), cacheRecommendationFiles(), extractClaims(), isCacheCandidate(), mentionsAuthSensitiveParallelization(), mentionsCachedNotFoundOr404(), mentionsCacheLifeCdnHeaderClaim(), mentionsCacheLifetimeChange() (+23 more)
+Cohesion: 0.09
+Nodes (54): asArray(), cacheRecommendationFiles(), extractClaims(), isCacheCandidate(), mentionsAuthSensitiveParallelization(), mentionsCachedNotFoundOr404(), mentionsCacheLifeCdnHeaderClaim(), mentionsCacheLifetimeChange() (+46 more)
 
 ### Community 64 - "Hours_Edit_Route_Ts Edit API Route"
 Cohesion: 0.06
@@ -627,28 +633,28 @@ Cohesion: 0.07
 Nodes (28): A) `VERCEL_TOKEN` is already set in the environment, About `.vercel/` Directory, Authentication error, B) Token is in a `.env` file under `VERCEL_TOKEN`, Build failure, C) Token is in a `.env` file under a different name, Check project state first, CLI not installed (+20 more)
 
 ### Community 66 - "Jobs_Add_Route_Ts Add API Route"
-Cohesion: 0.18
-Nodes (12): POST(), sql, POST(), sql, sql, POST(), sql, DeckEstimateForm() (+4 more)
+Cohesion: 0.22
+Nodes (10): POST(), sql, POST(), sql, sql, DeckEstimateForm(), money(), geocodeAddress() (+2 more)
 
 ### Community 67 - "Jobs_Delete_Route_Ts Delete API Route"
-Cohesion: 0.06
-Nodes (49): RATE_FIELDS, DeckEstimateSummary(), money(), DeckSketchCanvas(), Drag, Mode, STATUS_OPTIONS, EstimatorPage() (+41 more)
+Cohesion: 0.09
+Nodes (32): RATE_FIELDS, DeckSketchCanvas(), Drag, Mode, addDeckEstimate(), changePassword(), clockIn(), clockOut() (+24 more)
 
 ### Community 68 - "Jobs_Edit_Route_Ts Edit API Route"
 Cohesion: 0.07
 Nodes (28): dependencies, @base-ui/react, bcryptjs, class-variance-authority, clsx, date-fns, embla-carousel-react, heic-convert (+20 more)
 
 ### Community 71 - "JobProfile"
-Cohesion: 0.17
-Nodes (30): POST /api/customers/add, POST /api/employees/add, POST /api/expenses/add, authOptions (NextAuth config), Data layer, Required environment variables, POST /api/customers/delete, POST /api/employees/delete (+22 more)
+Cohesion: 0.20
+Nodes (20): Data layer, Required environment variables, HoursSearch(), MessageBox (commented out / unused), HoursPage(), getEmployeeByEmail(), getEmployeeByLastName(), getEmployees() (+12 more)
 
 ### Community 72 - "JobProfile"
 Cohesion: 0.25
 Nodes (24): arrayAt(), deploymentRegressionDecision(), dropWithObservation(), formatInteger(), formatMs(), formatPct(), isrOverrevalidationDecision(), numberAt() (+16 more)
 
 ### Community 73 - "GET"
-Cohesion: 0.11
-Nodes (19): data, ListItem(), Work(), LINKS, ListItem (public navbar), Navbar(), data, ListItem() (+11 more)
+Cohesion: 0.21
+Nodes (14): data, ListItem(), data, ListItem(), cn(), NavigationMenu(), NavigationMenuContent(), NavigationMenuIndicator() (+6 more)
 
 ### Community 79 - "ImageCarousel"
 Cohesion: 0.16
@@ -656,7 +662,7 @@ Nodes (19): compareVersion(), HERE, LIBRARY_PATH, libraryForStack(), loadLibrary
 
 ### Community 80 - "Contact"
 Cohesion: 0.06
-Nodes (42): Home (About page), SERVICES, WHY_CHOOSE_US, BeforeAfter(), BeforeAfterProps, SignInButton(), SOCIALS, Home (Estimate page) (+34 more)
+Nodes (41): Home (About page), SERVICES, WHY_CHOOSE_US, BeforeAfter(), BeforeAfterProps, SignInButton(), SOCIALS, Home (Estimate page) (+33 more)
 
 ### Community 81 - "EmployeeProfile"
 Cohesion: 0.17
@@ -667,16 +673,16 @@ Cohesion: 0.13
 Nodes (17): HERE, KNOWN_CANDIDATE_KINDS, loadSupportTopics(), nonEmptyArray(), nonEmptyString(), normalizeTopic(), parseFrontmatter(), parseFrontmatterValue() (+9 more)
 
 ### Community 85 - "GET"
-Cohesion: 0.05
-Nodes (41): sql, GET(), sql, POST(), sql, PATCH(), sql, VALID_STATUSES (+33 more)
+Cohesion: 0.22
+Nodes (8): sql, NextAuth Google OAuth architecture, REST-ish API route convention, authOptions, signIn callback, users table (referenced), NextAuth route handler (GET/POST), handler
 
 ### Community 100 - "Popover"
 Cohesion: 0.23
-Nodes (11): DatePicker(), Button(), buttonVariants, Calendar(), CalendarDayButton(), Popover(), PopoverContent(), PopoverDescription() (+3 more)
+Nodes (11): Button(), buttonVariants, Calendar(), CalendarDayButton(), ComboboxChip(), Popover(), PopoverContent(), PopoverDescription() (+3 more)
 
 ### Community 101 - "TableCell"
-Cohesion: 0.34
-Nodes (11): HoursSearch(), MessageBox (commented out / unused), deleteExpense(), Table(), TableBody(), TableCaption(), TableCell(), TableFooter() (+3 more)
+Cohesion: 0.38
+Nodes (9): Label(), Table(), TableBody(), TableCaption(), TableCell(), TableFooter(), TableHead(), TableHeader() (+1 more)
 
 ### Community 102 - "TableHead"
 Cohesion: 0.14
@@ -691,12 +697,12 @@ Cohesion: 0.14
 Nodes (21): isDailyQuotaExceeded(), aggregateServicesByName(), baselineStack(), categorizeError(), checkObservabilityPlusConfiguration(), classifyObservabilityPlusConfiguration(), detectNextCacheComponents(), detectStack() (+13 more)
 
 ### Community 107 - "Community 107"
-Cohesion: 0.24
-Nodes (7): escapeRegex(), apply(), COUNT_CLAIM_TYPES, metadata, rewriteCount(), metadata, STRIP_DIRECTIVES
+Cohesion: 0.11
+Nodes (14): escapeRegex(), extractRoute(), apply(), COUNT_CLAIM_TYPES, metadata, rewriteCount(), metadata, metadata (+6 more)
 
 ### Community 108 - "Community 108"
 Cohesion: 0.11
-Nodes (11): extractRoute(), lineOf(), metadata, metadata, MODE_PATTERNS, isApplicable(), metadata, scan() (+3 more)
+Nodes (12): lineOf(), isApplicable(), metadata, scan(), isApplicable(), metadata, scan(), scanners (+4 more)
 
 ### Community 109 - "Community 109"
 Cohesion: 0.16
@@ -715,8 +721,8 @@ Cohesion: 0.10
 Nodes (19): Agent-Specific Notes, Claude Code / terminal-based agents, CLI Auth Failure, Codex, Deploy to Vercel, Escalated Network Access (Codex / sandboxed environments), Linked (`.vercel/` exists) + has git remote → Git Push, Linked (`.vercel/` exists) + no git remote → `vercel deploy` (+11 more)
 
 ### Community 113 - "Community 113"
-Cohesion: 0.11
-Nodes (17): gate(), metadata, unique(), extractColdStarts(), gate(), metadata, gates, extractRows() (+9 more)
+Cohesion: 0.16
+Nodes (15): gates, MAX_CODE_CANDIDATES, metadata, HERE, main(), REFS, renderCandidates(), renderScanners() (+7 more)
 
 ### Community 114 - "Community 114"
 Cohesion: 0.10
@@ -728,7 +734,7 @@ Nodes (18): 1.1 Stop on blockers, 1. Collect, scan, and merge signals, 2.1 Ask a
 
 ### Community 116 - "Community 116"
 Cohesion: 0.12
-Nodes (20): GET /api/applications, ApplyPage, Field helper component, FormData interface, handleChange function, handlePositionSelect function, handleSubmit function, inputClass helper function (+12 more)
+Nodes (16): ApplyPage, Field helper component, FormData interface, handleChange function, handlePositionSelect function, handleSubmit function, inputClass helper function, ApplyPage() (+8 more)
 
 ### Community 117 - "Community 117"
 Cohesion: 0.11
@@ -759,8 +765,8 @@ Cohesion: 0.12
 Nodes (15): Sections, 10. Design System (design-system), 11. Monorepo (monorepo), 12. Third-Party Dependencies (imports), 13. JavaScript (js), 14. Fonts (fonts), 1. Core Rendering (rendering), 2. List Performance (list-performance) (+7 more)
 
 ### Community 124 - "Community 124"
-Cohesion: 0.12
-Nodes (15): CandidateContractError, candidateLabel(), nonEmptyString(), VALID_SCOPES, validateCandidate(), validateCandidates(), DEFAULT_KIND_CAPS, DIVERSITY_ELIGIBILITY (+7 more)
+Cohesion: 0.20
+Nodes (11): CandidateContractError, candidateLabel(), nonEmptyString(), VALID_SCOPES, validateCandidate(), validateCandidates(), applyAuthDisqualifier(), isAuthRoute() (+3 more)
 
 ### Community 125 - "Community 125"
 Cohesion: 0.23
@@ -779,8 +785,8 @@ Cohesion: 0.12
 Nodes (16): 5.10 Subscribe to Derived State, 5.11 Use Functional setState Updates, 5.12 Use Lazy State Initialization, 5.13 Use Transitions for Non-Urgent Updates, 5.14 Use useDeferredValue for Expensive Derived Renders, 5.15 Use useRef for Transient Values, 5.1 Calculate Derived State During Rendering, 5.2 Defer State Reads to Usage Point (+8 more)
 
 ### Community 129 - "Community 129"
-Cohesion: 0.22
-Nodes (11): asArray(), buildFinalReportMessage(), compactFinalText(), displayCandidate(), extractCoverageLine(), formatRecommendationText(), impactString(), renderFinalRecommendationPreview() (+3 more)
+Cohesion: 0.21
+Nodes (12): asArray(), candidateForDisplay(), compactFinalText(), displayCandidate(), displayCandidateObject(), displayCandidateRef(), formatRecommendationText(), impactString() (+4 more)
 
 ### Community 130 - "Community 130"
 Cohesion: 0.18
@@ -811,8 +817,8 @@ Cohesion: 0.13
 Nodes (14): Backdrop-Blur Workaround, CSS Animation Recipes, Directional Navigation, Fade, Persistent Element Isolation, Reduced Motion, Scale, Separate Enter/Exit Classes (+6 more)
 
 ### Community 137 - "Community 137"
-Cohesion: 0.26
-Nodes (12): computeImpactLabel(), cwvIssue(), formatCwvIssue(), formatInteger(), joinEnglish(), parseSigNumber(), round1(), round2() (+4 more)
+Cohesion: 0.40
+Nodes (9): computeImpactLabel(), cwvIssue(), formatCwvIssue(), formatInteger(), joinEnglish(), parseSigNumber(), round1(), round2() (+1 more)
 
 ### Community 138 - "Community 138"
 Cohesion: 0.14
@@ -831,8 +837,8 @@ Cohesion: 0.15
 Nodes (12): Layout-Level ViewTransition, `loading.tsx` as Suspense Boundary, Next.js Implementation Additions, Programmatic Navigation, Same-Route Dynamic Segment Transitions, Server Components, Server-Side Filtering with `router.replace`, Setup (+4 more)
 
 ### Community 142 - "Community 142"
-Cohesion: 0.36
-Nodes (7): apply(), collectText(), matchConcurrency(), matchProviders(), metadata, PROVIDER_LIMITS, PROVIDER_RE
+Cohesion: 0.14
+Nodes (14): DeckEstimateSummary(), money(), EstimateDetail(), STATUS_OPTIONS, EstimatorPage(), money(), STATUS_CONFIG, EstimateDetailPage() (+6 more)
 
 ### Community 143 - "Community 143"
 Cohesion: 0.33
@@ -895,8 +901,8 @@ Cohesion: 0.22
 Nodes (7): API routes (`app/api/`), Architecture, Auth, Commands, Environment, graphify, UI components
 
 ### Community 159 - "Community 159"
-Cohesion: 0.60
-Nodes (4): extractHighColdRoutes(), extractSlowHotRoutes(), gate(), metadata
+Cohesion: 0.28
+Nodes (7): extractColdStarts(), gate(), metadata, extractHighColdRoutes(), extractSlowHotRoutes(), gate(), metadata
 
 ### Community 160 - "Community 160"
 Cohesion: 0.39
@@ -907,8 +913,8 @@ Cohesion: 0.33
 Nodes (7): candidateForGroup(), gate(), groupFindings(), metadata, questionFor(), SCANNER_GATES, uniqueStrings()
 
 ### Community 162 - "Community 162"
-Cohesion: 0.33
-Nodes (5): ApplyPage(), FormData, inputClass(), Position, POSITIONS
+Cohesion: 0.25
+Nodes (4): DEFAULT_KIND_CAPS, DIVERSITY_ELIGIBILITY, isDiversityEligible(), selectLaunchCandidates()
 
 ### Community 163 - "Community 163"
 Cohesion: 0.22
@@ -931,8 +937,8 @@ Cohesion: 0.25
 Nodes (7): Claim types, Dispositions, Re-gen trigger and accept criteria, Table of contents, Verification, Verifier implementation, Why mechanical verification
 
 ### Community 168 - "Community 168"
-Cohesion: 0.67
-Nodes (3): isApplicable(), metadata, scan()
+Cohesion: 0.29
+Nodes (6): isApplicable(), metadata, scan(), isApplicable(), metadata, scan()
 
 ### Community 169 - "Community 169"
 Cohesion: 0.43
@@ -1047,8 +1053,8 @@ Cohesion: 0.33
 Nodes (5): Installation, React View Transitions Skill, Resources, Skill Structure, What This Skill Covers
 
 ### Community 199 - "Community 199"
-Cohesion: 0.17
-Nodes (13): JobProfile (customer edit page), EditJob(), EstimateDetail(), CustomerEditPage(), EstimateEditPage(), JobEditPage(), EditCustomer, EstimateDetailPage() (+5 more)
+Cohesion: 0.19
+Nodes (13): JobProfile (customer edit page), EditJob(), CustomerEditPage(), EstimateEditPage(), JobEditPage(), EditCustomer, getCustomerById(), getCustomers() (+5 more)
 
 ### Community 200 - "Community 200"
 Cohesion: 0.60
@@ -1283,12 +1289,12 @@ Cohesion: 0.67
 Nodes (3): PATCH(), sql, VALID_STATUSES
 
 ### Community 259 - "Community 259"
-Cohesion: 0.47
-Nodes (5): apply(), extractCodeBlocks(), metadata, NODE_BUILTINS, pkgRoot()
+Cohesion: 0.67
+Nodes (3): gate(), metadata, unique()
 
 ### Community 260 - "Community 260"
 Cohesion: 0.67
-Nodes (4): candidateForDisplay(), displayCandidateObject(), displayCandidateRef(), parseCandidateRef()
+Nodes (3): extractRows(), gate(), metadata
 
 ### Community 261 - "Community 261"
 Cohesion: 0.67
@@ -1330,10 +1336,6 @@ Nodes (4): How Multiple VTs Interact, Nested VT Limitation, Two Patterns Coexist
 Cohesion: 0.20
 Nodes (13): Carousel(), CarouselApi, CarouselContent(), CarouselContext, CarouselContextProps, CarouselItem(), CarouselNext(), CarouselOptions (+5 more)
 
-### Community 271 - "Community 271"
-Cohesion: 0.67
-Nodes (3): isApplicable(), metadata, scan()
-
 ### Community 275 - "Community 275"
 Cohesion: 0.67
 Nodes (3): 11.1 Install Native Dependencies in App Directory, 11.2 Use Single Dependency Versions Across Monorepo, 11. Monorepo
@@ -1347,16 +1349,24 @@ Cohesion: 0.67
 Nodes (3): 8.1 Destructure Functions Early in Render (React Compiler), 8.2 Use .get() and .set() for Reanimated Shared Values (not .value), 8. React Compiler
 
 ### Community 400 - "Community 400"
-Cohesion: 0.67
-Nodes (3): isApplicable(), metadata, scan()
+Cohesion: 0.20
+Nodes (11): EstimateRow(), EstimatesPage(), SERVICE_TYPE_LABELS, STATUS_CONFIG, EstimateRequest, EstimateStatus, getEstimateRequests(), ServiceType (+3 more)
 
 ### Community 401 - "Community 401"
-Cohesion: 0.19
-Nodes (13): SpinnerOverlay (commented out), EmployeeTable, EmployeeEditPage(), EmployeeProfile (employee edit page), EmployeeProfile(), EditEmployee, getEmployeeById(), getEmployeeByLastName() (+5 more)
+Cohesion: 0.24
+Nodes (9): SpinnerOverlay (commented out), EmployeeTable, EmployeeEditPage(), EmployeeProfile (employee edit page), EmployeeProfile(), EditEmployee, getEmployeeById(), addEmployees() (+1 more)
 
 ### Community 402 - "Community 402"
+Cohesion: 0.29
+Nodes (6): Work(), LINKS, ListItem (public navbar), Navbar(), Projects(), ListItem (employee navbar)
+
+### Community 403 - "Community 403"
+Cohesion: 0.50
+Nodes (3): QuickAddHours(), StatCard(), StatCardProps
+
+### Community 404 - "Community 404"
 Cohesion: 0.67
-Nodes (3): metadata, parseRegionList(), scan()
+Nodes (3): PATCH(), sql, VALID_STATUSES
 
 ## Ambiguous Edges - Review These
 - `CustomerProfile()` → `ExpenseTable()`  [AMBIGUOUS]
@@ -1423,9 +1433,9 @@ Nodes (3): metadata, parseRegionList(), scan()
   README.md · relation: conceptually_related_to
 
 ## Knowledge Gaps
-- **1201 isolated node(s):** `deploy-codex.sh script`, `deploy.sh script`, `HERE`, `LIBRARY_PATH`, `SERVICE_DIMENSION` (+1196 more)
+- **1200 isolated node(s):** `deploy-codex.sh script`, `deploy.sh script`, `HERE`, `LIBRARY_PATH`, `SERVICE_DIMENSION` (+1195 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **183 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **193 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
