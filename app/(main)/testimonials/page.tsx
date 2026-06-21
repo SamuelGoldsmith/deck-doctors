@@ -1,9 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ExternalLink, Star } from "lucide-react";
 import reviews from "@/data/reviews.json";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import { Reveal } from "@/components/motion/Reveal";
+
+export const metadata: Metadata = {
+  title: "Reviews & Testimonials",
+  description:
+    "See what Connecticut & Massachusetts homeowners say about Deck Doctors' deck restoration, repair, and new construction work.",
+  alternates: { canonical: "/testimonials" },
+  openGraph: {
+    title: "Deck Doctors Reviews & Testimonials",
+    description: "Real reviews from CT & MA homeowners.",
+    url: "/testimonials",
+  },
+};
 
 const GOOGLE_REVIEWS_URL = "https://share.google/PhUOpIj2nIsZN3IWA";
 

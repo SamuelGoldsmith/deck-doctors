@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import { GalleryBrowser } from "@/components/gallery/GalleryBrowser";
@@ -6,6 +7,18 @@ import { getGalleryGroups } from "@/lib/gallery";
 // Reads gallery photos from the DB at request time so new uploads appear without
 // a rebuild (and so the build doesn't depend on the gallery tables existing yet).
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "Deck Gallery — Before & After",
+  description:
+    "Browse before-and-after photos of Deck Doctors projects — restorations, Trex composite builds, and new decks across CT & MA. Filter by project type.",
+  alternates: { canonical: "/gallery" },
+  openGraph: {
+    title: "Deck Doctors Gallery — Before & After",
+    description: "Restorations, Trex builds, and new decks across Connecticut & Massachusetts.",
+    url: "/gallery",
+  },
+};
 
 export default async function GalleryPage() {
   const groups = await getGalleryGroups();

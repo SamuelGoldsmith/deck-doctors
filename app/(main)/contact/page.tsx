@@ -1,9 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
 import { SiInstagram, SiFacebook } from "react-icons/si";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import { Reveal } from "@/components/motion/Reveal";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description:
+    "Call or text (413) 400-0884, or message Deck Doctors. Serving homeowners across Connecticut & Massachusetts for deck restoration, repair, and new builds.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Deck Doctors",
+    description: "Call (413) 400-0884 — deck restoration & construction in CT & MA.",
+    url: "/contact",
+  },
+};
 
 const SOCIALS = [
   { href: "https://www.instagram.com/deckdoctorsne/", label: "Instagram", icon: SiInstagram },

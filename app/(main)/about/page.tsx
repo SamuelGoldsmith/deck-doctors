@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
@@ -5,6 +6,19 @@ import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import { Reveal } from "@/components/motion/Reveal";
 import { GalleryImage } from "@/components/gallery/GalleryImage";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "Meet Deck Doctors — licensed deck restoration and construction pros (HIC CT 0701796 · MA 215589) serving Connecticut & Massachusetts with craftsmanship built to last.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Deck Doctors",
+    description:
+      "Licensed deck restoration & construction serving Connecticut and Massachusetts.",
+    url: "/about",
+  },
+};
 
 const WHY_CHOOSE_US = [
   {
