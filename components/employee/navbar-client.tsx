@@ -15,6 +15,7 @@ const OWNER_LINKS = [
   { href: "/employee-portal/estimates", label: "Estimates" },
   { href: "/employee-portal/estimator", label: "Estimator" },
   { href: "/employee-portal/jobs", label: "Jobs" },
+  { href: "/employee-portal/upload", label: "Upload" },
   { href: "/employee-portal/employees", label: "Employees" },
   { href: "/employee-portal/customers", label: "Contacts" },
   { href: "/employee-portal/hours", label: "Hours" },

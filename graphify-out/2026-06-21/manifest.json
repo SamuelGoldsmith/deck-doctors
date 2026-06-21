@@ -440,8 +440,8 @@
     "semantic_hash": ""
   },
   "next.config.ts": {
-    "mtime": 1782082935.024304,
-    "ast_hash": "3d8f27d34f94e5211423cee4476aacb0",
+    "mtime": 1782082220.197873,
+    "ast_hash": "a90754fec72e0689aa7b0bf371ee4130",
     "semantic_hash": ""
   },
   "package.json": {
@@ -1600,8 +1600,8 @@
     "semantic_hash": ""
   },
   ".claude/settings.local.json": {
-    "mtime": 1782082972.7309508,
-    "ast_hash": "0c440a12243969120b3dc89139ad3730",
+    "mtime": 1782082333.9484315,
+    "ast_hash": "8c8d89f639315f918c769620a4ec1cac",
     "semantic_hash": ""
   },
   ".claude/skills/deploy-to-vercel/resources/deploy-codex.sh": {
@@ -4435,8 +4435,8 @@
     "semantic_hash": ""
   },
   "components/employee/gallery/GalleryGroupForm.tsx": {
-    "mtime": 1782082922.7470117,
-    "ast_hash": "7084a5a49267f7afbe89b1ff088ca587",
+    "mtime": 1782082009.9723828,
+    "ast_hash": "f6e66dcce798c3cdd75d2f61357e16ac",
     "semantic_hash": ""
   },
   "components/employee/gallery/GroupRow.tsx": {
@@ -4445,8 +4445,8 @@
     "semantic_hash": ""
   },
   "components/employee/gallery/ImageCard.tsx": {
-    "mtime": 1782082907.2950215,
-    "ast_hash": "14ea76cd1890236298f730bdc24d1808",
+    "mtime": 1782081971.5467172,
+    "ast_hash": "c81c6b9b87b68c437ddfe3c02767e360",
     "semantic_hash": ""
   },
   "components/employee/gallery/TagSelector.tsx": {
@@ -4455,8 +4455,8 @@
     "semantic_hash": ""
   },
   "components/employee/gallery/types.ts": {
-    "mtime": 1782082901.918067,
-    "ast_hash": "b2c05c6a9ee74b5e86b48efd3ffb9713",
+    "mtime": 1782081945.530303,
+    "ast_hash": "f073c597a6c2dc7e4330e0b0f264f680",
     "semantic_hash": ""
   },
   "components/gallery/GalleryBrowser.tsx": {
@@ -4470,8 +4470,8 @@
     "semantic_hash": ""
   },
   "lib/galleryClient.ts": {
-    "mtime": 1782082896.3835452,
-    "ast_hash": "397f82a548090ec6f6a1241746077ff6",
+    "mtime": 1782081365.4592173,
+    "ast_hash": "ad7af88a2cf3e9652d5d1be3dbc08e78",
     "semantic_hash": ""
   },
   "lib/galleryServer.ts": {
@@ -4482,16 +4482,6 @@
   "scripts/migrate-decks-to-blob.mjs": {
     "mtime": 1782081582.9633856,
     "ast_hash": "7439b22699d6180333191cd2db422f1a",
-    "semantic_hash": ""
-  },
-  "app/api/gallery/convert-heic/route.ts": {
-    "mtime": 1782082879.8081677,
-    "ast_hash": "a62c4114a4efee83cbcbdf1934cc624c",
-    "semantic_hash": ""
-  },
-  "types/heic-convert.d.ts": {
-    "mtime": 1782082884.3145297,
-    "ast_hash": "9ae3ad600081671127fefef0dc52d5ff",
     "semantic_hash": ""
   }
 }

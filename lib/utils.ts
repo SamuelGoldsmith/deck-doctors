@@ -783,3 +783,112 @@ export function summarizeDeckEstimate(e: DeckEstimate): string {
   lines.push(`(From on-site estimate #${e.id})`);
   return lines.join("\n");
 }
+
+/* ============================================================
+ * Public Gallery (Vercel Blob uploads)
+ * Photos are grouped into "jobs"; each job carries optional tags and shows a
+ * before/after comparison slider (single before + single after image) plus
+ * any number of extra "other" thumbnails. See lib/tables.sql (gallery_groups,
+ * gallery_images) and lib/gallery.ts (server fetch).
+ * ========================================================== */
+
+export type GalleryTag = "trex" | "new_build" | "restoration";
+
+export const GALLERY_TAGS: GalleryTag[] = ["trex", "new_build", "restoration"];
+
+export const GALLERY_TAG_LABELS: Record<GalleryTag, string> = {
+  trex: "Trex",
+  new_build: "New Build",
+  restoration: "Restoration",
+};
+
+export type GalleryImageRole = "before" | "after" | "other";
+
+/** Max photos allowed per job group (1 before + 1 after + up to 8 others). */
+export const MAX_GALLERY_IMAGES = 10;
+
+export interface GalleryImage {
+  id: number;
+  group_id: string;
+  pathname: string; // blob pathname, e.g. gallery/<uuid>.jpg
+  url: string;      // blob public URL
+  role: GalleryImageRole;
+  position: number; // display order within the group
+}
+
+export interface GalleryGroup {
+  id: string;
+  title: string | null;
+  tags: GalleryTag[];
+  position: number; // display order of the job on the gallery page
+  created_by: string | null;
+  created_at: string;
+  updated_at: string;
+  images: GalleryImage[];
+}
+
+/** A single image being saved (already uploaded to Blob client-side). */
+export interface GalleryImageInput {
+  pathname: string;
+  url: string;
+  role: GalleryImageRole;
+  position: number;
+}
+
+/** Payload for creating or updating a job group. */
+export interface GalleryGroupInput {
+  id?: string; // present when editing an existing group
+  title: string | null;
+  tags: GalleryTag[];
+  images: GalleryImageInput[];
+}
+
+export async function addGalleryGroup(
+  input: GalleryGroupInput
+): Promise<{ ok: boolean; id?: string }> {
+  const res = await fetch("/api/gallery/add", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(input),
+  });
+  if (!res.ok) return { ok: false };
+  const row = await res.json().catch(() => null);
+  return { ok: true, id: row?.id };
+}
+
+export async function updateGalleryGroup(input: GalleryGroupInput): Promise<boolean> {
+  const res = await fetch("/api/gallery/edit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(input),
+  });
+  return res.ok;
+}
+
+export async function deleteGalleryGroup(id: string): Promise<boolean> {
+  if (!confirm("Delete this gallery job and all its photos? This cannot be undone.")) {
+    return false;
+  }
+  const res = await fetch("/api/gallery/delete", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id }),
+  });
+  return res.ok;
+}
+
+/** Persist a new page order for the job groups (array of group ids, top first). */
+export async function reorderGalleryGroups(order: string[]): Promise<boolean> {
+  const res = await fetch("/api/gallery/reorder", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ order }),
+  });
+  return res.ok;
+}
+
+export async function getGalleryGroupsClient(): Promise<GalleryGroup[]> {
+  const res = await fetch("/api/gallery/list");
+  if (!res.ok) throw new Error("Failed to fetch gallery groups");
+  return res.json();
+}

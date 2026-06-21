@@ -291,3 +291,48 @@ CREATE TRIGGER trg_deck_estimates_updated_at
 CREATE INDEX IF NOT EXISTS idx_deck_estimates_status     ON deck_estimates (status);
 CREATE INDEX IF NOT EXISTS idx_deck_estimates_cid        ON deck_estimates (cid);
 CREATE INDEX IF NOT EXISTS idx_deck_estimates_created_at ON deck_estimates (created_at);
+
+-- ============================================================
+-- Deck Doctors — Public Gallery (Vercel Blob uploads)
+-- Managers (Google sign-in) upload up to 10 photos per "job" group.
+-- Blob files are named with an opaque GUID pathname (gallery/<uuid>.<ext>);
+-- ALL display metadata lives here, never encoded in the filename:
+--   - gallery_groups  : one row per job shown on the gallery page.
+--                       `tags` is a subset of ('trex','new_build','restoration')
+--                       (per-job, multiple allowed, optional) used for filtering.
+--                       `position` orders the jobs on the page (reorderable).
+--   - gallery_images  : the blob files for a group. `role` marks the single
+--                       'before' + single 'after' used by the comparison slider;
+--                       everything else is 'other' (thumbnails below).
+--                       `position` orders images within the group (reorderable).
+-- ============================================================
+
+CREATE TABLE IF NOT EXISTS gallery_groups (
+  id          UUID PRIMARY KEY,
+  title       VARCHAR(255),                 -- optional caption shown with the job
+  tags        TEXT[]        NOT NULL DEFAULT '{}',
+  position    INTEGER       NOT NULL DEFAULT 0,
+  created_by  VARCHAR(255),                 -- uploader email from the session
+  created_at  TIMESTAMPTZ   NOT NULL DEFAULT NOW(),
+  updated_at  TIMESTAMPTZ   NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS gallery_images (
+  id          SERIAL PRIMARY KEY,
+  group_id    UUID          NOT NULL REFERENCES gallery_groups(id) ON DELETE CASCADE,
+  pathname    VARCHAR(512)  NOT NULL,       -- blob pathname, e.g. gallery/<uuid>.jpg
+  url         VARCHAR(1024) NOT NULL,       -- blob public URL
+  role        VARCHAR(10)   NOT NULL DEFAULT 'other'
+                CHECK (role IN ('before', 'after', 'other')),
+  position    INTEGER       NOT NULL DEFAULT 0,
+  created_at  TIMESTAMPTZ   NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_gallery_images_group    ON gallery_images (group_id);
+CREATE INDEX IF NOT EXISTS idx_gallery_groups_position ON gallery_groups (position);
+
+-- Reuses set_updated_at() defined above
+DROP TRIGGER IF EXISTS trg_gallery_groups_updated_at ON gallery_groups;
+CREATE TRIGGER trg_gallery_groups_updated_at
+  BEFORE UPDATE ON gallery_groups
+  FOR EACH ROW EXECUTE FUNCTION set_updated_at();
